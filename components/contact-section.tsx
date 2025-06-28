@@ -93,7 +93,7 @@ export default function ContactSection() {
       body: JSON.stringify(formData),
     });
     console.log(formData)
-    const result = await res.json();
+    // const result = await res.json();
     
     setIsSubmitting(true)
 
