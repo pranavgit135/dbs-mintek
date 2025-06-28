@@ -89,7 +89,7 @@ function useCountUp(target: number, duration = 2000, shouldStart = false) {
     if (!shouldStart) return
 
     const startTime = Date.now()
-    const endTime = startTime + duration
+    // const endTime = startTime + duration
 
     const timer = setInterval(() => {
       const now = Date.now()
@@ -229,22 +229,22 @@ useEffect(() => {
     setIsPaused(!isPaused)
   }
 
-  const getIconColor = (color: string) => {
-    switch (color) {
-      case "blue":
-        return "text-blue-600 bg-blue-100"
-      case "green":
-        return "text-green-600 bg-green-100"
-      case "purple":
-        return "text-purple-600 bg-purple-100"
-      case "indigo":
-        return "text-indigo-600 bg-indigo-100"
-      case "red":
-        return "text-red-600 bg-red-100"
-      default:
-        return "text-blue-600 bg-blue-100"
-    }
-  }
+  // const getIconColor = (color: string) => {
+  //   switch (color) {
+  //     case "blue":
+  //       return "text-blue-600 bg-blue-100"
+  //     case "green":
+  //       return "text-green-600 bg-green-100"
+  //     case "purple":
+  //       return "text-purple-600 bg-purple-100"
+  //     case "indigo":
+  //       return "text-indigo-600 bg-indigo-100"
+  //     case "red":
+  //       return "text-red-600 bg-red-100"
+  //     default:
+  //       return "text-blue-600 bg-blue-100"
+  //   }
+  // }
 
   return (
     <section
@@ -417,7 +417,7 @@ useEffect(() => {
             <div className="max-w-3xl mx-auto">
               <h3 className="text-2xl lg:text-3xl font-bold mb-4">Ready to Transform Your Customer Experience?</h3>
               <p className="text-lg mb-8 text-blue-100">
-                Let's discuss how our comprehensive services can help your business achieve exceptional customer
+                Let&apos;s discuss how our comprehensive services can help your business achieve exceptional customer
                 satisfaction and drive growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
