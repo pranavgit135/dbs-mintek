@@ -66,7 +66,7 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-  const [status,setStatus]=useState("")
+  // const [status,setStatus]=useState("")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -95,7 +95,7 @@ export default function ContactSection() {
     });
     console.log(formData)
     const result = await res.json();
-    setStatus(result.success ? 'Email sent!' : result.error);
+    // setStatus(result.success ? 'Email sent!' : result.error);
     setIsSubmitting(true)
 
     // Simulate form submission
