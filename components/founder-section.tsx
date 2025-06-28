@@ -1,8 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Linkedin, Quote, Award, Users, TrendingUp } from "lucide-react"
+import { Card } from "@/components/ui/card"
+import { Linkedin, Award, Users, TrendingUp } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -69,7 +69,7 @@ export default function FounderSection() {
               Leadership That Drives Innovation
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Discover the vision and expertise behind Geo SofTech's success story
+              Discover the vision and expertise behind Geo SofTech&apos;s success story
             </p>
           </motion.div>
 
@@ -129,7 +129,7 @@ export default function FounderSection() {
                   <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
                     Amar Korde brings over a decade of experience in digital strategy, helping 300+ businesses scale
                     through smart web solutions, SEO, and automation technologies. His vision has transformed how
-                    companies approach digital transformation in today's competitive landscape.
+                    companies approach digital transformation in today&apos;s competitive landscape.
                   </p>
                 </div>
               </div>
