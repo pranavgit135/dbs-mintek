@@ -148,7 +148,7 @@ function ServiceCarousel() {
   }
 
   const currentService = services[currentSlide]
-  const IconComponent = currentService.icon
+  // const IconComponent = currentService.icon
 
   return (
     <div className="relative bg-white rounded-lg shadow-lg overflow-hidden w-full">
@@ -195,7 +195,7 @@ function ServiceCarousel() {
           className="flex transition-transform duration-700 ease-in-out h-full"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {services.map((service, index) => {
+          {services.map((service) => {
             const ServiceIcon = service.icon
             return (
               <div key={service.id} className="w-full flex-shrink-0">
@@ -921,7 +921,7 @@ export default function AboutUs() {
             Make Your Business Global
           </h2>
           <p className="text-responsive-base sm:text-responsive-lg text-lg lg:text-xl  text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-            Ready to transform your customer service operations? Let's discuss how DBS MINTEK can help your business
+            Ready to transform your customer service operations? Let&apos;s discuss how DBS MINTEK can help your business
             grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8">
