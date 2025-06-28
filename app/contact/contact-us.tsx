@@ -95,7 +95,7 @@ export default function ContactUs() {
 
     // Simulate form submission
     setTimeout(() => {
-      alert("Thank you for your enquiry! We'll be in touch soon.")
+      alert("Thank you for your enquiry! We&apos;ll be in touch soon.")
       setIsSubmitting(false)
       // Reset form
       setFormData({
@@ -181,8 +181,8 @@ export default function ContactUs() {
               </Badge>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">Contact Our Expert Team</h1>
               <p className="text-lg sm:text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
-                Our team is happy to answer your sales questions. Fill out the form and we'll be in touch as soon as
-                possible. Let's discuss how we can help make your business global.
+                Our team is happy to answer your sales questions. Fill out the form and we&apos;ll be in touch as soon as
+                possible. Let&apos;s discuss how we can help make your business global.
               </p>
             </div>
 
@@ -216,7 +216,7 @@ export default function ContactUs() {
               <div className="space-y-4">
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Send Us a Message</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Please complete the details below and then click on Submit. We'll be in contact with you shortly to
+                  Please complete the details below and then click on Submit. We&apos;ll be in contact with you shortly to
                   discuss your requirements.
                 </p>
               </div>
@@ -490,7 +490,7 @@ export default function ContactUs() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                        <p className="text-gray-600 text-sm mb-2">We're available when you need us</p>
+                        <p className="text-gray-600 text-sm mb-2">We&apos;re available when you need us</p>
                         <div className="text-purple-600 font-semibold">
                           <div>Mon - Fri: 9:00 AM - 6:00 PM IST</div>
                           <div className="text-sm text-gray-600">24/7 Support Available</div>
@@ -545,7 +545,7 @@ export default function ContactUs() {
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Locations</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Visit us at any of our strategically located offices across major business hubs in India. We're here to
+              Visit us at any of our strategically located offices across major business hubs in India. We&apos;re here to
               serve you with world-class call center solutions.
             </p>
           </div>
@@ -628,7 +628,7 @@ export default function ContactUs() {
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold">Ready to Get Started?</h3>
                     <p className="text-blue-100">
-                      Contact us today and let's discuss how we can help make your business global with our
+                      Contact us today and let&apos;s discuss how we can help make your business global with our
                       comprehensive call center solutions.
                     </p>
                   </div>
