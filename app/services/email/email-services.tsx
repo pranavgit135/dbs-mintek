@@ -493,7 +493,7 @@ export default function EmailServices() {
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
                   Use the latest technologies to keep you connected with customers, no matter where they are or what
-                  device they're using, ensuring consistent communication quality.
+                  device they&apos;re using, ensuring consistent communication quality.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
