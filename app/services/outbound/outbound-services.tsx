@@ -489,7 +489,7 @@ export default function OutboundServices() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Scalable, secure, and reliable hosted outbound dialing solution that's easy to use and affordable for
+                  Scalable, secure, and reliable hosted outbound dialing solution that&apos;s easy to use and affordable for
                   businesses of all sizes.
                 </p>
                 <ul className="space-y-1 text-xs text-gray-600">
@@ -584,7 +584,7 @@ export default function OutboundServices() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-600">
-              We're here to help you with any questions about our outbound services.
+              We&apos;re here to help you with any questions about our outbound services.
             </p>
           </div>
 
