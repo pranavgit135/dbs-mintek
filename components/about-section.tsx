@@ -279,7 +279,7 @@ export default function AboutSection() {
               <Zap className="h-12 w-12 mx-auto mb-6 text-yellow-300" />
               <h3 className="text-2xl lg:text-3xl font-bold mb-4">Ready to Transform Your Customer Experience?</h3>
               <p className="text-lg mb-8 text-purple-100">
-                Join hundreds of satisfied clients who trust DBS Mintek for their call centre needs. Let's discuss how
+                Join hundreds of satisfied clients who trust DBS Mintek for their call centre needs. Let&apos;s discuss how
                 we can elevate your customer service to the next level.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
