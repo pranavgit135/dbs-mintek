@@ -135,7 +135,7 @@ export default function OutboundServices() {
 
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-6">
                 <div className="text-lg sm:text-xl font-semibold mb-2 text-green-100">
-                  "Outbound services are a great way to connect with new customers and grow your business."
+                  &quot;Outbound services are a great way to connect with new customers and grow your business.&quot;
                 </div>
                 <div className="text-sm text-green-200">- DBS MINTEK Expert Team</div>
               </div>
