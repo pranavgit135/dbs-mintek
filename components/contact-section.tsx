@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Building, Users, Headphones } from "lucide-react"
-import CountUp from "react-countup"
+
 
 const contactInfo = [
   {
@@ -66,7 +66,6 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-  const [status, setStatus] = useState('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
