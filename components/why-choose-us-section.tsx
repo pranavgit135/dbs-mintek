@@ -211,7 +211,7 @@ export default function WhyChooseUsSection() {
         <div
           className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 ${isVisible ? "animate-fade-in-delay" : "opacity-0"}`}
         >
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <Card
               key={feature.id}
               className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm cursor-pointer transform hover:-translate-y-4"
