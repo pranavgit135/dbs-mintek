@@ -5,7 +5,7 @@ import Image from "next/image"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { stat, Stats } from "fs"
+
 
 const clients = [
   {
@@ -24,7 +24,7 @@ const clients = [
     name: "Xanadu",
     logo: "/client9.jpg?height=60&width=120",
     industry: "Consulting",
-    testimonial: "Their team's expertise in customer engagement has significantly improved our client satisfaction.",
+    testimonial: "Their team&apos;s expertise in customer engagement has significantly improved our client satisfaction.",
   },
   {
     name: "HeroFinCorp",
@@ -36,7 +36,7 @@ const clients = [
     name: "Bike Bazaar",
     logo: "/client6.jpg?height=60&width=120",
     industry: "E-commerce",
-    testimonial: "DBS Mintek's sales support has helped us achieve remarkable growth in customer acquisition.",
+    testimonial: "DBS Mintek&apos;s sales support has helped us achieve remarkable growth in customer acquisition.",
   },
   {
     name: "HDFC Bank",
