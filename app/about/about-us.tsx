@@ -147,7 +147,7 @@ function ServiceCarousel() {
     setIsAutoPlay(!isAutoPlay)
   }
 
-  const currentService = services[currentSlide]
+  // const currentService = services[currentSlide]
   // const IconComponent = currentService.icon
 
   return (
