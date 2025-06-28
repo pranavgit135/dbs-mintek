@@ -30,17 +30,17 @@ export default function FounderSection() {
     },
   }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  }
+  // const itemVariants = {
+  //   hidden: { opacity: 0, y: 30 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       duration: 0.6,
+  //       ease: "easeOut",
+  //     },
+  //   },
+  // }
 
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden" ref={ref}>
