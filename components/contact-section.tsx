@@ -66,6 +66,7 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  const [status,setStatus]=useState("")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
