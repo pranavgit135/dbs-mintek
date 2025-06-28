@@ -163,7 +163,7 @@ export default function ContactSection() {
                     <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
                     <h4 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h4>
                     <p className="text-gray-600">
-                      Your message has been sent successfully. We'll get back to you within 24 hours.
+                      Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                     </p>
                   </div>
                 ) : (
@@ -267,7 +267,7 @@ export default function ContactSection() {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
               <p className="text-gray-600 mb-8">
-                We're here to help you find the perfect call center solution for your business. Reach out to us through
+                We&apos;re here to help you find the perfect call center solution for your business. Reach out to us through
                 any of the following channels.
               </p>
             </div>
