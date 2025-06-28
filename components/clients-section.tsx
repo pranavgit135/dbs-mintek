@@ -333,9 +333,9 @@ export default function ClientsSection() {
                 ))}
               </div>
               <blockquote className="text-lg lg:text-xl mb-6 max-w-3xl mx-auto">
-                "DBS Mintek has been instrumental in transforming our customer service operations. Their professional
+                &quot;DBS Mintek has been instrumental in transforming our customer service operations. Their professional
                 approach, 24/7 availability, and commitment to excellence have significantly improved our client
-                satisfaction rates."
+                satisfaction rates.&quot;
               </blockquote>
               <div className="flex items-center justify-center space-x-4">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
