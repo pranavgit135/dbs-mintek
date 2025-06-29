@@ -492,7 +492,7 @@ export default function ContactUs() {
                         <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
                         <p className="text-gray-600 text-sm mb-2">We&apos;re available when you need us</p>
                         <div className="text-purple-600 font-semibold">
-                          <div>Mon - Fri: 9:00 AM - 6:00 PM IST</div>
+                          <div>Mon - Sat: 9:00 AM - 6:00 PM IST</div>
                           <div className="text-sm text-gray-600">24/7 Support Available</div>
                         </div>
                       </div>
