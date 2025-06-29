@@ -92,8 +92,6 @@ export default function ContactSection() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
-    console.log(formData)
-    // const result = await res.json();
     
     setIsSubmitting(true)
 
