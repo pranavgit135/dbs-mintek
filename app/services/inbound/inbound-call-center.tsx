@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState ,useEffect} from "react"
 import {
   Phone,
   Clock,
@@ -34,9 +34,43 @@ interface FAQItem {
   answer: string
 }
 
+const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=serviceInbound`;
+console.log(url)
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [data, setData] = useState<ContentfulResponse | null>(null);
 
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
   const faqs: FAQItem[] = [
     {
       question: "What are the service hours of your call center?",
@@ -76,7 +110,7 @@ function FAQSection() {
 
   return (
     <div className="space-y-4">
-      {faqs.map((faq, index) => (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:any, index:number) => (
         <Card key={index} className="border border-gray-200 hover:border-blue-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(index)}>
             <div className="flex items-center justify-between">
@@ -100,6 +134,39 @@ function FAQSection() {
 }
 
 export default function InboundCallCenter() {
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <Header/>
@@ -111,42 +178,40 @@ export default function InboundCallCenter() {
             <div className="space-y-6 sm:space-y-8">
               <div className="space-y-4">
                 <Badge variant="secondary" className="bg-white/20 text-white border-white/30 text-sm">
-                  Enterprise-Grade Solutions
+                {data?.items?.[0]?.fields?.pageContent.subtitle} 
                 </Badge>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-                  Inbound Call Center
+                {data?.items?.[0]?.fields?.pageContent.title} 
                   <span className="block text-blue-200">Services</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-blue-100 leading-relaxed">
-                  Transform your customer service with our virtual call center solutions. Deliver enterprise-grade
-                  inbound customer services that bring corporate-level support to businesses at an affordable cost.
+                {data?.items?.[0]?.fields?.pageContent.description} Transform your customer service with our virtual call center solutions. Deliver enterprise-grade
+                  
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold">
                   <Phone className="w-5 h-5 mr-2" />
-                  Get Started Today
+                  {data?.items?.[0]?.fields?.pageContent.primaryCTA}
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Learn More
+                <Button size="lg" variant="outline" className="border-white text-white bg-white/10">
+                {data?.items?.[0]?.fields?.pageContent.secondaryCTA}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
 
               <div className="grid grid-cols-3 gap-4 pt-4">
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold">24/7</div>
-                  <div className="text-sm text-blue-200">Monitoring</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold">12</div>
-                  <div className="text-sm text-blue-200">Languages</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold">100%</div>
-                  <div className="text-sm text-blue-200">Customizable</div>
-                </div>
+                {data?.items?.[0]?.fields?.pageContent.stats.map((stat:any ,index:number)=>{
+                  return (
+                  <div className="text-center" key={index}>
+                  <div className="text-2xl sm:text-3xl font-bold">{stat.label}</div>
+                  <div className="text-sm text-blue-200">{stat.subLabel}</div>
+                </div>)
+                })}
+                
+                
+                
               </div>
             </div>
 
@@ -155,24 +220,24 @@ export default function InboundCallCenter() {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="bg-white/20 rounded-lg p-4 text-center">
                     <Phone className="w-8 h-8 mx-auto mb-2" />
-                    <div className="text-sm font-medium">Voice Support</div>
+                    <div className="text-sm font-medium">{data?.items?.[0]?.fields?.pageContent.channels[0].label}</div>
                   </div>
                   <div className="bg-white/20 rounded-lg p-4 text-center">
                     <Mail className="w-8 h-8 mx-auto mb-2" />
-                    <div className="text-sm font-medium">Email Support</div>
+                    <div className="text-sm font-medium">{data?.items?.[0]?.fields?.pageContent.channels[1].label}</div>
                   </div>
                   <div className="bg-white/20 rounded-lg p-4 text-center">
                     <MessageSquare className="w-8 h-8 mx-auto mb-2" />
-                    <div className="text-sm font-medium">Live Chat</div>
+                    <div className="text-sm font-medium">{data?.items?.[0]?.fields?.pageContent.channels[2].label}</div>
                   </div>
                   <div className="bg-white/20 rounded-lg p-4 text-center">
                     <Settings className="w-8 h-8 mx-auto mb-2" />
-                    <div className="text-sm font-medium">Custom IVR</div>
+                    <div className="text-sm font-medium">{data?.items?.[0]?.fields?.pageContent.channels[3].label}</div>
                   </div>
                 </div>
                 <div className="text-center">
                   <div className="text-sm text-blue-200 mb-2">Trusted by</div>
-                  <div className="text-lg font-semibold">BFSI • Telecom • Fintech • Real Estate</div>
+                  <div className="text-lg font-semibold">{data?.items?.[0]?.fields?.pageContent.trustedBy}</div>
                 </div>
               </div>
             </div>
@@ -200,13 +265,13 @@ export default function InboundCallCenter() {
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                     <Phone className="w-6 h-6 text-blue-600" />
                   </div>
-                  <CardTitle className="text-lg">Customer Service</CardTitle>
+                  <CardTitle className="text-lg">{data?.items?.[0]?.fields?.pageContent.services[0].title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Professional customer service representatives handle inquiries, provide product information, and
-                  ensure customer satisfaction across all touchpoints.
+                {data?.items?.[0]?.fields?.pageContent.services[0].description}
+                  
                 </p>
               </CardContent>
             </Card>
@@ -217,13 +282,12 @@ export default function InboundCallCenter() {
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                     <Shield className="w-6 h-6 text-green-600" />
                   </div>
-                  <CardTitle className="text-lg">Complaint Resolution</CardTitle>
+                  <CardTitle className="text-lg">{data?.items?.[0]?.fields?.pageContent.services[1].title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Dedicated complaint resolution specialists trained to handle customer concerns with empathy and
-                  efficiency, turning negative experiences into positive outcomes.
+                {data?.items?.[0]?.fields?.pageContent.services[1].description}
                 </p>
               </CardContent>
             </Card>
@@ -234,13 +298,12 @@ export default function InboundCallCenter() {
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                     <Headphones className="w-6 h-6 text-purple-600" />
                   </div>
-                  <CardTitle className="text-lg">Technical Support</CardTitle>
+                  <CardTitle className="text-lg">{data?.items?.[0]?.fields?.pageContent.services[2].title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Expert technical support agents provide troubleshooting assistance, product guidance, and technical
-                  solutions to keep your customers satisfied.
+                {data?.items?.[0]?.fields?.pageContent.services[2].description}
                 </p>
               </CardContent>
             </Card>
@@ -251,13 +314,12 @@ export default function InboundCallCenter() {
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-orange-600" />
                   </div>
-                  <CardTitle className="text-lg">Lead Conversion</CardTitle>
+                  <CardTitle className="text-lg">{data?.items?.[0]?.fields?.pageContent.services[3].title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Convert inbound leads into customers with our trained sales representatives who understand your
-                  products and can guide prospects through the buying process.
+                {data?.items?.[0]?.fields?.pageContent.services[3].description}
                 </p>
               </CardContent>
             </Card>
@@ -268,13 +330,12 @@ export default function InboundCallCenter() {
                   <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
                     <Users className="w-6 h-6 text-red-600" />
                   </div>
-                  <CardTitle className="text-lg">HR Support</CardTitle>
+                  <CardTitle className="text-lg">{data?.items?.[0]?.fields?.pageContent.services[4].title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Dedicated HR support services for employee inquiries, benefits information, and internal customer
-                  service needs.
+                {data?.items?.[0]?.fields?.pageContent.services[4].description}
                 </p>
               </CardContent>
             </Card>
@@ -285,13 +346,12 @@ export default function InboundCallCenter() {
                   <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
                     <Globe className="w-6 h-6 text-indigo-600" />
                   </div>
-                  <CardTitle className="text-lg">Travel Help Desk</CardTitle>
+                  <CardTitle className="text-lg">{data?.items?.[0]?.fields?.pageContent.services[5].title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Specialized travel customer help desk services for booking assistance, itinerary changes, and
-                  travel-related customer support.
+                {data?.items?.[0]?.fields?.pageContent.services[5].description}
                 </p>
               </CardContent>
             </Card>
@@ -304,10 +364,10 @@ export default function InboundCallCenter() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Our Inbound Services
+            {data?.items?.[0]?.fields?.pageContent.benefitsTitle}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Experience the competitive advantages that set our inbound call center services apart from the rest.
+            {data?.items?.[0]?.fields?.pageContent.benefitsIntro}
             </p>
           </div>
 
@@ -319,30 +379,30 @@ export default function InboundCallCenter() {
                     <DollarSign className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">No Capital Expenditure</CardTitle>
+                    <CardTitle className="text-xl text-gray-900 mb-2">{data?.items?.[0]?.fields?.pageContent.benefitsList[0].title}</CardTitle>
                     <Badge variant="secondary" className="bg-blue-100 text-blue-700">
-                      Cost Effective
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[0].badge}
                     </Badge>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Eliminate the need for expensive infrastructure investments or staff hiring. Our ready-to-deploy
-                  solution provides immediate access to professional call center services without upfront costs.
+                {data?.items?.[0]?.fields?.pageContent.benefitsList[0].description}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    No equipment or software purchases
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[0].points[0]}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    No recruitment and training costs
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[0].points[1]}
+                   
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Pay-as-you-use pricing model
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[0].points[2]}
                   </li>
                 </ul>
               </CardContent>
@@ -355,30 +415,29 @@ export default function InboundCallCenter() {
                     <Clock className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">24x7 Accessibility</CardTitle>
+                    <CardTitle className="text-xl text-gray-900 mb-2">{data?.items?.[0]?.fields?.pageContent.benefitsList[1].title}</CardTitle>
                     <Badge variant="secondary" className="bg-green-100 text-green-700">
-                      Always Available
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[1].badge}
                     </Badge>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Be accessible to your customers around the clock with our comprehensive monitoring and support
-                  services. Never miss an important customer interaction again.
+                {data?.items?.[0]?.fields?.pageContent.benefitsList[1].description}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Round-the-clock monitoring
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[1].points[0]}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Multi-channel support coverage
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[1].points[1]}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Emergency escalation protocols
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[1].points[2]}
                   </li>
                 </ul>
               </CardContent>
@@ -391,30 +450,29 @@ export default function InboundCallCenter() {
                     <Target className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">Lead Conversion</CardTitle>
+                    <CardTitle className="text-xl text-gray-900 mb-2"> {data?.items?.[0]?.fields?.pageContent.benefitsList[2].title}</CardTitle>
                     <Badge variant="secondary" className="bg-purple-100 text-purple-700">
-                      Revenue Growth
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[2].badge}
                     </Badge>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Transform inbound leads into paying customers with our trained sales representatives who understand
-                  your business and can effectively guide prospects through the conversion process.
+                {data?.items?.[0]?.fields?.pageContent.benefitsList[2].description}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Qualified lead handling
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[2].points[0]}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Sales process optimization
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[2].points[1]}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Conversion rate tracking
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[2].points[2]}
                   </li>
                 </ul>
               </CardContent>
@@ -427,30 +485,29 @@ export default function InboundCallCenter() {
                     <Headphones className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">Technical Support</CardTitle>
+                    <CardTitle className="text-xl text-gray-900 mb-2"> {data?.items?.[0]?.fields?.pageContent.benefitsList[3].title}</CardTitle>
                     <Badge variant="secondary" className="bg-orange-100 text-orange-700">
-                      Expert Assistance
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[3].badge}
                     </Badge>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Provide comprehensive technical support to your customers with our skilled technical representatives
-                  who can troubleshoot issues and provide solutions effectively.
+                {data?.items?.[0]?.fields?.pageContent.benefitsList[3].description}
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Multi-level technical expertise
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[3].points[0]}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Product-specific training
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[3].points[1]}
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Issue resolution tracking
+                    {data?.items?.[0]?.fields?.pageContent.benefitsList[3].points[2]}
                   </li>
                 </ul>
               </CardContent>
@@ -557,30 +614,29 @@ export default function InboundCallCenter() {
           {/* Benefits Section */}
           <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-6 sm:p-8 lg:p-12 text-white">
             <div className="text-center mb-8">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4">Customer-First Framework</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4"> {data?.items?.[0]?.fields?.pageContent.frameworkTitle}</h3>
               <p className="text-blue-100 text-lg max-w-3xl mx-auto">
-                Be seen as responsive and customer-centric by your entire international customer base with our proven
-                inbound customer service methodology.
+              {data?.items?.[0]?.fields?.pageContent.frameworkText}
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
                 <Users className="w-10 h-10 mx-auto mb-4 text-blue-200" />
-                <h4 className="font-semibold mb-2">Customer Delight</h4>
-                <p className="text-sm text-blue-100">Turn customers into loyal advocates through exceptional service</p>
+                <h4 className="font-semibold mb-2">{data?.items?.[0]?.fields?.pageContent.frameworkCards[0].title}</h4>
+                <p className="text-sm text-blue-100">{data?.items?.[0]?.fields?.pageContent.frameworkCards[0].description}</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
                 <TrendingUp className="w-10 h-10 mx-auto mb-4 text-blue-200" />
-                <h4 className="font-semibold mb-2">Business Growth</h4>
+                <h4 className="font-semibold mb-2">{data?.items?.[0]?.fields?.pageContent.frameworkCards[1].title}</h4>
                 <p className="text-sm text-blue-100">
-                  Transform satisfied customers into a growth engine for your business
+                {data?.items?.[0]?.fields?.pageContent.frameworkCards[1].description}
                 </p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center sm:col-span-2 lg:col-span-1">
                 <Shield className="w-10 h-10 mx-auto mb-4 text-blue-200" />
-                <h4 className="font-semibold mb-2">Success Partnership</h4>
-                <p className="text-sm text-blue-100">Help customers achieve success using your products and services</p>
+                <h4 className="font-semibold mb-2">{data?.items?.[0]?.fields?.pageContent.frameworkCards[2].title}</h4>
+                <p className="text-sm text-blue-100">{data?.items?.[0]?.fields?.pageContent.frameworkCards[2].description}</p>
               </div>
             </div>
           </div>

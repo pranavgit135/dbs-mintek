@@ -31,36 +31,69 @@ import Footer from "@/components/footer"
 
 interface ContactFormData {
   firstName: string
-  middleName: string
+  
   lastName: string
   phone: string
   email: string
-  confirmEmail: string
+ 
   companyName: string
-  website: string
+  
   signature: string
   enquiryType: string
   captcha: string
 }
 
+const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=contactPage`;
+
 export default function ContactUs() {
   const [formData, setFormData] = useState<ContactFormData>({
     firstName: "",
-    middleName: "",
     lastName: "",
     phone: "",
     email: "",
-    confirmEmail: "",
     companyName: "",
-    website: "",
     signature: "",
     enquiryType: "",
-    captcha: "",
+   captcha:""
   })
-
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
+
   // const [captchaAnswer] = useState(19) // 11 + 8 = 19
 
   useEffect(() => {
@@ -76,6 +109,7 @@ export default function ContactUs() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
     setIsSubmitting(true)
 
     // Validate captcha
@@ -87,26 +121,41 @@ export default function ContactUs() {
     }
 
     // Validate email confirmation
-    if (formData.email !== formData.confirmEmail) {
-      alert("Email addresses do not match")
-      setIsSubmitting(false)
-      return
-    }
+    // if (formData.email !== formData.confirmEmail) {
+    //   alert("Email addresses do not match")
+    //   setIsSubmitting(false)
+    //   return
+    // }
+
+    const res = await fetch('/api/inquiry-mail', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+    console.log(formData)
+    const result = await res.json();
+    // setStatus(result.success ? 'Email sent!' : result.error);
+    setIsSubmitting(true)
 
     // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+
+    setIsSubmitting(false)
+    setIsSubmitted(true)
+    // Simulate form submission
     setTimeout(() => {
-      alert("Thank you for your enquiry! We&apos;ll be in touch soon.")
+      alert("Thank you for your enquiry! We'll be in touch soon.")
       setIsSubmitting(false)
       // Reset form
       setFormData({
         firstName: "",
-        middleName: "",
+        
         lastName: "",
         phone: "",
         email: "",
-        confirmEmail: "",
+        
         companyName: "",
-        website: "",
+        
         signature: "",
         enquiryType: "",
         captcha: "",
@@ -151,6 +200,23 @@ export default function ContactUs() {
       gradient: "from-purple-500 to-purple-600",
       mapUrl: "https://maps.google.com/?q=Om+Tower+32+Chowringhee+Road+Park+Street+Kolkata+700071",
     },
+    {
+      id: "kolkata",
+      name: "Kolkata Office",
+      type: "Business District",
+      address: "Suit# 10F, 32, Chowringhee Road, Om Tower, 7th Floor, Unit#706, Park Street, Kolkata- 700 071",
+      color: "purple",
+      gradient: "from-purple-500 to-purple-600",
+      mapUrl: "https://maps.google.com/?q=Om+Tower+32+Chowringhee+Road+Park+Street+Kolkata+700071",
+    },{
+      id: "kolkata",
+      name: "Kolkata Office",
+      type: "Business District",
+      address: "Suit# 10F, 32, Chowringhee Road, Om Tower, 7th Floor, Unit#706, Park Street, Kolkata- 700 071",
+      color: "purple",
+      gradient: "from-purple-500 to-purple-600",
+      mapUrl: "https://maps.google.com/?q=Om+Tower+32+Chowringhee+Road+Park+Street+Kolkata+700071",
+    }
   ]
 
   const enquiryTypes = [
@@ -177,12 +243,11 @@ export default function ContactUs() {
           <div className="space-y-6 sm:space-y-8">
             <div className="space-y-4">
               <Badge variant="secondary" className="bg-white/20 text-white border-white/30 text-sm">
-                Get In Touch
+              {data?.items?.[0]?.fields?.subtitle} 
               </Badge>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">Contact Our Expert Team</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">{data?.items?.[0]?.fields?.title}</h1>
               <p className="text-lg sm:text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
-                Our team is happy to answer your sales questions. Fill out the form and we&apos;ll be in touch as soon as
-                possible. Let&apos;s discuss how we can help make your business global.
+              {data?.items?.[0]?.fields?.description}
               </p>
             </div>
 
@@ -190,12 +255,12 @@ export default function ContactUs() {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
                 <Phone className="w-8 h-8 mx-auto mb-3 text-blue-200" />
                 <div className="font-semibold mb-1">Call Us</div>
-                <div className="text-sm text-blue-200">+91-838-005-5201</div>
+                <div className="text-sm text-blue-200">{data?.items?.[0]?.fields?.phoneNumber}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
                 <Mail className="w-8 h-8 mx-auto mb-3 text-blue-200" />
                 <div className="font-semibold mb-1">Email Us</div>
-                <div className="text-sm text-blue-200">info@dbsmintek.com</div>
+                <div className="text-sm text-blue-200">{data?.items?.[0]?.fields?.email}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
                 <MapPin className="w-8 h-8 mx-auto mb-3 text-blue-200" />
@@ -216,7 +281,7 @@ export default function ContactUs() {
               <div className="space-y-4">
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Send Us a Message</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Please complete the details below and then click on Submit. We&apos;ll be in contact with you shortly to
+                  Please complete the details below and then click on Submit. We'll be in contact with you shortly to
                   discuss your requirements.
                 </p>
               </div>
@@ -229,13 +294,13 @@ export default function ContactUs() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit}  className="space-y-6">
                     {/* Name Fields */}
                     <div className="space-y-4">
                       <Label className="text-base font-semibold text-gray-900">
                         Name <span className="text-red-500">*</span>
                       </Label>
-                      <div className="grid sm:grid-cols-3 gap-4">
+                      <div className="grid sm:grid-cols-2 gap-4">
                         <div>
                           <Label htmlFor="firstName" className="text-sm text-gray-600">
                             First Name
@@ -248,7 +313,7 @@ export default function ContactUs() {
                             className="mt-1"
                           />
                         </div>
-                        <div>
+                        {/* <div>
                           <Label htmlFor="middleName" className="text-sm text-gray-600">
                             Middle Name
                           </Label>
@@ -258,7 +323,7 @@ export default function ContactUs() {
                             onChange={(e) => handleInputChange("middleName", e.target.value)}
                             className="mt-1"
                           />
-                        </div>
+                        </div> */}
                         <div>
                           <Label htmlFor="lastName" className="text-sm text-gray-600">
                             Last Name
@@ -291,7 +356,7 @@ export default function ContactUs() {
                     </div>
 
                     {/* Email Fields */}
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid  gap-4">
                       <div>
                         <Label htmlFor="email" className="text-base font-semibold text-gray-900">
                           Email <span className="text-red-500">*</span>
@@ -306,20 +371,7 @@ export default function ContactUs() {
                           className="mt-2"
                         />
                       </div>
-                      <div>
-                        <Label htmlFor="confirmEmail" className="text-base font-semibold text-gray-900">
-                          Confirm Email <span className="text-red-500">*</span>
-                        </Label>
-                        <Input
-                          id="confirmEmail"
-                          type="email"
-                          placeholder="confirm@email.com"
-                          value={formData.confirmEmail}
-                          onChange={(e) => handleInputChange("confirmEmail", e.target.value)}
-                          required
-                          className="mt-2"
-                        />
-                      </div>
+                      
                     </div>
 
                     {/* Company Name */}
@@ -337,7 +389,7 @@ export default function ContactUs() {
                     </div>
 
                     {/* Website */}
-                    <div>
+                    {/* <div>
                       <Label htmlFor="website" className="text-base font-semibold text-gray-900">
                         Website / URL
                       </Label>
@@ -349,25 +401,10 @@ export default function ContactUs() {
                         onChange={(e) => handleInputChange("website", e.target.value)}
                         className="mt-2"
                       />
-                    </div>
+                    </div> */}
 
-                    {/* Signature */}
-                    <div>
-                      <Label htmlFor="signature" className="text-base font-semibold text-gray-900">
-                        Message / Additional Information
-                      </Label>
-                      <Textarea
-                        id="signature"
-                        placeholder="Please provide any additional details about your enquiry..."
-                        value={formData.signature}
-                        onChange={(e) => handleInputChange("signature", e.target.value)}
-                        rows={4}
-                        className="mt-2"
-                      />
-                    </div>
-
-                    {/* Enquiry Type */}
-                    <div>
+                     {/* Enquiry Type */}
+                     <div>
                       <Label className="text-base font-semibold text-gray-900">
                         Type of Enquiry <span className="text-red-500">*</span>
                       </Label>
@@ -387,6 +424,23 @@ export default function ContactUs() {
                         </SelectContent>
                       </Select>
                     </div>
+
+                    {/* Signature */}
+                    <div>
+                      <Label htmlFor="signature" className="text-base font-semibold text-gray-900">
+                        Message / Additional Information
+                      </Label>
+                      <Textarea
+                        id="signature"
+                        placeholder="Please provide any additional details about your enquiry..."
+                        value={formData.signature}
+                        onChange={(e) => handleInputChange("signature", e.target.value)}
+                        rows={4}
+                        className="mt-2"
+                      />
+                    </div>
+
+                   
 
                     {/* Captcha */}
                     <div>
@@ -455,7 +509,7 @@ export default function ContactUs() {
                           href="tel:+918380055201"
                           className="text-blue-600 font-semibold hover:text-blue-700 transition-colors"
                         >
-                          +91-838-005-5201
+                          {data?.items?.[0]?.fields?.phoneNumber}
                         </a>
                       </div>
                     </div>
@@ -475,7 +529,7 @@ export default function ContactUs() {
                           href="mailto:info@dbsmintek.com"
                           className="text-green-600 font-semibold hover:text-green-700 transition-colors"
                         >
-                          info@dbsmintek.com
+                          {data?.items?.[0]?.fields?.email}
                         </a>
                       </div>
                     </div>
@@ -490,9 +544,9 @@ export default function ContactUs() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                        <p className="text-gray-600 text-sm mb-2">We&apos;re available when you need us</p>
+                        <p className="text-gray-600 text-sm mb-2">We're available when you need us</p>
                         <div className="text-purple-600 font-semibold">
-                          <div>Mon - Sat: 9:00 AM - 6:00 PM IST</div>
+                          <div>{data?.items?.[0]?.fields?.businessHours}</div>
                           <div className="text-sm text-gray-600">24/7 Support Available</div>
                         </div>
                       </div>
@@ -511,26 +565,16 @@ export default function ContactUs() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3">
+
+                  {data?.items?.[0]?.fields?.whyChooseUsPoints.map((key:any)=>{
+                    return(<div key={key}  className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">15+ years of industry experience</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">1200+ workstations across 4 locations</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">Multi-language support capabilities</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">24/7 monitoring and support</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">State-of-the-art technology infrastructure</span>
-                    </div>
+                      <span className="text-sm text-gray-700">{key}</span>
+                    </div>)
+                    
+                  })} 
+
+                    
                   </div>
                 </CardContent>
               </Card>
@@ -545,13 +589,13 @@ export default function ContactUs() {
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Locations</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Visit us at any of our strategically located offices across major business hubs in India. We&apos;re here to
+              Visit us at any of our strategically located offices across major business hubs in India. We're here to
               serve you with world-class call center solutions.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
-            {locations.map((location) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {data?.items?.[0]?.fields?.locations.map((location:any) => (
               <Card key={location.id} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
                 <CardHeader>
                   <div className="flex items-start justify-between gap-4">
@@ -626,10 +670,9 @@ export default function ContactUs() {
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-bold">Ready to Get Started?</h3>
+                    <h3 className="text-2xl font-bold">{data?.items?.[0]?.fields?.ctaheading}</h3>
                     <p className="text-blue-100">
-                      Contact us today and let&apos;s discuss how we can help make your business global with our
-                      comprehensive call center solutions.
+                    {data?.items?.[0]?.fields?.ctadescription}
                     </p>
                   </div>
 
@@ -650,7 +693,7 @@ export default function ContactUs() {
                         <Users className="w-6 h-6" />
                       </div>
                       <div className="font-semibold">Expert Team</div>
-                      <div className="text-sm text-blue-200">15+ years experience</div>
+                      <div className="text-sm text-blue-200">17+ years experience</div>
                     </div>
                     <div className="text-center">
                       <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">

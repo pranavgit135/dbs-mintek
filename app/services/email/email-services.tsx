@@ -1,6 +1,28 @@
 "use client"
 
-import { useState } from "react"
+import { useState,useEffect } from "react"
+const iconMap: { [key: string]: React.ElementType } = {
+  Mail,
+  Zap,
+  Users,
+  Globe,
+  Shield,
+  Target,
+  CheckCircle,
+  ArrowRight,
+  Settings,
+  BarChart3,
+  Clock,
+  Eye,
+  Layers,
+  ChevronDown,
+  ChevronUp,
+  Star,
+  Award,
+  Phone,
+  Database,
+  TrendingUp,
+}
 import {
   Mail,
   Zap,
@@ -33,9 +55,43 @@ interface FAQItem {
   question: string
   answer: string
 }
-
+const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=serviceEmail`;
+console.log(url);
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
 
   const faqs: FAQItem[] = [
     {
@@ -81,19 +137,19 @@ function FAQSection() {
 
   return (
     <div className="space-y-4">
-      {faqs.map((faq, index) => (
-        <Card key={index} className="border border-gray-200 hover:border-purple-300 transition-colors">
-          <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(index)}>
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:any, index:Number) => (
+        <Card key={faq.question} className="border border-gray-200 hover:border-purple-300 transition-colors">
+          <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(faq.question)}>
             <div className="flex items-center justify-between">
               <CardTitle className="text-base sm:text-lg font-semibold text-gray-900 pr-4">{faq.question}</CardTitle>
-              {openIndex === index ? (
+              {openIndex === faq.question ? (
                 <ChevronUp className="w-5 h-5 text-purple-600 flex-shrink-0" />
               ) : (
                 <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
               )}
             </div>
           </CardHeader>
-          {openIndex === index && (
+          {openIndex === faq.question && (
             <CardContent className="pt-0">
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{faq.answer}</p>
             </CardContent>
@@ -105,6 +161,39 @@ function FAQSection() {
 }
 
 export default function EmailServices() {
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
       <Header/>
@@ -116,15 +205,14 @@ export default function EmailServices() {
             <div className="space-y-6 sm:space-y-8">
               <div className="space-y-4">
                 <Badge variant="secondary" className="bg-white/20 text-white border-white/30 text-sm">
-                  Lightning Speed Response
+                {data?.items?.[0]?.fields?.pageContent.badges}
                 </Badge>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-                  Professional Email
-                  <span className="block text-purple-200">Services & Solutions</span>
+                {data?.items?.[0]?.fields?.pageContent.title}
+                  <span className="block text-purple-200">  {data?.items?.[0]?.fields?.pageContent.subtitle}</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-purple-100 leading-relaxed">
-                  We understand the importance of communication in the digital age. Get lightning-speed responses with
-                  our advanced email management software and ACD technology for seamless customer engagement.
+                {data?.items?.[0]?.fields?.pageContent.description}
                 </p>
               </div>
 
@@ -132,10 +220,9 @@ export default function EmailServices() {
                 <div className="flex items-start gap-3">
                   <Zap className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" />
                   <div>
-                    <div className="text-lg font-semibold mb-2 text-purple-100">Lightning Speed Response</div>
+                    <div className="text-lg font-semibold mb-2 text-purple-100">  {data?.items?.[0]?.fields?.pageContent.heroHighlightTitle}</div>
                     <div className="text-sm text-purple-200">
-                      Our associates respond using latest email management software with ACD technology for immediate
-                      client enquiry handling.
+                    {data?.items?.[0]?.fields?.pageContent.heroHighlightText}
                     </div>
                   </div>
                 </div>
@@ -144,10 +231,10 @@ export default function EmailServices() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 font-semibold">
                   <Mail className="w-5 h-5 mr-2" />
-                  Start Email Service
+                  {data?.items?.[0]?.fields?.pageContent.primaryCTA}
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Learn More
+                <Button size="lg" variant="outline" className="border-white text-white bg-white/10">
+                {data?.items?.[0]?.fields?.pageContent.secondaryCTA}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
@@ -156,22 +243,19 @@ export default function EmailServices() {
             <div className="relative">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-white/20 rounded-lg p-4 text-center">
-                    <Mail className="w-8 h-8 mx-auto mb-2" />
-                    <div className="text-sm font-medium">Email Management</div>
+                 
+
+                  {data?.items?.[0]?.fields?.pageContent.heroStats.map((stat:any)=>{
+                  const StateIcon = iconMap[stat.icon]
+                  return(
+                    <div key={stat.label} className="bg-white/20 rounded-lg p-4 text-center">
+                    <StateIcon className="w-8 h-8 mx-auto mb-2" />
+                    <div className="text-sm font-medium">{stat.label}</div>
                   </div>
-                  <div className="bg-white/20 rounded-lg p-4 text-center">
-                    <Zap className="w-8 h-8 mx-auto mb-2" />
-                    <div className="text-sm font-medium">ACD Technology</div>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-4 text-center">
-                    <Eye className="w-8 h-8 mx-auto mb-2" />
-                    <div className="text-sm font-medium">360° View</div>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-4 text-center">
-                    <Layers className="w-8 h-8 mx-auto mb-2" />
-                    <div className="text-sm font-medium">Omnichannel</div>
-                  </div>
+                  )
+
+                  })}
+
                 </div>
                 <div className="text-center">
                   <div className="text-sm text-purple-200 mb-2">Integrated Solutions</div>
@@ -188,11 +272,10 @@ export default function EmailServices() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Email Service Providers That Get You
+            {data?.items?.[0]?.fields?.pageContent.overviewTitle}
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Our platform provides users with a reliable and secure way to communicate with anyone, anywhere in the
-              world. We are constantly updating our features to ensure the best possible experience.
+            {data?.items?.[0]?.fields?.pageContent.overviewDescription}
             </p>
           </div>
 
@@ -200,52 +283,37 @@ export default function EmailServices() {
             <div className="space-y-6">
               <div className="space-y-4">
                 <Badge variant="secondary" className="bg-purple-100 text-purple-700">
-                  Digital Communication
+                {data?.items?.[0]?.fields?.pageContent.overviewBadge}
                 </Badge>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">Reliable & Secure Email Communication</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{data?.items?.[0]?.fields?.pageContent.overviewsubTitle}</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  We are committed to making our service the best it can be, providing you with a unique, multi-channel
-                  engagement experience that helps you close more sales and maintain better customer relationships.
+                {data?.items?.[0]?.fields?.pageContent.overviewsubdescription}
                 </p>
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
+               
+
+                {data?.items?.[0]?.fields?.pageContent.overviewFeatures.map((feature:any)=>{
+                  const FeatureIcon = iconMap[feature.icon]
+
+                  return(
+                    <div key={feature.title} className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Globe className="w-4 h-4 text-purple-600" />
+                    <FeatureIcon className={`w-4 h-4 ${feature.color} `} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Global Connectivity</h4>
+                    <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
                     <p className="text-gray-600 text-sm">
-                      Connect with anyone, anywhere in the world with our reliable email infrastructure
+                      {feature.description}
                     </p>
                   </div>
                 </div>
+                  )
 
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <Shield className="w-4 h-4 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Secure Communication</h4>
-                    <p className="text-gray-600 text-sm">
-                      State-of-the-art security measures protect all your email communications
-                    </p>
-                  </div>
-                </div>
+                })}
 
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <TrendingUp className="w-4 h-4 text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Continuous Innovation</h4>
-                    <p className="text-gray-600 text-sm">
-                      Constantly updating features to provide the best possible user experience
-                    </p>
-                  </div>
                 </div>
-              </div>
             </div>
 
             <div className="bg-gradient-to-br from-purple-50 to-blue-100 rounded-2xl p-6 sm:p-8">
@@ -253,13 +321,13 @@ export default function EmailServices() {
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Mail className="w-10 h-10 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">Advanced Email Platform</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">{data?.items?.[0]?.fields?.pageContent.platformTitle}</h4>
                 <p className="text-gray-600 text-sm">
-                  Cutting-edge technology for seamless email communication and management
+                {data?.items?.[0]?.fields?.pageContent.platformDescription}
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className={`grid grid-cols-2 gap-3 `}>
                 <div className="bg-white rounded-lg p-3 text-center">
                   <Clock className="w-6 h-6 text-purple-600 mx-auto mb-1" />
                   <div className="text-xs font-medium text-gray-900">Real-time</div>
@@ -287,230 +355,56 @@ export default function EmailServices() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Advanced Email Service Features
+            {data?.items?.[0]?.fields?.pageContent.keyFeaturesTitle}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our mission is to create an engaging and effortless customer experience that helps you close more sales
-              through multi-channel engagement.
+            {data?.items?.[0]?.fields?.pageContent.keyFeaturesIntro}
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <Card className="bg-white hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Users className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">Real-time Advisor Integration</CardTitle>
-                    <Badge variant="secondary" className="bg-purple-100 text-purple-700">
-                      Team Collaboration
-                    </Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Integrate client emails to our distribution list for various advisors to respond in real-time,
-                  ensuring faster response times and coordinated customer service.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Multiple advisor access
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Real-time collaboration
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Coordinated responses
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
 
-            <Card className="bg-white hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Zap className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">Lightning Speed Response</CardTitle>
-                    <Badge variant="secondary" className="bg-blue-100 text-blue-700">
-                      ACD Technology
-                    </Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Respond at lightning speeds to client enquiries, sales requests, and service requests using our latest
-                  email management software with ACD technology.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Instant response capability
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Advanced ACD technology
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Automated distribution
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          {data?.items?.[0]?.fields?.pageContent.keyFeatures.map((feature:any)=>{
+                  const FeatureIcon = iconMap[feature.icon]
+                  return(
+                    <Card key={feature.title} className="bg-white hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                    <CardHeader>
+                      <div className="flex items-start gap-4">
+                        <div className={`w-14 h-14 bg-gradient-to-br ${feature.iconbg}  rounded-xl flex items-center justify-center flex-shrink-0`}>
+                          <FeatureIcon className="w-7 h-7 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl text-gray-900 mb-2">{feature.title}</CardTitle>
+                          <Badge variant="secondary" className={`${feature.badgecolor}`}>
+                            {feature.badge}
+                          </Badge>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 leading-relaxed mb-4">
+                       {feature.description}
+                      </p>
+                      <ul className="space-y-2 text-sm text-gray-600">
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          {feature.points[0]}
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          {feature.points[1]}
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          {feature.points[2]}
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                  )
 
-            <Card className="bg-white hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Eye className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">360-Degree Customer View</CardTitle>
-                    <Badge variant="secondary" className="bg-green-100 text-green-700">
-                      Complete Visibility
-                    </Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Provide agents with a complete 360-degree view of customer interactions across various touchpoints and
-                  platforms for better service delivery.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Complete interaction history
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Multi-touchpoint tracking
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Unified customer profile
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Layers className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">Omnichannel Experience</CardTitle>
-                    <Badge variant="secondary" className="bg-orange-100 text-orange-700">
-                      Multi-Platform
-                    </Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Extend omnichannel engagement experience across multiple platforms, keeping touchpoints separate for
-                  agents while maintaining unified customer interaction views.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Multi-platform integration
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Seamless channel switching
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Unified experience delivery
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Target className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">Sales Process Enhancement</CardTitle>
-                    <Badge variant="secondary" className="bg-red-100 text-red-700">
-                      Revenue Growth
-                    </Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Go beyond traditional sales processes to provide unique, multi-channel engagement experiences that
-                  help close more sales and improve customer relationships.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Enhanced sales workflows
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Multi-channel engagement
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Improved conversion rates
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Settings className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl text-gray-900 mb-2">Latest Technology Integration</CardTitle>
-                    <Badge variant="secondary" className="bg-indigo-100 text-indigo-700">
-                      Advanced Tech
-                    </Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Use the latest technologies to keep you connected with customers, no matter where they are or what
-                  device they&apos;re using, ensuring consistent communication quality.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Cutting-edge technology
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Device-agnostic solutions
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    Consistent connectivity
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          })}
+   
           </div>
         </div>
       </section>
@@ -520,11 +414,10 @@ export default function EmailServices() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Advanced Email Management Technology
+              {data?.items?.[0]?.fields?.pageContent.techTitle}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Powered by cutting-edge ACD technology and latest email management software for superior performance and
-              reliability.
+            {data?.items?.[0]?.fields?.pageContent.techIntro}
             </p>
           </div>
 
@@ -533,13 +426,11 @@ export default function EmailServices() {
               <div className="space-y-6">
                 <div className="space-y-4">
                   <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                    ACD Technology
+                  {data?.items?.[0]?.fields?.pageContent.badge}
                   </Badge>
-                  <h3 className="text-2xl sm:text-3xl font-bold">Lightning-Speed Email Management</h3>
+                  <h3 className="text-2xl sm:text-3xl font-bold">{data?.items?.[0]?.fields?.pageContent.techHighlightTitle}</h3>
                   <p className="text-purple-100 text-lg leading-relaxed">
-                    Our associates respond using our latest email management software with ACD (Automatic Call
-                    Distribution) technology, ensuring immediate handling of client enquiries, sales requests, and
-                    service requests.
+                  {data?.items?.[0]?.fields?.pageContent.techHighlightDescription}
                   </p>
                 </div>
 
@@ -548,19 +439,19 @@ export default function EmailServices() {
                     <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                       <Zap className="w-4 h-4" />
                     </div>
-                    <span className="text-purple-100">Instant response capabilities</span>
+                    <span className="text-purple-100">{data?.items?.[0]?.fields?.pageContent.techBulletPoints[0]}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                       <BarChart3 className="w-4 h-4" />
                     </div>
-                    <span className="text-purple-100">Advanced distribution algorithms</span>
+                    <span className="text-purple-100">{data?.items?.[0]?.fields?.pageContent.techBulletPoints[1]}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                       <Shield className="w-4 h-4" />
                     </div>
-                    <span className="text-purple-100">Secure email processing</span>
+                    <span className="text-purple-100">{data?.items?.[0]?.fields?.pageContent.techBulletPoints[2]}</span>
                   </div>
                 </div>
               </div>
@@ -574,22 +465,16 @@ export default function EmailServices() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold mb-1">{"< 30s"}</div>
-                    <div className="text-sm text-purple-200">Response Time</div>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold mb-1">24/7</div>
-                    <div className="text-sm text-purple-200">Availability</div>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold mb-1">99.9%</div>
-                    <div className="text-sm text-purple-200">Uptime</div>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold mb-1">100%</div>
-                    <div className="text-sm text-purple-200">Secure</div>
-                  </div>
+
+
+                {data?.items?.[0]?.fields?.pageContent.techStats.map((stat:any)=>{
+                  return(<div key={stat.label} className="bg-white/20 rounded-lg p-4 text-center">
+                    <div className="text-2xl font-bold mb-1">{stat.label}</div>
+                    <div className="text-sm text-purple-200">{stat.subLabel}</div>
+                  </div>)
+                })}
+
+      
                 </div>
               </div>
             </div>
@@ -619,18 +504,16 @@ export default function EmailServices() {
           <div className="space-y-6 sm:space-y-8">
             <div className="space-y-4">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
-                Ready to Transform Your Email Communication?
+              {data?.items?.[0]?.fields?.pageContent.ctaTitle}
               </h2>
-              <p className="text-lg sm:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
-                Contact us for more details about our advanced email services and discover how we can enhance your
-                customer communication experience.
+              <p>{data?.items?.[0]?.fields?.pageContent.ctaText}
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 font-semibold px-8">
                 <Mail className="w-5 h-5 mr-2" />
-                Get Started Today
+                {data?.items?.[0]?.fields?.pageContent.ctaButtons[0].label}
               </Button>
               <Button
                 size="lg"
@@ -638,32 +521,25 @@ export default function EmailServices() {
                 className="border-white text-purple-600 hover:text-white hover:bg-white/10 font-semibold px-8"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Schedule Demo
+                {data?.items?.[0]?.fields?.pageContent.ctaButtons[1].label}
               </Button>
             </div>
 
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
-              <div className="text-center">
+            {data?.items?.[0]?.fields?.pageContent.ctaStats.map((stat:any)=>{
+                  const CtaIcon = iconMap[stat.icon]
+                  return(
+                    <div key={stat.label} className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Zap className="w-6 h-6" />
+                  <CtaIcon className="w-6 h-6" />
                 </div>
-                <div className="font-semibold">Lightning Speed</div>
-                <div className="text-sm text-purple-200">Instant response times</div>
+                <div className="font-semibold">{stat.label}</div>
+                <div className="text-sm text-purple-200">{stat.subLabel}</div>
               </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Eye className="w-6 h-6" />
-                </div>
-                <div className="font-semibold">360° View</div>
-                <div className="text-sm text-purple-200">Complete customer visibility</div>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Layers className="w-6 h-6" />
-                </div>
-                <div className="font-semibold">Omnichannel</div>
-                <div className="text-sm text-purple-200">Multi-platform integration</div>
-              </div>
+                  )
+            })}
+              
+             
             </div>
 
             <div className="pt-6 border-t border-white/20">

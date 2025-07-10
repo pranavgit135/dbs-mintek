@@ -1,7 +1,23 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Header from "@/components/header"
+const iconMap: { [key: string]: React.ElementType } = {
+  Building2,
+  Globe,
+  Headphones,
+  MapPin,
+  Phone,
+  Shield,
+  Target,
+  Users,
+  Zap,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Pause,
+}
+
 import {
   Building2,
   Globe,
@@ -26,6 +42,39 @@ function ServiceCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlay, setIsAutoPlay] = useState(true)
   const [isPaused, setIsPaused] = useState(false)
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
 
   const services = [
     {
@@ -121,6 +170,9 @@ function ServiceCarousel() {
     },
   ]
 
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutPage`;
+
+
   // Auto-play functionality
   useEffect(() => {
     if (isAutoPlay && !isPaused) {
@@ -147,8 +199,8 @@ function ServiceCarousel() {
     setIsAutoPlay(!isAutoPlay)
   }
 
-  // const currentService = services[currentSlide]
-  // const IconComponent = currentService.icon
+  const currentService = services[currentSlide]
+  const IconComponent = currentService.icon
 
   return (
     <div className="relative bg-white rounded-lg shadow-lg overflow-hidden w-full">
@@ -195,8 +247,9 @@ function ServiceCarousel() {
           className="flex transition-transform duration-700 ease-in-out h-full"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {services.map((service) => {
-            const ServiceIcon = service.icon
+          {data?.items?.[0]?.fields?.services.map((service:any, index:number) => {
+            const ServiceIcon = iconMap[service.icon]
+            
             return (
               <div key={service.id} className="w-full flex-shrink-0">
                 
@@ -228,7 +281,7 @@ function ServiceCarousel() {
                       <div className="space-y-3 sm:space-y-4">
                         <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Key Features:</h4>
                         <div className="grid grid-cols-1 gap-2">
-                          {service.features.map((feature, idx) => (
+                          {service.features.map((feature:any, idx:number) => (
                             <div key={idx} className="flex items-start gap-3">
                               <div className={`w-2 h-2 bg-${service.color}-500 rounded-full mt-2 flex-shrink-0`}></div>
                               <span className="text-xs sm:text-sm text-gray-700 leading-relaxed">{feature}</span>
@@ -241,7 +294,7 @@ function ServiceCarousel() {
                         <div className={`bg-${service.color}-50 p-3 sm:p-4 rounded-lg`}>
                           <p className={`text-xs text-${service.color}-700 font-medium mb-2`}>Channels Supported:</p>
                           <div className="flex flex-wrap gap-1 sm:gap-2">
-                            {service.channels.map((channel, idx) => (
+                            {service.channels.map((channel:any, idx:number) => (
                               <Badge key={idx} variant="outline" className="text-xs">
                                 {channel}
                               </Badge>
@@ -259,7 +312,7 @@ function ServiceCarousel() {
                         <div className={`bg-${service.color}-50 p-3 sm:p-4 rounded-lg`}>
                           <p className={`text-xs text-${service.color}-700 font-medium mb-2`}>Key Benefits:</p>
                           <ul className={`text-xs text-${service.color}-600 space-y-1`}>
-                            {service.benefits.map((benefit, idx) => (
+                            {service.benefits.map((benefit:any, idx:number) => (
                               <li key={idx} className="leading-relaxed">
                                 • {benefit}
                               </li>
@@ -272,7 +325,7 @@ function ServiceCarousel() {
                         <div className={`bg-${service.color}-50 p-3 sm:p-4 rounded-lg`}>
                           <p className={`text-xs text-${service.color}-700 font-medium mb-2`}>Technology Features:</p>
                           <ul className={`text-xs text-${service.color}-600 space-y-1`}>
-                            {service.technology.map((tech, idx) => (
+                            {service.technology.map((tech:any, idx:number) => (
                               <li key={idx} className="leading-relaxed">
                                 • {tech}
                               </li>
@@ -285,7 +338,7 @@ function ServiceCarousel() {
                         <div className={`bg-${service.color}-50 p-3 sm:p-4 rounded-lg`}>
                           <p className={`text-xs text-${service.color}-700 font-medium mb-2`}>Deployment Options:</p>
                           <ul className={`text-xs text-${service.color}-600 space-y-1`}>
-                            {service.deployment.map((option, idx) => (
+                            {service.deployment.map((option:any, idx:number) => (
                               <li key={idx} className="leading-relaxed">
                                 • {option}
                               </li>
@@ -300,7 +353,7 @@ function ServiceCarousel() {
                             Healthcare Specializations:
                           </p>
                           <ul className={`text-xs text-${service.color}-600 space-y-1`}>
-                            {service.specializations.map((spec, idx) => (
+                            {service.specializations.map((spec:any, idx:number) => (
                               <li key={idx} className="leading-relaxed">
                                 • {spec}
                               </li>
@@ -374,219 +427,49 @@ function ServiceCarousel() {
   )
 }
 
-export default function AboutUs() {
+function AnimatedCarousel() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const cardCount = 6;
+  const cardWidth = 304; // 300px card + 2*2px padding
+  const intervalMs = 3000;
+  const [index, setIndex] = useState(0);
+
+  // Auto-scroll to the next card
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((prev) => (prev + 1) % (cardCount - 2)); // Only scroll to positions where 3 cards are visible
+    }, intervalMs);
+    return () => clearInterval(id);
+  }, [cardCount]);
+
+  // Scroll to the current card (horizontal only)
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+    carousel.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth",
+    });
+  }, [index]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 w-full  overflow-x-hidden">
-      <Header/>
-      {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 lg:py-20 xl:py-24 px-4 text-center bg-gradient-to-r from-blue-600 to-indigo-700 text-white w-full">
-        <div className="container-responsive">
-          <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30 text-xs sm:text-sm">
-            Established 2008
-          </Badge>
-          <h1 className="text-responsive-3xl text-5xl sm:text-responsive-4xl lg:text-responsive-5xl font-bold mb-4 sm:mb-6 leading-tight">
-            DBS MINTEK PVT LTD
-          </h1>
-          <p className="text-responsive-base discription sm:text-responsive-lg lg:text-responsive-xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
-            Leading International Call Center Solutions Provider based in Mumbai & Pune, India. Empowering businesses
-            globally with cost-effective, high-quality customer service operations.
-          </p>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-            <div className="flex items-center justify-center gap-2 bg-white/20 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base">
-              <Building2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-              <span>1200+ Workstations</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 bg-white/20 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base">
-              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-              <span>4 Strategic Locations</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 bg-white/20 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base">
-              <Globe className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-              <span>15+ Years Experience</span>
-            </div>
-          </div>
-          <Button
-            size="lg"
-            className="bg-white text-blue-600 hover:bg-gray-100 w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8"
-          >
-            Request A Call Today
-          </Button>
-        </div>
-      </section>
-
-      {/* Company Overview */}
-      <section className="py-12 sm:py-16  lg:pl-56 sm:pl-32 xl:py-24 px-4 p w-5/6" id="about">
-        <div className="container-responsive">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-responsive-2xl text-2xl  sm:text-3xl lg:text-4xl sm:text-responsive-3xl font-bold text-gray-900 mb-4">
-              About Our Company
-            </h2>
-            <p className="text-responsive-base text-lg lg:text-xl sm:text-responsive-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Incorporated in 2008 as a Private Limited Company, DBS MINTEK has grown to become a trusted partner for
-              businesses seeking reliable call center solutions.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 align-items-center lg:gap-12 items-center">
-            <div className="space-y-6 sm:space-y-6 shadow-xl p-5 rounded-xl ">
-              <h3 className="text-responsive-xl sm:text-responsive-2xl  lg:text-2xl  font-semibold text-gray-900">Our Story</h3>
-              <p className="text-gray-600 text-responsive-sm discription sm:text-responsive-base leading-relaxed">
-                Well equipped with state-of-the-art technology and the capacity for fast ramp-up and rollout of new
-                campaigns, our existing operation spans a 1200 workstation facility across four strategic locations.
-              </p>
-              <p className="text-gray-600 text-responsive-sm discription sm:text-responsive-base leading-relaxed">
-                We are scaling up by another 200 workstations in the short term, demonstrating our commitment to growth
-                and meeting increasing client demands.
-              </p>
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  gap-4">
-                <div className="text-center p-3 sm:p-4 bg-white rounded-lg">
-                  <div className="text-responsive-xl sm:text-responsive-2xl font-bold text-blue-600">1200+</div>
-                  <div className="text-responsive-xs sm:text-responsive-sm text-gray-600">Active Workstations</div>
-                </div>
-                <div className="text-center p-3 sm:p-4 bg-indigo-50 rounded-lg">
-                  <div className="text-responsive-xl sm:text-responsive-2xl font-bold text-indigo-600">34,000+</div>
-                  <div className="text-responsive-xs sm:text-responsive-sm text-gray-600">Sq Ft Total Area</div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
-              <div className="aspect-responsive bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center">
-                <Building2 className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-blue-600" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="py-12  sm:py-16 lg:py-20 xl:py-24 px-4 lg:px-40 bg-white w-full">
-        <div className="container-responsive">
-          <div className="grid lg:grid-cols-2   gap-6 sm:gap-8">
-            <Card className="border-l-4 border-l-blue-500">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Target className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 flex-shrink-0" />
-                  <CardTitle className="text-responsive-xl sm:text-responsive-2xl">Our Mission</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed text-responsive-sm sm:text-responsive-base">
-                  To empower companies to be cost-effective & economical in their business operations without
-                  compromising on quality. To provide our clients with technology solutions that meet their business
-                  needs.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-indigo-500">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600 flex-shrink-0" />
-                  <CardTitle className="text-responsive-xl sm:text-responsive-2xl">Our Vision</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 leading-relaxed text-responsive-sm sm:text-responsive-base">
-                  To ensure the delivery of our Solution, which will offer an unmatched business value to our customers
-                  through a combination of Process Excellence, on-time Service Delivery and Innovation.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-12 sm:py-16 lg:py-20 xl:py-24 lg:px-40 md:px-36 px-4 bg-gray-50 w-full" id="services">
-        <div className="container-responsive">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-responsive-2xl sm:text-responsive-3xl font-bold lg:text-4xl md:text-3xl sm:text-2xl text-gray-900 mb-4">Our Services</h2>
-            <p className="text-responsive-base sm:text-responsive-lg text-gray-600 lg:text-xl text-md leading-relaxed">
-              Comprehensive solutions across multiple domains and languages
-            </p>
-          </div>
-
-          {/* Advanced Services Carousel */}
-          <div className="relative w-full rounded-xl">
-            <ServiceCarousel />
-          </div>
-        </div>
-      </section>
-
-      {/* Infrastructure & Technology */}
-      <section className="py-12 sm:py-16 lg:py-20 xl:py-24 px-4 lg:px-36 md:px-36 bg-white w-full">
-        <div className="container-responsive">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-responsive-2xl sm:text-responsive-3xl text-2xl   sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              State-of-the-Art Infrastructure
-            </h2>
-            <p className="text-responsive-base sm:text-responsive-lg text-lg lg:text-xl text-gray-600 leading-relaxed">
-              Premium technology and infrastructure ensuring seamless operations
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:px-20 gap-5">
-            <Card className="h-full">
-              <CardHeader>
-                <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-purple-600 mb-2" />
-                <CardTitle className="text-responsive-sm sm:text-responsive-xl">Security & Connectivity</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-responsive-xs sm:text-responsive-sm text-gray-600 space-y-1 leading-relaxed">
-                  <li>• Premium P2P Leased Line (30 Mbps)</li>
-                  <li>• 10 Mbps Internet Leased Line</li>
-                  <li>• Advanced Routers & Firewalls</li>
-                  <li>• Secure System Protection</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="h-full">
-              <CardHeader>
-                <Phone className="w-10 h-10 sm:w-12 sm:h-12 text-green-600 mb-2" />
-                <CardTitle className="text-responsive-lg sm:text-responsive-xl">Telephony Systems</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-responsive-xs sm:text-responsive-sm text-gray-600 space-y-1 leading-relaxed">
-                  <li>• PRI Lines with 600+ Channels</li>
-                  <li>• Sangoma PRI Cards</li>
-                  <li>• Built-in Digital Signal Processor</li>
-                  <li>• Noise & Echo Cancellation</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="h-full">
-              <CardHeader>
-                <Building2 className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600 mb-2" />
-                <CardTitle className="text-responsive-lg sm:text-responsive-xl">Hardware & Servers</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-responsive-xs sm:text-responsive-sm text-gray-600 space-y-1 leading-relaxed">
-                  <li>• IBM Servers</li>
-                  <li>• HP & Dell Workstations</li>
-                  <li>• Self-owned Buildings</li>
-                  <li>• Scalable Infrastructure</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Locations */}
-      <section className="py-12 sm:py-16 lg:py-20 xl:py-24 px-20 lg:px-40 md:px-36  bg-gray-50 w-full" id="locations">
-        <div className="container-responsive">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-responsive-2xl sm:text-responsive-3xl  text-2xl  sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Locations</h2>
-            <p className="text-responsive-base sm:text-responsive-lg lg:text-xl text-gray-600 leading-relaxed">
-              Strategically located across major business hubs in India
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-            {/* Mumbai Head Office */}
-            <Card className="h-full shadow-xl  transition-all hover:scale-105">
+    <>
+      <div
+        className="overflow-x-auto hide-scrollbar scrollbar-none"
+        style={{
+          maxWidth: `${cardWidth * 3}px`, // Show 3 cards at a time
+          margin: "0 auto",
+          scrollSnapType: "x mandatory",
+          scrollbarWidth: "none",        // Firefox (inline fallback)
+          msOverflowStyle: "none",       // IE 10+ (inline fallback)
+          overflowY: "hidden",           // Prevent vertical scrollbar
+        }}
+        ref={carouselRef}
+      >
+        <div className="flex" style={{ width: `${cardCount * cardWidth}px` }}>
+          {/* Each card: 300px wide, 3 visible at a time */}
+          <div className="min-w-[300px] max-w-[300px] flex-shrink-0 snap-center px-2">
+            <Card className="h-full shadow-xl transition-all hover:scale-105">
               <CardHeader>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -634,9 +517,9 @@ export default function AboutUs() {
                 </Button>
               </CardContent>
             </Card>
-
-            {/* Baner Pune */}
-            <Card className="h-full  transition-all hover:scale-105">
+          </div>
+          <div className="min-w-[300px] max-w-[300px] flex-shrink-0 snap-center px-2">
+            <Card className="h-full transition-all hover:scale-105">
               <CardHeader>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -684,9 +567,9 @@ export default function AboutUs() {
                 </Button>
               </CardContent>
             </Card>
-
-            {/* Kothrud Pune */}
-            <Card className="h-full  transition-all hover:scale-105">
+          </div>
+          <div className="min-w-[300px] max-w-[300px] flex-shrink-0 snap-center px-2">
+            <Card className="h-full transition-all hover:scale-105">
               <CardHeader>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -734,9 +617,9 @@ export default function AboutUs() {
                 </Button>
               </CardContent>
             </Card>
-
-            {/* Kolkata Office */}
-            <Card className="h-full  transition-all hover:scale-105">
+          </div>
+          <div className="min-w-[300px] max-w-[300px] flex-shrink-0 snap-center px-2">
+            <Card className="h-full transition-all hover:scale-105">
               <CardHeader>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -784,6 +667,375 @@ export default function AboutUs() {
                 </Button>
               </CardContent>
             </Card>
+          </div>
+          <div className="min-w-[300px] max-w-[300px] flex-shrink-0 snap-center px-2">
+            <Card className="h-full transition-all hover:scale-105">
+              <CardHeader>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 w-full sm:w-auto">
+                    <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 flex-shrink-0" />
+                    <div className="min-w-0 flex-1">
+                      <CardTitle className="text-responsive-lg sm:text-responsive-xl break-words">
+                        Navi Mumbai
+                      </CardTitle>
+                      <Badge variant="outline" className="mt-1 text-responsive-xs sm:text-responsive-sm">
+                        Modern Facility
+                      </Badge>
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="text-responsive-xs sm:text-responsive-sm text-gray-600 leading-relaxed">
+                  <p className="font-medium">6, Neelkanth CHS Limited,</p>
+                  <p>Sector 3, Ghansoli, opp. Ghansoli Rly Station,</p>
+                  <p> Navi Mumbai, Maharashtra 400701</p>
+                </div>
+                <div className="flex items-center justify-between text-responsive-xs sm:text-responsive-sm">
+                  <div>
+                    <span className="font-semibold text-gray-900">10,000</span>
+                    <span className="text-gray-600"> Sq Ft</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-900">Latest</span>
+                    <span className="text-gray-600"> Tech</span>
+                  </div>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full text-responsive-xs lg:mt-12 sm:text-responsive-sm"
+                  onClick={() =>
+                    window.open(
+                      "https://www.google.com/maps/place/DBS+Mintek+Pvt.Ltd.+Ghansoli/@19.1144607,73.0054354,17z/data=!4m6!3m5!1s0x3be7c0c607fb3bef:0x46bf6691e00d6827!8m2!3d19.1145117!4d73.0056129!16s%2Fg%2F11c0xrytb7?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
+                      "_blank",
+                    )
+                  }
+                >
+                  <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
+                  <span className="truncate">View on Google Maps</span>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="min-w-[300px] max-w-[300px] flex-shrink-0 snap-center px-2">
+            <Card className="h-full transition-all hover:scale-105">
+              <CardHeader>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 w-full sm:w-auto">
+                    <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-red-600 flex-shrink-0" />
+                    <div className="min-w-0 flex-1">
+                      <CardTitle className="text-responsive-lg sm:text-responsive-xl break-words">
+                        Arihant Aura, Thane
+                      </CardTitle>
+                      <Badge variant="outline" className="mt-1 text-responsive-xs sm:text-responsive-sm">
+                        Modern Facility
+                      </Badge>
+                    </div>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="text-responsive-xs sm:text-responsive-sm text-gray-600 leading-relaxed">
+                  <p className="font-medium">Belapur Rd,</p>
+                  <p>Turbhe MIDC, Turbhe,</p>
+                  <p>Navi Mumbai, Maharashtra 400705</p>
+                </div>
+                <div className="flex items-center justify-between text-responsive-xs sm:text-responsive-sm">
+                  <div>
+                    <span className="font-semibold text-gray-900">10,000</span>
+                    <span className="text-gray-600"> Sq Ft</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-900">Latest</span>
+                    <span className="text-gray-600"> Tech</span>
+                  </div>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full text-responsive-xs lg:mt-12 sm:text-responsive-sm"
+                  onClick={() =>
+                    window.open(
+                      "https://maps.google.com/?q=Anjani+Palladium+Prabhavee+Tech+Park+Baner+Pune+Maharashtra+411045",
+                      "_blank",
+                    )
+                  }
+                >
+                  <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
+                  <span className="truncate">View on Google Maps</span>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+      {/* Dot navigation */}
+      <div className="flex justify-center mt-4 gap-2">
+        {Array.from({ length: cardCount - 2 }).map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i === index
+                ? "bg-blue-600"
+                : "bg-gray-300 hover:bg-gray-400"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+
+const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutPage`;
+
+console.log(url)
+export default function AboutUs() {
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 w-full  overflow-x-hidden">
+      <Header/>
+      {/* Hero Section */}
+      <section className="relative py-12 sm:py-16 lg:py-20 xl:py-24 px-4 text-center bg-gradient-to-r from-blue-600 to-indigo-700 text-white w-full">
+        <div className="container-responsive">
+          <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30 text-xs sm:text-sm">
+            Established 2008
+          </Badge>
+          <h1 className="text-responsive-3xl text-5xl sm:text-responsive-4xl lg:text-responsive-5xl font-bold mb-4 sm:mb-6 leading-tight">
+          {data?.items?.[0]?.fields?.companyName}
+          </h1>
+          <p className="text-responsive-base discription sm:text-responsive-lg lg:text-responsive-xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+          {data?.items?.[0]?.fields?.herodescription}
+            
+          </p>
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <div className="flex items-center justify-center gap-2 bg-white/20 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base">
+              <Building2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+              <span>{data?.items?.[0]?.fields?.highlightStats?.[0]?.label}</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 bg-white/20 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base">
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+              <span>{data?.items?.[0]?.fields?.highlightStats?.[1]?.label}</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 bg-white/20 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base">
+              <Globe className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+              <span>{data?.items?.[0]?.fields?.highlightStats?.[2]?.label}</span>
+            </div>
+          </div>
+          <Button
+            size="lg"
+            className="bg-white text-blue-600 hover:bg-gray-100 w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8"
+          >
+            Request A Call Today
+          </Button>
+        </div>
+      </section>
+
+      {/* Company Overview */}
+      <section className="py-12 sm:py-16  lg:pl-56 sm:pl-32 xl:py-24 px-4 p w-5/6" id="about">
+        <div className="container-responsive">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-responsive-2xl text-2xl  sm:text-3xl lg:text-4xl sm:text-responsive-3xl font-bold text-gray-900 mb-4">
+              About Our Company
+            </h2>
+            <p className="text-responsive-base text-lg lg:text-xl sm:text-responsive-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Incorporated in 2008 as a Private Limited Company, DBS MINTEK has grown to become a trusted partner for
+              businesses seeking reliable call center solutions.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 align-items-center lg:gap-12 items-center">
+            <div className="space-y-6 sm:space-y-6 shadow-xl p-5 rounded-xl ">
+              <h3 className="text-responsive-xl sm:text-responsive-2xl  lg:text-2xl  font-semibold text-gray-900">Our Story</h3>
+              <p className="text-gray-600 text-responsive-sm discription sm:text-responsive-base leading-relaxed">
+              {data?.items?.[0]?.fields?.ourStory} 
+              </p>
+              <p className="text-gray-600 text-responsive-sm discription sm:text-responsive-base leading-relaxed">
+                We are scaling up by another 200 workstations in the short term, demonstrating our commitment to growth
+                and meeting increasing client demands.
+              </p>
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1  gap-4">
+                <div className="text-center p-3 sm:p-4 bg-white rounded-lg">
+                  <div className="text-responsive-xl sm:text-responsive-2xl font-bold text-blue-600">1200+</div>
+                  <div className="text-responsive-xs sm:text-responsive-sm text-gray-600">Active Workstations</div>
+                </div>
+                <div className="text-center p-3 sm:p-4 bg-indigo-50 rounded-lg">
+                  <div className="text-responsive-xl sm:text-responsive-2xl font-bold text-indigo-600">34,000+</div>
+                  <div className="text-responsive-xs sm:text-responsive-sm text-gray-600">Sq Ft Total Area</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+              <div className="aspect-responsive bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center">
+                <Building2 className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-blue-600" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-12  sm:py-16 lg:py-20 xl:py-24 px-4 lg:px-40 bg-white w-full">
+        <div className="container-responsive">
+          <div className="grid lg:grid-cols-2   gap-6 sm:gap-8">
+            <Card className="border-l-4 border-l-blue-500">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <Target className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 flex-shrink-0" />
+                  <CardTitle className="text-responsive-xl sm:text-responsive-2xl">Our Mission</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 leading-relaxed text-responsive-sm sm:text-responsive-base">
+                {data?.items?.[0]?.fields?.ourMission}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-indigo-500">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600 flex-shrink-0" />
+                  <CardTitle className="text-responsive-xl sm:text-responsive-2xl">Our Vision</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 leading-relaxed text-responsive-sm sm:text-responsive-base">
+                {data?.items?.[0]?.fields?.ourVision}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-12 sm:py-16 lg:py-20 xl:py-24 lg:px-40 md:px-36 px-4 bg-gray-50 w-full" id="services">
+        <div className="container-responsive">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-responsive-2xl sm:text-responsive-3xl font-bold lg:text-4xl md:text-3xl sm:text-2xl text-gray-900 mb-4">Our Services</h2>
+            <p className="text-responsive-base sm:text-responsive-lg text-gray-600 lg:text-xl text-md leading-relaxed">
+              Comprehensive solutions across multiple domains and languages
+            </p>
+          </div>
+
+          {/* Advanced Services Carousel */}
+          <div className="relative w-full rounded-xl">
+            <ServiceCarousel />
+          </div>
+        </div>
+      </section>
+
+      {/* Infrastructure & Technology */}
+      <section className="py-12 sm:py-16 lg:py-20 xl:py-24 px-4 lg:px-36 md:px-36 bg-white w-full">
+        <div className="container-responsive">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-responsive-2xl sm:text-responsive-3xl text-2xl   sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              State-of-the-Art Infrastructure
+            </h2>
+            <p className="text-responsive-base sm:text-responsive-lg text-lg lg:text-xl text-gray-600 leading-relaxed">
+              Premium technology and infrastructure ensuring seamless operations
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:px-20 gap-5">
+            <Card className="h-full">
+              <CardHeader>
+                <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-purple-600 mb-2" />
+                <CardTitle className="text-responsive-sm sm:text-responsive-xl">{data?.items?.[0]?.fields?.infrastructure[0].title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-responsive-xs sm:text-responsive-sm text-gray-600 space-y-1 leading-relaxed">
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[0].features[0]}</li>
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[0].features[1]}</li>
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[0].features[2]}</li>
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[0].features[3]}</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="h-full">
+              <CardHeader>
+                <Phone className="w-10 h-10 sm:w-12 sm:h-12 text-green-600 mb-2" />
+                <CardTitle className="text-responsive-lg sm:text-responsive-xl">{data?.items?.[0]?.fields?.infrastructure[1].title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-responsive-xs sm:text-responsive-sm text-gray-600 space-y-1 leading-relaxed">
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[1].features[0]}</li>
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[1].features[1]}</li>
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[1].features[2]}</li>
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[1].features[3]}</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="h-full">
+              <CardHeader>
+                <Building2 className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600 mb-2" />
+                <CardTitle className="text-responsive-lg sm:text-responsive-xl">{data?.items?.[0]?.fields?.infrastructure[2].title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-responsive-xs sm:text-responsive-sm text-gray-600 space-y-1 leading-relaxed">
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[2].features[0]}</li>
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[2].features[1]}</li>
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[2].features[2]}</li>
+                  <li>• {data?.items?.[0]?.fields?.infrastructure[2].features[3]}</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Locations */}
+      <section className="py-12 sm:py-16 lg:py-20 xl:py-24 px-20 lg:px-40 md:px-36  bg-gray-50 w-full" id="locations">
+        <div className="container-responsive">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-responsive-2xl sm:text-responsive-3xl  text-2xl  sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Locations</h2>
+            <p className="text-responsive-base sm:text-responsive-lg lg:text-xl text-gray-600 leading-relaxed">
+              Strategically located across major business hubs in India
+            </p>
+          </div>
+
+          {/* Carousel for Locations */}
+          {/* Animated Carousel with no visible scrollbar */}
+          <div className="relative">
+            {/* Carousel Wrapper */}
+            <AnimatedCarousel />
           </div>
 
           {/* Interactive Map Section */}
@@ -888,27 +1140,24 @@ export default function AboutUs() {
             We encourage an open & creative workplace conducive to personal & professional growth for all of our
             employees. We believe in rewarding excellence & providing an environment that is both fun & challenging.
           </p>
-          <div className="grid-responsive-3">
+          <div className="grid lg:grid-cols-3 gap-2 md:grid-cols-3 sm:grid-cols-1">
             <div className="bg-white/10 p-4 sm:p-6 rounded-lg">
               <Users className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4" />
-              <h3 className="font-semibold mb-2 text-responsive-sm sm:text-responsive-base">Team Excellence</h3>
+              <h3 className="font-semibold mb-2 text-responsive-sm sm:text-responsive-base">{data?.items?.[0]?.fields?.culture[0].title}</h3>
               <p className="text-responsive-xs sm:text-responsive-sm opacity-90 leading-relaxed">
-                Passionate team members committed to highest quality customer satisfaction
-              </p>
+              {data?.items?.[0]?.fields?.culture[0].description}              </p>
             </div>
             <div className="bg-white/10 p-4 sm:p-6 rounded-lg">
               <Target className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4" />
-              <h3 className="font-semibold mb-2 text-responsive-sm sm:text-responsive-base">Growth Focused</h3>
+              <h3 className="font-semibold mb-2 text-responsive-sm sm:text-responsive-base">{data?.items?.[0]?.fields?.culture[1].title}</h3>
               <p className="text-responsive-xs sm:text-responsive-sm opacity-90 leading-relaxed">
-                Personal and professional development opportunities for all employees
-              </p>
+              {data?.items?.[0]?.fields?.culture[1].description}              </p>
             </div>
             <div className="bg-white/10 p-4 sm:p-6 rounded-lg">
               <Zap className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4" />
-              <h3 className="font-semibold mb-2 text-responsive-sm sm:text-responsive-base">Innovation Driven</h3>
+              <h3 className="font-semibold mb-2 text-responsive-sm sm:text-responsive-base">{data?.items?.[0]?.fields?.culture[2].title}</h3>
               <p className="text-responsive-xs sm:text-responsive-sm opacity-90 leading-relaxed">
-                Creative workplace that encourages innovation and excellence
-              </p>
+              {data?.items?.[0]?.fields?.culture[0].description}              </p>
             </div>
           </div>
         </div>
@@ -921,8 +1170,7 @@ export default function AboutUs() {
             Make Your Business Global
           </h2>
           <p className="text-responsive-base sm:text-responsive-lg text-lg lg:text-xl  text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-            Ready to transform your customer service operations? Let&apos;s discuss how DBS MINTEK can help your business
-            grow.
+          {data?.items?.[0]?.fields?.contactCta}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8">
             <Button
