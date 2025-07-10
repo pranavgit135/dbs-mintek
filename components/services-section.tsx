@@ -4,6 +4,22 @@ import { useEffect, useRef, useState, useCallback } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+const iconMap: { [key: string]: React.ElementType } = {
+  Headphones,
+  Phone,
+  Mail,
+  MessageCircle,
+  Heart,
+  ArrowRight,
+  CheckCircle,
+  Clock,
+  Users,
+  Globe,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Pause,
+}
 import {
   Headphones,
   Phone,
@@ -89,7 +105,7 @@ function useCountUp(target: number, duration = 2000, shouldStart = false) {
     if (!shouldStart) return
 
     const startTime = Date.now()
-    // const endTime = startTime + duration
+    const endTime = startTime + duration
 
     const timer = setInterval(() => {
       const now = Date.now()
@@ -131,6 +147,7 @@ function CountUp({ target, suffix, shouldStart }: { target: number; suffix: stri
     </span>
   )
 }
+const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutSection`;
 
 export default function ServicesSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -144,6 +161,39 @@ export default function ServicesSection() {
 
   const [activeFeature, setActiveFeature] = useState<string | null>(null)
   const [windowWidth, setWindowWidth] = useState(0)
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
 
 useEffect(() => {
   // Set initial window width after mount
@@ -229,22 +279,7 @@ useEffect(() => {
     setIsPaused(!isPaused)
   }
 
-  // const getIconColor = (color: string) => {
-  //   switch (color) {
-  //     case "blue":
-  //       return "text-blue-600 bg-blue-100"
-  //     case "green":
-  //       return "text-green-600 bg-green-100"
-  //     case "purple":
-  //       return "text-purple-600 bg-purple-100"
-  //     case "indigo":
-  //       return "text-indigo-600 bg-indigo-100"
-  //     case "red":
-  //       return "text-red-600 bg-red-100"
-  //     default:
-  //       return "text-blue-600 bg-blue-100"
-  //   }
-  // }
+ 
 
   return (
     <section
@@ -261,9 +296,9 @@ useEffect(() => {
         {/* Header */}
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
           <Badge className="mb-4 px-4 py-2 text-sm font-medium">WHAT WE OFFER</Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-blue-600 mb-6">Our Services</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-blue-600 mb-6">{data?.items?.[0]?.fields?.serviceTitle}</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Comprehensive call center solutions designed to elevate your customer experience and drive business growth
+          {data?.items?.[0]?.fields?.serviceDescription}
           </p>
         </div>
 
@@ -278,7 +313,9 @@ useEffect(() => {
                 transform: `translateX(-${currentSlide * (windowWidth < 768 ? 100 : window.innerWidth < 1024 ? 50 : 100 / 3)}%)`,
               }}
             >
-              {services.map((service, index) => (
+              {data?.items?.[0]?.fields?.services.map((service:any, index:any) => {
+                const ServiceIcon = iconMap[service.icon]
+                return(
                 <div key={service.id} className="w-full  md:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
                   <Card
                     className="h-full hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm border-0  overflow-hidden hover:-translate-y-4"
@@ -292,7 +329,7 @@ useEffect(() => {
                       <div className="relative z-10">
                         <div className="flex items-center justify-between mb-6">
                           <div className="p-4 bg-white/20 rounded-xl backdrop-blur-sm">
-                            <service.icon className="h-12 w-12 text-white" />
+                            <ServiceIcon className="h-12 w-12 text-white" />
                           </div>
                           <div className="text-right">
                             <div className="text-sm opacity-80">Service #{index + 1}</div>
@@ -308,7 +345,7 @@ useEffect(() => {
                         <div>
                           <h3 className={`text-xl font-bold text-gray-900 mb-4 `}>Key Features</h3>
                           <div className="space-y-3">
-                            {service.features.map((feature, featureIndex) => (
+                            {service.features.map((feature:any, featureIndex:number) => (
                               <div
                                 key={featureIndex}
                                 className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
@@ -337,7 +374,7 @@ useEffect(() => {
                     </CardContent>
                   </Card>
                 </div>
-              ))}
+)})}
             </div>
           </div>
 
@@ -387,18 +424,20 @@ useEffect(() => {
         <div ref={statsRef} className={`mb-16 ${isVisible ? "animate-fade-in-delay-2" : "opacity-0"}`}>
           <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
             <div className="text-center mb-8">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Why Choose Our Services?</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{data?.items?.[0]?.fields?.serviceStatTitle}</h3>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Our commitment to excellence and proven track record speak for themselves
+              {data?.items?.[0]?.fields?.serviceStatDescription}
               </p>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center group">
+              {data?.items?.[0]?.fields?.serviceStats.map((stat:any, index:any) => {
+                const StatIcon = iconMap[stat.icon]
+                return(
+                  <div key={index} className="text-center group">
                   <div className="flex justify-center mb-4">
                     <div className="p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-                      <stat.icon className="h-8 w-8 text-blue-600" />
+                      <StatIcon className="h-8 w-8 text-blue-600" />
                     </div>
                   </div>
                   <div className="mb-2">
@@ -406,7 +445,9 @@ useEffect(() => {
                   </div>
                   <p className="text-gray-600 font-medium">{stat.label}</p>
                 </div>
-              ))}
+                )
+               
+                })}
             </div>
           </div>
         </div>
@@ -415,15 +456,14 @@ useEffect(() => {
         <div className={`text-center ${isVisible ? "animate-fade-in-delay-3" : "opacity-0"}`}>
           <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 lg:p-12 text-white">
             <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4">Ready to Transform Your Customer Experience?</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4">{data?.items?.[0]?.fields?.servicectaTitle}</h3>
               <p className="text-lg mb-8 text-blue-100">
-                Let&apos;s discuss how our comprehensive services can help your business achieve exceptional customer
-                satisfaction and drive growth.
+              {data?.items?.[0]?.fields?.servicectaDescription}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8">Get Started Today</Button>
+                <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8">{data?.items?.[0]?.fields?.ctaBtn1}</Button>
                 <Button className="border-white text-white hover:bg-white border-2 hover:text-blue-600 px-8">
-                  Schedule Consultation
+                {data?.items?.[0]?.fields?.ctaBtn2}
                 </Button>
               </div>
             </div>

@@ -5,7 +5,7 @@ import Image from "next/image"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-
+import { stat, Stats } from "fs"
 
 const clients = [
   {
@@ -24,7 +24,7 @@ const clients = [
     name: "Xanadu",
     logo: "/client9.jpg?height=60&width=120",
     industry: "Consulting",
-    testimonial: "Their team&apos;s expertise in customer engagement has significantly improved our client satisfaction.",
+    testimonial: "Their team's expertise in customer engagement has significantly improved our client satisfaction.",
   },
   {
     name: "HeroFinCorp",
@@ -36,7 +36,7 @@ const clients = [
     name: "Bike Bazaar",
     logo: "/client6.jpg?height=60&width=120",
     industry: "E-commerce",
-    testimonial: "DBS Mintek&apos;s sales support has helped us achieve remarkable growth in customer acquisition.",
+    testimonial: "DBS Mintek's sales support has helped us achieve remarkable growth in customer acquisition.",
   },
   {
     name: "HDFC Bank",
@@ -323,32 +323,7 @@ export default function ClientsSection() {
           </div>
         </div>
 
-        {/* Featured Testimonial */}
-        <div className={`${isVisible ? "animate-fade-in-delay-3" : "opacity-0"}`}>
-          <Card className="bg-gradient-to-r from-purple-600 to-blue-600 border-0 text-white">
-            <CardContent className="p-8 lg:p-12 text-center">
-              <div className="flex justify-center mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <blockquote className="text-lg lg:text-xl mb-6 max-w-3xl mx-auto">
-                &quot;DBS Mintek has been instrumental in transforming our customer service operations. Their professional
-                approach, 24/7 availability, and commitment to excellence have significantly improved our client
-                satisfaction rates.&quot;
-              </blockquote>
-              <div className="flex items-center justify-center space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-bold">JD</span>
-                </div>
-                <div className="text-left">
-                  <p className="font-semibold">John Doe</p>
-                  <p className="text-purple-200">CEO, TechCorp Solutions</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+       
 
         {/* Call to Action */}
         <div className={`text-center mt-16 ${isVisible ? "animate-fade-in-delay-4" : "opacity-0"}`}>

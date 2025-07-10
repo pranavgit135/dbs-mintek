@@ -4,6 +4,18 @@ import { useEffect, useRef, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+const iconMap: { [key: string]: React.ElementType } = {
+  Settings,
+  Users,
+  Award,
+  GraduationCap,
+  ArrowRight,
+  CheckCircle,
+  Star,
+  TrendingUp,
+  Shield,
+  Clock,
+}
 import {
   Settings,
   Users,
@@ -126,6 +138,8 @@ function CountUpNumber({
     </span>
   )
 }
+const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutSection`;
+
 
 export default function WhyChooseUsSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -133,6 +147,39 @@ export default function WhyChooseUsSection() {
   const [activeFeature, setActiveFeature] = useState<string | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const trackRecordRef = useRef<HTMLDivElement>(null)
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -200,10 +247,9 @@ export default function WhyChooseUsSection() {
           <Badge  className="mb-4 px-4 py-2 text-sm font-medium">
             WHY CHOOSE US
           </Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-600 mb-6">We Love Our Work!</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-600 mb-6">{data?.items?.[0]?.fields?.whychooseTitle}</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover what makes us the preferred choice for businesses worldwide. Our commitment to excellence drives
-            everything we do.
+          {data?.items?.[0]?.fields?.whychooseDescription}
           </p>
         </div>
 
@@ -211,8 +257,10 @@ export default function WhyChooseUsSection() {
         <div
           className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 ${isVisible ? "animate-fade-in-delay" : "opacity-0"}`}
         >
-          {features.map((feature) => (
-            <Card
+          {data?.items?.[0]?.fields?.whychooseFeatures.map((feature:any, index:any) => {
+            const FeatureIcon = iconMap[feature.icon]
+            return(
+              <Card
               key={feature.id}
               className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm cursor-pointer transform hover:-translate-y-4"
               onMouseEnter={() => setActiveFeature(feature.id)}
@@ -222,7 +270,7 @@ export default function WhyChooseUsSection() {
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
                   <div className={`p-4 rounded-2xl transition-all duration-300 ${getIconColor(feature.color)}`}>
-                    <feature.icon className="h-12 w-12" />
+                    <FeatureIcon className="h-12 w-12" />
                   </div>
                 </div>
 
@@ -232,7 +280,7 @@ export default function WhyChooseUsSection() {
                 </h3>
 
                 {/* Description */}
-                <div className= {`text-gray-600 leading-relaxed mb-6 `}>{feature.benefits.map((benefit, benefitIndex) => (
+                <div className= {`text-gray-600 leading-relaxed mb-6 `}>{feature.benefits.map((benefit:any, benefitIndex:any) => (
                     <div key={benefitIndex} className="flex items-center space-x-2 text-sm">
                       <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                       <span className="text-gray-600">{benefit}</span>
@@ -259,7 +307,9 @@ export default function WhyChooseUsSection() {
                 </Button>
               </CardContent>
             </Card>
-          ))}
+            )
+            
+          })}
         </div>
 
         {/* Achievements Section */}
@@ -273,11 +323,12 @@ export default function WhyChooseUsSection() {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="text-center group">
+              {data?.items?.[0]?.fields?.whychooseStats.map((achievement:any, index:any) => {
+               const StatIcon = iconMap[achievement.icon]
+               return(<div key={index} className="text-center group">
                   <div className="flex justify-center mb-4">
                     <div className="p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-                      <achievement.icon className="h-8 w-8 text-blue-600" />
+                      <StatIcon className="h-8 w-8 text-blue-600" />
                     </div>
                   </div>
                   <div className="mb-2">
@@ -291,57 +342,32 @@ export default function WhyChooseUsSection() {
                     </span>
                   </div>
                   <p className="text-gray-600 font-medium">{achievement.label}</p>
-                </div>
-              ))}
+                </div>)
+                
+              })}
             </div>
           </div>
         </div>
 
-        {/* Testimonial Section */}
-        {/* <div className={`mb-16 ${isVisible ? "animate-fade-in-delay-3" : "opacity-0"}`}>
-          <Card className="bg-gradient-to-r from-blue-600 to-purple-600 border-0 text-white">
-            <CardContent className="p-8 lg:p-12 text-center">
-              <div className="flex justify-center mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <blockquote className="text-lg lg:text-xl mb-6 max-w-3xl mx-auto">
-                "DBS Mintek's combination of cutting-edge technology, professional team, and commitment to excellence
-                has transformed our customer service operations. Their training programs ensure consistent quality that
-                exceeds our expectations."
-              </blockquote>
-              <div className="flex items-center justify-center space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-bold">SM</span>
-                </div>
-                <div className="text-left">
-                  <p className="font-semibold">Sarah Mitchell</p>
-                  <p className="text-blue-200">Operations Director, GlobalTech Solutions</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div> */}
+    
 
         {/* Call to Action */}
         <div className={`text-center ${isVisible ? "animate-fade-in-delay-4" : "opacity-0"}`}>
           <div className="bg-gradient-to-r from-gray-900 to-gray-700 rounded-2xl p-8 lg:p-12 text-white">
             <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4">Experience the DBS Mintek Difference</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4">{data?.items?.[0]?.fields?.whychooseCtaTitle}</h3>
               <p className="text-lg mb-8 text-gray-300">
-                Join hundreds of satisfied clients who have transformed their customer experience with our professional
-                call center solutions.
+              {data?.items?.[0]?.fields?.whychooseCtaDescription}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button  className="bg-blue-600 hover:bg-blue-700 px-8">
-                  Get Started Today
+                {data?.items?.[0]?.fields?.ctaBtn1}
                 </Button>
                 <Button
                   
                   className="border-white text-white hover:bg-white hover:text-gray-900 px-8"
                 >
-                  Schedule a Demo
+                  {data?.items?.[0]?.fields?.ctaBtn2}
                 </Button>
               </div>
             </div>

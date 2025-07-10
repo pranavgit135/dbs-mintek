@@ -1,15 +1,16 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useRef, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+const iconMap: { [key: string]: React.ElementType } = {
+  Phone, Mail, MapPin, Clock, Send, CheckCircle, Building, Users, Headphones 
+}
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Building, Users, Headphones } from "lucide-react"
-
 
 const contactInfo = [
   {
@@ -52,6 +53,7 @@ const services = [
   "Chat Support",
   "Healthcare Services",
 ]
+const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutSection`;
 
 export default function ContactSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -66,6 +68,40 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+  const [status, setStatus] = useState('');
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -92,8 +128,9 @@ export default function ContactSection() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
-    console.log(res)
-    
+    console.log(formData)
+    const result = await res.json();
+    setStatus(result.success ? 'Email sent!' : result.error);
     setIsSubmitting(true)
 
     // Simulate form submission
@@ -138,10 +175,9 @@ export default function ContactSection() {
         {/* Header */}
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
           <Badge className="mb-4 px-4 py-2 text-sm text-white font-medium bg-blue-600 hover:bg-blue-700">GET IN TOUCH</Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Contact Us Today</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">{data?.items?.[0]?.fields?.contactTitle}</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Ready to transform your customer service? Get in touch with our experts for a free consultation and discover
-            how we can help your business grow.
+          {data?.items?.[0]?.fields?.contactdescription}
           </p>
         </div>
 
@@ -162,7 +198,7 @@ export default function ContactSection() {
                     <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
                     <h4 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h4>
                     <p className="text-gray-600">
-                      Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
+                      Your message has been sent successfully. We'll get back to you within 24 hours.
                     </p>
                   </div>
                 ) : (
@@ -227,7 +263,7 @@ export default function ContactSection() {
                         className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       >
                         <option value="">Select a service</option>
-                        {services.map((service) => (
+                        {data?.items?.[0]?.fields?.contactServices.map((service:any) => (
                           <option key={service} value={service}>
                             {service}
                           </option>
@@ -264,16 +300,16 @@ export default function ContactSection() {
           {/* Contact Information */}
           <div className={`space-y-8 ${isVisible ? "animate-fade-in-delay-2" : "opacity-0"}`}>
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{data?.items?.[0]?.fields?.contactsubTitle}</h3>
               <p className="text-gray-600 mb-8">
-                We&apos;re here to help you find the perfect call center solution for your business. Reach out to us through
-                any of the following channels.
+              {data?.items?.[0]?.fields?.contactsubdescription}
               </p>
             </div>
 
             <div className="grid gap-6 lg:grid-cols-2 md:grid-cols-2">
-              {contactInfo.map((info, index) => (
-                <Card
+              {data?.items?.[0]?.fields?.contactDetails.map((info:any, index:any) => {
+                const InfoIcon = iconMap[info.icon]
+                return(<Card
                   key={index}
                   className="group hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm"
                 >
@@ -290,12 +326,12 @@ export default function ContactSection() {
                                 : "bg-orange-100 text-orange-600"
                         } group-hover:scale-110 transition-transform`}
                       >
-                        <info.icon className="h-6 w-6" />
+                        <InfoIcon className="h-6 w-6" />
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
                         <div className="space-y-1 mb-2">
-                          {info.details.map((detail, idx) => (
+                          {info.details.map((detail:any, idx:any) => (
                             <p key={idx} className="text-gray-700 font-medium">
                               {detail}
                             </p>
@@ -305,8 +341,9 @@ export default function ContactSection() {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)
+                
+              })}
             </div>
 
             {/* Quick Stats */}

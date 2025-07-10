@@ -3,36 +3,18 @@
 import { useEffect, useRef, useState,useCallback } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
+const iconMap: { [key: string]: React.ElementType } = {
+  CheckCircle, Globe, Clock, Users, Award, Zap 
+}
 import { CheckCircle, Globe, Clock, Users, Award, Zap } from "lucide-react"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-const features = [
-  {
-    icon: Globe,
-    title: "Global Reach",
-    description: "Serving clients from all over the world with international standards",
-  },
-  {
-    icon: Clock,
-    title: "24/7 Availability",
-    description: "Round-the-clock support ensuring your business never stops",
-  },
-  {
-    icon: Users,
-    title: "Skilled Professionals",
-    description: "Expert team trained in latest customer service methodologies",
-  },
-  {
-    icon: Award,
-    title: "Quality Assurance",
-    description: "Consistent high-quality service delivery with proven track record",
-  },
-]
 
 const stats = [
   { number: "500+", label: "Happy Clients"},
   { number: "24/7", label: "Support Hours" },
   { number: "99.9%", label: "Uptime" },
-  { number: "10+", label: "Years Experience" },
+  { number: "17+", label: "Years Experience" },
 ]
 
 
@@ -40,6 +22,7 @@ const stats = [
 function useCountUp(end: number, duration = 2000, start = 0) {
   const [count, setCount] = useState(start)
   const [isAnimating, setIsAnimating] = useState(false)
+  
 
   const startAnimation = useCallback(() => {
     if (isAnimating) return
@@ -121,11 +104,47 @@ function AnimatedStat({ stat, isVisible }: { stat: (typeof stats)[0]; isVisible:
   )
 }
 
-export default function AboutSection() {
+ const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutSection`;
+console.log(url)
+
+export default  function AboutSection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
   const [statsVisible, setStatsVisible] = useState(false)
   const statsRef = useRef<HTMLDivElement>(null)
+  const [data, setData] = useState<ContentfulResponse | null>(null);
+
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -160,6 +179,8 @@ export default function AboutSection() {
 
   return () => observer.disconnect()
 }, [])
+
+
   return (
     <section
       ref={sectionRef}
@@ -183,6 +204,21 @@ export default function AboutSection() {
               ABOUT US
             </Badge>
 
+           
+               <div className="space-y-4">
+               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                {data?.items?.[1]?.fields?.heading}
+                 
+               </h2>
+               <p className="text-lg text-purple-600 font-medium">{data?.items?.[4]?.fields?.subheading}</p>
+             </div>
+ 
+             <p className="text-gray-600 text-lg leading-relaxed">
+             {data?.items?.[1]?.fields?.subheading}
+             </p>
+            
+         
+{/* 
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Best in the Call Centre industry
@@ -194,7 +230,7 @@ export default function AboutSection() {
               DBS MINTEK PVT LTD is an international call centre based in Mumbai and Pune, India. We provide customer
               support and sales services to clients from all over the world. Our team of skilled professionals are
               available 24/7 to ensure your business operations run smoothly and efficiently.
-            </p>
+            </p> */}
 
             {/* Key Points */}
             <div className="space-y-3 pt-4">
@@ -216,16 +252,39 @@ export default function AboutSection() {
           <div className={`space-y-8 ${isVisible ? "animate-fade-in-delay" : "opacity-0"}`}>
             <div className="space-y-4">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                Best state of the art technology
+              {data?.items?.[0]?.fields?.rightColTitle}
               </h3>
               <p className="text-gray-600 text-lg lg:text-xl">
-                We leverage cutting-edge technology and innovative solutions to deliver exceptional service quality that
-                exceeds industry standards.
+              {data?.items?.[0]?.fields?.rightColDescription}
               </p>
             </div>
-
+            
             {/* Technology Features */}
             <div className="grid sm:grid-cols-2 gap-4">
+            {data?.items?.[0]?.fields?.aboutFeatures.map((feature:any,index:Number)=>{
+                  const FeatureIcon = iconMap[feature.icon]
+
+                  return(
+                    <Card key={feature.title}  className="border-0 shadow-sm hover:shadow-md transition-all duration-300 group">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
+                        <FeatureIcon className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-gray-900">{feature.title}</h4>
+                        <p className="text-sm text-gray-600">{feature.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                  )
+            })}
+              
+               
+              
+            </div>
+            {/* <div className="grid sm:grid-cols-2 gap-4">
               {features.map((feature, index) => (
                 <Card key={index} className="border-0 shadow-sm hover:shadow-md transition-all duration-300 group">
                   <CardContent className="p-6">
@@ -241,7 +300,7 @@ export default function AboutSection() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -249,24 +308,16 @@ export default function AboutSection() {
         <div ref={statsRef} className={`${isVisible ? "animate-fade-in-delay-2" : "opacity-0"}`}>
           <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
             <div className="text-center mb-8">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">Our Track Record Speaks for Itself</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">{data?.items?.[1]?.fields?.heading}</h3>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Years of dedication and commitment to excellence have established us as a trusted partner in the call
-                centre industry.
+              {data?.items?.[1]?.fields?.subheading}
               </p>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <AnimatedStat key={index} stat={stat} isVisible={statsVisible} />
-                // <div key={index} className="text-center group">
-                //   <div className="mb-2">
-                //     <span className="text-3xl lg:text-4xl font-bold text-purple-600 group-hover:text-purple-700 transition-colors">
-                //       {stat.number}
-                //     </span>
-                //   </div>
-                  // <p className="text-gray-600 font-medium">{stat.label}</p>
-                // </div>
+              {data?.items?.[0]?.fields?.aboutStats.map((stat:any) => (
+                <AnimatedStat key={stat.label} stat={stat} isVisible={statsVisible} />
+                
               ))}
             </div>
           </div>
@@ -277,17 +328,16 @@ export default function AboutSection() {
           <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 lg:p-12 text-white">
             <div className="max-w-3xl mx-auto">
               <Zap className="h-12 w-12 mx-auto mb-6 text-yellow-300" />
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4">Ready to Transform Your Customer Experience?</h3>
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4">{data?.items?.[0]?.fields?.aboutctaTitle}</h3>
               <p className="text-lg mb-8 text-purple-100">
-                Join hundreds of satisfied clients who trust DBS Mintek for their call centre needs. Let&apos;s discuss how
-                we can elevate your customer service to the next level.
+              {data?.items?.[0]?.fields?.aboutctaDescription} 
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Get Started Today
+                {data?.items?.[0]?.fields?.ctaBtn1}
                 </button>
                 <button className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Learn More
+                {data?.items?.[0]?.fields?.ctaBtn2}
                 </button>
               </div>
             </div>

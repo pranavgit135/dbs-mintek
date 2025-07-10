@@ -236,13 +236,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
             <img src="./logo.png" alt="DBS MINTEK PVT LTD" className="h-16 w-44"/>
-              {/* <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm sm:text-lg">D</span>
-              </div>
-              <div className="min-w-0">
-                <div className="text-lg sm:text-xl font-bold text-gray-900 truncate">DBS MINTEK</div>
-                <div className="text-xs text-gray-600 hidden sm:block">Call Center Solutions</div>
-              </div> */}
+              
             </Link>
 
             {/* Desktop Navigation */}

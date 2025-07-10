@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight, CheckCircle } from "lucide-react"
+import { ChevronLeft, ChevronRight, MessageCircle, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Typewriter from 'typewriter-effect'
 
@@ -73,16 +73,16 @@ export default function HeroSection() {
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-blue-700 leading-tight mb-6 animate-fade-in">
             <Typewriter
-  options={{
-    strings: `${slides[currentSlide].title}`,
-    autoStart: true,
-    loop: true,
+               options={{
+               strings: `${slides[currentSlide].title}`,
+               autoStart: true,
+               loop: true,
     
-  }}
-/>
+                }}
+            />
               
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8 animate-fade-in-delay">
+            <p className="text-lg md:text-xl text-gray-700  animate-fade-in-delay">
               {slides[currentSlide].subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:pt-20 animate-fade-in-delay-2">

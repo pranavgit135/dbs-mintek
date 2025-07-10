@@ -67,13 +67,18 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center">
+                {/* <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center">
                   <div className="w-5 h-5 bg-white rounded-full opacity-90"></div>
-                </div>
-                <div>
+                </div> */}
+                {/* Logo */}
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+            <img src="./logo.png" alt="DBS MINTEK PVT LTD" className="h-16 w-44"/>
+              
+            </Link>
+                {/* <div>
                   <span className="text-2xl font-bold">DBS Mintek</span>
                   <div className="text-sm text-blue-400">Call Center Solutions</div>
-                </div>
+                </div> */}
               </div>
 
               <p className="text-gray-300 mb-6 leading-relaxed">

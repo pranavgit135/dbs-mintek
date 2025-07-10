@@ -1,18 +1,55 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Linkedin, Award, Users, TrendingUp } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+const iconMap: { [key: string]: React.ElementType } = {
+  Linkedin, Quote, Award, Users, TrendingUp 
+}
+import { Linkedin, Quote, Award, Users, TrendingUp } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef,useEffect,useState } from "react"
+
+const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutSection`;
 
 export default function FounderSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [data, setData] = useState<ContentfulResponse | null>(null);
 
+  interface ContentfulEntry {
+    fields: {
+      heading?: string;
+      [key: string]: any;
+    };
+  }
+  
+  interface ContentfulResponse {
+    items: ContentfulEntry[];
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(url); // Replace with your API URL
+        if (!res.ok) throw new Error("Failed to fetch data");
+        const json = await res.json();
+        setData(json);
+
+        // ✅ Safe log
+      if (json?.items?.length > 0) {
+        console.log(json);
+      }
+      } catch (err) {
+        console.error("API fetch error:", err);
+      } finally {
+      }
+    }
+
+    fetchData();
+  }, []);
   const stats = [
     { icon: Users, value: "300+", label: "Businesses Helped" },
     { icon: TrendingUp, value: "10+", label: "Years Experience" },
@@ -30,17 +67,17 @@ export default function FounderSection() {
     },
   }
 
-  // const itemVariants = {
-  //   hidden: { opacity: 0, y: 30 },
-  //   visible: {
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: {
-  //       duration: 0.6,
-  //       ease: "easeOut",
-  //     },
-  //   },
-  // }
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  }
 
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden" ref={ref}>
@@ -69,7 +106,7 @@ export default function FounderSection() {
               Leadership That Drives Innovation
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Discover the vision and expertise behind Geo SofTech&apos;s success story
+              Discover the vision and expertise behind Geo SofTech's success story
             </p>
           </motion.div>
 
@@ -119,36 +156,36 @@ export default function FounderSection() {
             <motion.div  className="space-y-8">
               {/* Name and Title */}
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">Amar Korde</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">{data?.items?.[0]?.fields?.founderName}</h3>
                 <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-6">
-                  Founder & CEO, Geo SofTech
+                {data?.items?.[0]?.fields?.founderTitle}
                 </p>
 
                 {/* Bio */}
                 <div className="prose prose-lg max-w-none">
                   <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
-                    Amar Korde brings over a decade of experience in digital strategy, helping 300+ businesses scale
-                    through smart web solutions, SEO, and automation technologies. His vision has transformed how
-                    companies approach digital transformation in today&apos;s competitive landscape.
+                  {data?.items?.[0]?.fields?.founderDescription}
                   </p>
                 </div>
               </div>
 
               {/* Stats Grid */}
               <div className="grid grid-cols-3 gap-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-xl">
-                {stats.map((stat, index) => (
-                  <motion.div
+                {data?.items?.[0]?.fields?.founderStats.map((stat:any, index:any) => {
+                  const StatIcon = iconMap[stat.icon]
+                  return(<motion.div
                     key={index}
                    
                     className="text-center p-4 rounded-xl  border border-white/20 dark:border-slate-700/50"
                   >
                     <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
-                      <stat.icon className="w-6 h-6 text-white" />
+                      <StatIcon className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-2xl font-bold text-slate-900 dark:text-white">{stat.value}</div>
                     <div className="text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
-                  </motion.div>
-                ))}
+                  </motion.div>)
+                  
+                })}
               </div>
 
               {/* Buttons */}

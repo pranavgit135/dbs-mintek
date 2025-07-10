@@ -29,7 +29,7 @@ const mobileTestimonials = [
     image: "/placeholder.svg?height=60&width=60",
     rating: 5,
     testimonial:
-      "DBS has completed 5 years for Vodafone and doing fantastic work. They have a dedicated team that gives market VOC regularly. We&apos;re proud of their team.",
+      "DBS has completed 5 years for Vodafone and doing fantastic work. They have a dedicated team that gives market VOC regularly. We're proud of their team.",
     socialIcon: Facebook,
     industry: "Telecom",
     partnership: "5+ Years",
@@ -192,7 +192,7 @@ export default function MobileTestimonialsSection() {
             className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-8"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {mobileTestimonials.map((testimonial) => (
+            {mobileTestimonials.map((testimonial, index) => (
               <Card
                 key={testimonial.id}
                 className="flex-shrink-0 w-72 snap-center bg-white/95 backdrop-blur-sm border-0 shadow-lg"
@@ -213,7 +213,7 @@ export default function MobileTestimonialsSection() {
 
                   {/* Testimonial Text */}
                   <blockquote className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-4">
-                    &quot;{testimonial.testimonial}&quot;
+                    "{testimonial.testimonial}"
                   </blockquote>
 
                   {/* Client Info */}
