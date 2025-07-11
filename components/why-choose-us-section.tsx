@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-const iconMap: { [key: string]: React.ElementType } = {
+const iconMap: { [key: String]: React.ElementType } = {
   Settings,
   Users,
   Award,
@@ -36,7 +36,7 @@ function CountUpNumber({
   suffix,
   isVisible,
   delay = 0,
-}: { end: number; suffix: string; isVisible: boolean; delay?: number }) {
+}: { end: number; suffix: String; isVisible: boolean; delay?: number }) {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
@@ -90,15 +90,15 @@ const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLI
 export default function WhyChooseUsSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [trackRecordVisible, setTrackRecordVisible] = useState(false)
-  const [activeFeature, setActiveFeature] = useState<string | null>(null)
+  const [activeFeature, setActiveFeature] = useState<String | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const trackRecordRef = useRef<HTMLDivElement>(null)
   const [data, setData] = useState<ContentfulResponse | null>(null);
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: string;
+      heading?: String;
+      [key: String]: String;
     };
   }
   
@@ -161,7 +161,7 @@ export default function WhyChooseUsSection() {
     return () => observer.disconnect()
   }, [])
 
-  const getIconColor = (color: string) => {
+  const getIconColor = (color: String) => {
     switch (color) {
       case "blue":
         return "text-blue-600 bg-blue-100 group-hover:bg-blue-200"
