@@ -30,17 +30,17 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 interface ContactFormData {
-  firstName: string
+  firstName: String
   
-  lastName: string
-  phone: string
-  email: string
+  lastName: String
+  phone: String
+  email: String
  
-  companyName: string
+  companyName: String
   
-  signature: string
-  enquiryType: string
-  captcha: string
+  signature: String
+  enquiryType: String
+  captcha: String
 }
 
 const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=contactPage`;
@@ -64,8 +64,8 @@ export default function ContactUs() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: String;
+      heading?: String;
+      [key: String]: String;
     };
   }
   
@@ -103,7 +103,7 @@ export default function ContactUs() {
     setNum2(b);
   }, []);
 
-  const handleInputChange = (field: keyof ContactFormData, value: string) => {
+  const handleInputChange = (field: keyof ContactFormData, value: String) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
@@ -132,7 +132,7 @@ export default function ContactUs() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
-    console.log(formData)
+    console.log(res)
     // const result = await res.json();
     // setStatus(result.success ? 'Email sent!' : result.error);
     setIsSubmitting(true)
@@ -144,7 +144,7 @@ export default function ContactUs() {
     
     // Simulate form submission
     setTimeout(() => {
-      alert("Thank you for your enquiry! We'll be in touch soon.")
+      alert("Thank you for your enquiry! We&apos;ll be in touch soon.")
       setIsSubmitting(false)
       // Reset form
       setFormData({
@@ -227,7 +227,7 @@ export default function ContactUs() {
               <div className="space-y-4">
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Send Us a Message</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Please complete the details below and then click on Submit. We'll be in contact with you shortly to
+                  Please complete the details below and then click on Submit. We&apos;ll be in contact with you shortly to
                   discuss your requirements.
                 </p>
               </div>
@@ -490,7 +490,7 @@ export default function ContactUs() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                        <p className="text-gray-600 text-sm mb-2">We're available when you need us</p>
+                        <p className="text-gray-600 text-sm mb-2">We&apos;re available when you need us</p>
                         <div className="text-purple-600 font-semibold">
                           <div>{data?.items?.[0]?.fields?.businessHours}</div>
                           <div className="text-sm text-gray-600">24/7 Support Available</div>
