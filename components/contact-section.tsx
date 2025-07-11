@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-const iconMap: { [key: String]: React.ElementType } = {
+const iconMap: { [key: string]: React.ElementType } = {
   Phone, Mail, MapPin, Clock, Send, CheckCircle, Building, Users, Headphones 
 }
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Building, Users, Headphones } from "lucide-react"
@@ -35,8 +35,8 @@ export default function ContactSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -225,7 +225,7 @@ export default function ContactSection() {
                         className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       >
                         <option value="">Select a service</option>
-                        {data?.items?.[0]?.fields?.contactServices.map((service:String) => (
+                        {data?.items?.[0]?.fields?.contactServices.map((service:string) => (
                           <option key={service} value={service}>
                             {service}
                           </option>
@@ -269,7 +269,7 @@ export default function ContactSection() {
             </div>
 
             <div className="grid gap-6 lg:grid-cols-2 md:grid-cols-2">
-              {data?.items?.[0]?.fields?.contactDetails.map((info:String) => {
+              {data?.items?.[0]?.fields?.contactDetails.map((info:string) => {
                 const InfoIcon = iconMap[info.icon]
                 return(<Card
                   key={info.icon}
@@ -293,7 +293,7 @@ export default function ContactSection() {
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
                         <div className="space-y-1 mb-2">
-                          {info.details.map((detail:String) => (
+                          {info.details.map((detail:string) => (
                             <p key={detail} className="text-gray-700 font-medium">
                               {detail}
                             </p>
