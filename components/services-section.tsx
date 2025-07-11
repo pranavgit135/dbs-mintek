@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-const iconMap: { [key: String]: React.ElementType } = {
+const iconMap: { [key: string]: React.ElementType } = {
   Headphones,
   Phone,
   Mail,
@@ -125,7 +125,7 @@ function useCountUp(target: number, duration = 2000, shouldStart = false) {
 }
 
 // Updated CountUp component
-function CountUp({ target, suffix, shouldStart }: { target: Number; suffix: String; shouldStart: boolean }) {
+function CountUp({ target, suffix, shouldStart }: { target: Number; suffix: string; shouldStart: boolean }) {
   const count = useCountUp(target, 2000, shouldStart)
 
   const formatNumber = (num: number) => {
@@ -154,14 +154,14 @@ export default function ServicesSection() {
   const statsRef = useRef<HTMLDivElement>(null)
   const carouselRef = useRef<HTMLDivElement>(null)
 
-  const [activeFeature, setActiveFeature] = useState<String | null>(null)
+  const [activeFeature, setActiveFeature] = useState<string | null>(null)
   const [windowWidth, setWindowWidth] = useState(0)
   const [data, setData] = useState<ContentfulResponse | null>(null);
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -308,7 +308,7 @@ useEffect(() => {
                 transform: `translateX(-${currentSlide * (windowWidth < 768 ? 100 : window.innerWidth < 1024 ? 50 : 100 / 3)}%)`,
               }}
             >
-              {data?.items?.[0]?.fields?.services.map((service:String) => {
+              {data?.items?.[0]?.fields?.services.map((service:string) => {
                 const ServiceIcon = iconMap[service.icon]
                 return(
                 <div key={service.id} className="w-full  md:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
@@ -340,7 +340,7 @@ useEffect(() => {
                         <div>
                           <h3 className={`text-xl font-bold text-gray-900 mb-4 `}>Key Features</h3>
                           <div className="space-y-3">
-                            {service.features.map((feature:String, featureIndex:number) => (
+                            {service.features.map((feature:string, featureIndex:number) => (
                               <div
                                 key={featureIndex}
                                 className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
@@ -426,7 +426,7 @@ useEffect(() => {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {data?.items?.[0]?.fields?.serviceStats.map((stat:String) => {
+              {data?.items?.[0]?.fields?.serviceStats.map((stat:string) => {
                 const StatIcon = iconMap[stat.icon]
                 return(
                   <div key={stat.icon} className="text-center group">
