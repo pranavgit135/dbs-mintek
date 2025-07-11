@@ -213,7 +213,7 @@ export default function MobileTestimonialsSection() {
 
                   {/* Testimonial Text */}
                   <blockquote className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-4">
-                    "{testimonial.testimonial}"
+                    &quot;{testimonial.testimonial}&quot;
                   </blockquote>
 
                   {/* Client Info */}
