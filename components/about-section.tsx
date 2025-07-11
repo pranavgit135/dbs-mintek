@@ -7,15 +7,15 @@ const iconMap: { [key: string]: React.ElementType } = {
   CheckCircle, Globe, Clock, Users, Award, Zap 
 }
 import { CheckCircle, Globe, Clock, Users, Award, Zap } from "lucide-react"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 
-const stats = [
-  { number: "500+", label: "Happy Clients"},
-  { number: "24/7", label: "Support Hours" },
-  { number: "99.9%", label: "Uptime" },
-  { number: "17+", label: "Years Experience" },
-]
+
+// const stats = [
+//   { number: "500+", label: "Happy Clients"},
+//   { number: "24/7", label: "Support Hours" },
+//   { number: "99.9%", label: "Uptime" },
+//   { number: "17+", label: "Years Experience" },
+// ]
 
 
 // Custom hook for countup animation
@@ -117,7 +117,7 @@ export default  function AboutSection() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -261,7 +261,7 @@ export default  function AboutSection() {
             
             {/* Technology Features */}
             <div className="grid sm:grid-cols-2 gap-4">
-            {data?.items?.[0]?.fields?.aboutFeatures.map((feature:any,index:Number)=>{
+            {data?.items?.[0]?.fields?.aboutFeatures.map((feature:String)=>{
                   const FeatureIcon = iconMap[feature.icon]
 
                   return(
@@ -315,7 +315,7 @@ export default  function AboutSection() {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {data?.items?.[0]?.fields?.aboutStats.map((stat:any) => (
+              {data?.items?.[0]?.fields?.aboutStats.map((stat:String) => (
                 <AnimatedStat key={stat.label} stat={stat} isVisible={statsVisible} />
                 
               ))}
