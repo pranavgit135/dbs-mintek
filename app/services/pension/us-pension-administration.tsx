@@ -1,7 +1,7 @@
 "use client"
 
 import { useState ,useEffect} from "react"
-const iconMap: { [key: string]: React.ElementType } = {
+const iconMap: { [key: String]: React.ElementType } = {
   DollarSign,
   Shield,
   FileText,
@@ -66,8 +66,8 @@ function FAQSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: string;
+      heading?: String;
+      [key:String]: String;
     };
   }
   
@@ -132,8 +132,8 @@ export default function USPensionAdministration() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: string;
+      heading?: String;
+      [key: String]: String;
     };
   }
   
