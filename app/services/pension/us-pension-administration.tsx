@@ -1,7 +1,7 @@
 "use client"
 
 import { useState ,useEffect} from "react"
-const iconMap: { [key: String]: React.ElementType } = {
+const iconMap: { [key: string]: React.ElementType } = {
   DollarSign,
   Shield,
   FileText,
@@ -66,8 +66,8 @@ function FAQSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key:String]: String;
+      heading?: string;
+      [key:string]: string;
     };
   }
   
@@ -104,7 +104,7 @@ function FAQSection() {
 
   return (
     <div className="space-y-4">
-      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:String) => (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:string) => (
         <Card key={faq.question} className="border border-gray-200 hover:border-emerald-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(faq.question)}>
             <div className="flex items-center justify-between">
@@ -132,8 +132,8 @@ export default function USPensionAdministration() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -211,7 +211,7 @@ export default function USPensionAdministration() {
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
                 <div className="grid grid-cols-2 gap-4 mb-6">
 
-                {data?.items?.[0]?.fields?.pageContent.heroStats.map((stat:String)=>{
+                {data?.items?.[0]?.fields?.pageContent.heroStats.map((stat:string)=>{
                   const StatIcon = iconMap[stat.icon]
 
                   return(
@@ -243,7 +243,7 @@ export default function USPensionAdministration() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
-          {data?.items?.[0]?.fields?.pageContent.services.map((service:String[])=>{
+          {data?.items?.[0]?.fields?.pageContent.services.map((service:string[])=>{
                   const ServiceIcon = iconMap[service.icon]
 
                   return(
@@ -373,7 +373,7 @@ export default function USPensionAdministration() {
 
               <div className="grid grid-cols-2 gap-4">
               
-                {data?.items?.[0]?.fields?.pageContent.experienceStats.map((stat:String)=>{
+                {data?.items?.[0]?.fields?.pageContent.experienceStats.map((stat:string)=>{
                   return(
                     <div key={stat.label} className={` ${stat.bgColor} rounded-lg p-4 text-center`}>
                   <div className={`text-2xl font-bold ${stat.textColor}  mb-1`}>{stat.label}</div>
@@ -402,7 +402,7 @@ export default function USPensionAdministration() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             
-          {data?.items?.[0]?.fields?.pageContent.administrationServices.map((service:String)=>{
+          {data?.items?.[0]?.fields?.pageContent.administrationServices.map((service:string)=>{
                   const ServiceIcon = iconMap[service.icon]
 
                   return(
@@ -502,7 +502,7 @@ export default function USPensionAdministration() {
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-              {data?.items?.[0]?.fields?.pageContent.technologyStats.map((stat:String)=>{
+              {data?.items?.[0]?.fields?.pageContent.technologyStats.map((stat:string)=>{
                  return(
                   <div key={stat.label} className="bg-white/20 rounded-lg p-4 text-center">
                   <div className="text-2xl font-bold mb-1">{stat.label}</div>
@@ -563,7 +563,7 @@ export default function USPensionAdministration() {
             </div>
 
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
-            {data?.items?.[0]?.fields?.pageContent.ctaStats.map((stat:String)=>{
+            {data?.items?.[0]?.fields?.pageContent.ctaStats.map((stat:string)=>{
                   const StatIcon = iconMap[stat.icon]
                   return(
                     <div key={stat.label} className="text-center">
