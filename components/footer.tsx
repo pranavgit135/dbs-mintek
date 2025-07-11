@@ -218,7 +218,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400">© 2024 DBS Mintek Pvt Ltd. All rights reserved.</div>
+            <div className="text-sm text-gray-400">© 2024 DBS Mintek Pvt Ltd. All rights reserved| Developed by GEO Softech.</div>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
                 Privacy Policy
