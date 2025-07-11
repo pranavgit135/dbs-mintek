@@ -90,12 +90,7 @@ const services = [
   },
 ]
 
-const stats = [
-  { icon: Users, number: "500+", label: "Satisfied Clients", targetValue: 500, suffix: "+" },
-  { icon: Clock, number: "24/7", label: "Support Available", targetValue: 24, suffix: "/7" },
-  { icon: Globe, number: "15+", label: "Languages Supported", targetValue: 15, suffix: "+" },
-  { icon: CheckCircle, number: "99.9%", label: "Service Uptime", targetValue: 99.9, suffix: "%" },
-]
+
 
 // Simple and reliable CountUp hook
 function useCountUp(target: number, duration = 2000, shouldStart = false) {
@@ -105,7 +100,7 @@ function useCountUp(target: number, duration = 2000, shouldStart = false) {
     if (!shouldStart) return
 
     const startTime = Date.now()
-    const endTime = startTime + duration
+   
 
     const timer = setInterval(() => {
       const now = Date.now()
@@ -166,7 +161,7 @@ export default function ServicesSection() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -313,7 +308,7 @@ useEffect(() => {
                 transform: `translateX(-${currentSlide * (windowWidth < 768 ? 100 : window.innerWidth < 1024 ? 50 : 100 / 3)}%)`,
               }}
             >
-              {data?.items?.[0]?.fields?.services.map((service:any, index:any) => {
+              {data?.items?.[0]?.fields?.services.map((service:String) => {
                 const ServiceIcon = iconMap[service.icon]
                 return(
                 <div key={service.id} className="w-full  md:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
@@ -345,7 +340,7 @@ useEffect(() => {
                         <div>
                           <h3 className={`text-xl font-bold text-gray-900 mb-4 `}>Key Features</h3>
                           <div className="space-y-3">
-                            {service.features.map((feature:any, featureIndex:number) => (
+                            {service.features.map((feature:String, featureIndex:number) => (
                               <div
                                 key={featureIndex}
                                 className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
@@ -431,10 +426,10 @@ useEffect(() => {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {data?.items?.[0]?.fields?.serviceStats.map((stat:any, index:any) => {
+              {data?.items?.[0]?.fields?.serviceStats.map((stat:String) => {
                 const StatIcon = iconMap[stat.icon]
                 return(
-                  <div key={index} className="text-center group">
+                  <div key={stat.icon} className="text-center group">
                   <div className="flex justify-center mb-4">
                     <div className="p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
                       <StatIcon className="h-8 w-8 text-blue-600" />
