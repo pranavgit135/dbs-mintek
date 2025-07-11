@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-const iconMap: { [key: String]: React.ElementType } = {
+const iconMap: { [key: string]: React.ElementType } = {
   Settings,
   Users,
   Award,
@@ -36,7 +36,7 @@ function CountUpNumber({
   suffix,
   isVisible,
   delay = 0,
-}: { end: number; suffix: String; isVisible: boolean; delay?: number }) {
+}: { end: number; suffix: string; isVisible: boolean; delay?: number }) {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
@@ -90,15 +90,15 @@ const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLI
 export default function WhyChooseUsSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [trackRecordVisible, setTrackRecordVisible] = useState(false)
-  const [activeFeature, setActiveFeature] = useState<String | null>(null)
+  const [activeFeature, setActiveFeature] = useState<string | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const trackRecordRef = useRef<HTMLDivElement>(null)
   const [data, setData] = useState<ContentfulResponse | null>(null);
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -161,7 +161,7 @@ export default function WhyChooseUsSection() {
     return () => observer.disconnect()
   }, [])
 
-  const getIconColor = (color: String) => {
+  const getIconColor = (color: string) => {
     switch (color) {
       case "blue":
         return "text-blue-600 bg-blue-100 group-hover:bg-blue-200"
@@ -203,7 +203,7 @@ export default function WhyChooseUsSection() {
         <div
           className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 ${isVisible ? "animate-fade-in-delay" : "opacity-0"}`}
         >
-          {data?.items?.[0]?.fields?.whychooseFeatures.map((feature:String) => {
+          {data?.items?.[0]?.fields?.whychooseFeatures.map((feature:string) => {
             const FeatureIcon = iconMap[feature.icon]
             return(
               <Card
@@ -226,7 +226,7 @@ export default function WhyChooseUsSection() {
                 </h3>
 
                 {/* Description */}
-                <div className= {`text-gray-600 leading-relaxed mb-6 `}>{feature.benefits.map((benefit:String) => (
+                <div className= {`text-gray-600 leading-relaxed mb-6 `}>{feature.benefits.map((benefit:string) => (
                     <div key={benefit} className="flex items-center space-x-2 text-sm">
                       <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                       <span className="text-gray-600">{benefit}</span>
@@ -269,7 +269,7 @@ export default function WhyChooseUsSection() {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {data?.items?.[0]?.fields?.whychooseStats.map((achievement:String) => {
+              {data?.items?.[0]?.fields?.whychooseStats.map((achievement:string) => {
                const StatIcon = iconMap[achievement.icon]
                return(<div key={achievement.icon} className="text-center group">
                   <div className="flex justify-center mb-4">
