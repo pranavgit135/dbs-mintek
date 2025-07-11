@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState,useCallback } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { stat, Stats } from "fs"
+
 
 const clients = [
   {
