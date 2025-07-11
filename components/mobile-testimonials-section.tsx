@@ -192,7 +192,7 @@ export default function MobileTestimonialsSection() {
             className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory px-8"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {mobileTestimonials.map((testimonial, index) => (
+            {mobileTestimonials.map((testimonial) => (
               <Card
                 key={testimonial.id}
                 className="flex-shrink-0 w-72 snap-center bg-white/95 backdrop-blur-sm border-0 shadow-lg"
