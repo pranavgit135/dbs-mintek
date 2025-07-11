@@ -56,7 +56,7 @@ export default function ContactUs() {
     enquiryType: "",
    captcha:""
   })
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
@@ -65,7 +65,7 @@ export default function ContactUs() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: String;
     };
   }
   
@@ -133,7 +133,7 @@ export default function ContactUs() {
       body: JSON.stringify(formData),
     });
     console.log(formData)
-    const result = await res.json();
+    // const result = await res.json();
     // setStatus(result.success ? 'Email sent!' : result.error);
     setIsSubmitting(true)
 
@@ -141,7 +141,7 @@ export default function ContactUs() {
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     setIsSubmitting(false)
-    setIsSubmitted(true)
+    
     // Simulate form submission
     setTimeout(() => {
       alert("Thank you for your enquiry! We'll be in touch soon.")
@@ -163,61 +163,7 @@ export default function ContactUs() {
     }, 2000)
   }
 
-  const locations = [
-    {
-      id: "mumbai",
-      name: "Mahape, Navi Mumbai",
-      type: "Head Office",
-      address: "DBS House, EL-73, Electronic Zone, TTC MIDC, Mahape, Navi Mumbai-400 710, Maharashtra, India",
-      color: "red",
-      gradient: "from-red-500 to-red-600",
-      mapUrl: "https://maps.google.com/?q=DBS+House+EL-73+Electronic+Zone+TTC+MIDC+Mahape+Navi+Mumbai+400710",
-    },
-    {
-      id: "baner",
-      name: "Baner, Pune",
-      type: "Modern Facility",
-      address: "4th Floor, Anjani Palladium Next to Prabhavee Tech Park, Baner, Pune, Maharashtra 411045",
-      color: "blue",
-      gradient: "from-blue-500 to-blue-600",
-      mapUrl: "https://maps.google.com/?q=Anjani+Palladium+Prabhavee+Tech+Park+Baner+Pune+Maharashtra+411045",
-    },
-    {
-      id: "kothrud",
-      name: "Kothrud, Pune",
-      type: "IT Park Office",
-      address: "3rd Floor, B Wing, Lohia Jain IT Park, Kothrud, PUNE-411-038, Chandni Chowk, Maharashtra, India",
-      color: "green",
-      gradient: "from-green-500 to-green-600",
-      mapUrl: "https://maps.google.com/?q=Lohia+Jain+IT+Park+Kothrud+Pune+411038+Maharashtra",
-    },
-    {
-      id: "kolkata",
-      name: "Kolkata Office",
-      type: "Business District",
-      address: "Suit# 10F, 32, Chowringhee Road, Om Tower, 7th Floor, Unit#706, Park Street, Kolkata- 700 071",
-      color: "purple",
-      gradient: "from-purple-500 to-purple-600",
-      mapUrl: "https://maps.google.com/?q=Om+Tower+32+Chowringhee+Road+Park+Street+Kolkata+700071",
-    },
-    {
-      id: "kolkata",
-      name: "Kolkata Office",
-      type: "Business District",
-      address: "Suit# 10F, 32, Chowringhee Road, Om Tower, 7th Floor, Unit#706, Park Street, Kolkata- 700 071",
-      color: "purple",
-      gradient: "from-purple-500 to-purple-600",
-      mapUrl: "https://maps.google.com/?q=Om+Tower+32+Chowringhee+Road+Park+Street+Kolkata+700071",
-    },{
-      id: "kolkata",
-      name: "Kolkata Office",
-      type: "Business District",
-      address: "Suit# 10F, 32, Chowringhee Road, Om Tower, 7th Floor, Unit#706, Park Street, Kolkata- 700 071",
-      color: "purple",
-      gradient: "from-purple-500 to-purple-600",
-      mapUrl: "https://maps.google.com/?q=Om+Tower+32+Chowringhee+Road+Park+Street+Kolkata+700071",
-    }
-  ]
+
 
   const enquiryTypes = [
     "General Enquiry",
@@ -566,7 +512,7 @@ export default function ContactUs() {
                 <CardContent>
                   <div className="space-y-3">
 
-                  {data?.items?.[0]?.fields?.whyChooseUsPoints.map((key:any)=>{
+                  {data?.items?.[0]?.fields?.whyChooseUsPoints.map((key:String)=>{
                     return(<div key={key}  className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                       <span className="text-sm text-gray-700">{key}</span>
@@ -595,7 +541,7 @@ export default function ContactUs() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {data?.items?.[0]?.fields?.locations.map((location:any) => (
+            {data?.items?.[0]?.fields?.locations.map((location:String) => (
               <Card key={location.id} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
                 <CardHeader>
                   <div className="flex items-start justify-between gap-4">
