@@ -2,7 +2,7 @@
 
 import Header from "@/components/dropdown-header"
 import { useState ,useEffect} from "react"
-const iconMap: { [key: String]: React.ElementType } = {
+const iconMap: { [key: string]: React.ElementType } = {
   Phone,
   TrendingUp,
   Users,
@@ -67,8 +67,8 @@ function FAQSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -109,7 +109,7 @@ function FAQSection() {
    
     <div className="space-y-4">
       
-      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:String) => (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:string) => (
         <Card key={faq.answer} className="border border-gray-200 hover:border-blue-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(faq.answer)}>
             <div className="flex items-center justify-between">
@@ -137,8 +137,8 @@ export default function OutboundServices() {
 
   interface ContentfulEntry {
     fields: {
-      heading?:String;
-      [key: String]: String;
+      heading?:string;
+      [key: string]: string;
     };
   }
   
@@ -211,7 +211,7 @@ export default function OutboundServices() {
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
                 <div className="grid grid-cols-2 gap-4 mb-6">
 
-                {data?.items?.[0]?.fields?.pageContent.channels.map((channel:String)=>{
+                {data?.items?.[0]?.fields?.pageContent.channels.map((channel:string)=>{
                   const ChannelIcon = iconMap[channel.icon]
                    return(
                     <div key={channel.icon} className="bg-white/20 rounded-lg p-4 text-center">
@@ -247,7 +247,7 @@ export default function OutboundServices() {
 
           <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
 
-          {data?.items?.[0]?.fields?.pageContent.benefitsList.map((benefit:String)=>{
+          {data?.items?.[0]?.fields?.pageContent.benefitsList.map((benefit:string)=>{
             const BenefitIcon = iconMap[benefit.icon]
             return(
               <Card key={benefit.icon} className="bg-gradient-to-br from-blue-50 to-blue-100 border-0 hover:shadow-xl transition-all duration-300">
@@ -603,7 +603,7 @@ export default function OutboundServices() {
             </div>
 
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
-           { data?.items?.[0]?.fields?.pageContent.quickCards.map((card:String)=>{
+           { data?.items?.[0]?.fields?.pageContent.quickCards.map((card:string)=>{
             const CardIcon = iconMap[card.icon]
             return(
               <div className="text-center" key={card.icon}>
