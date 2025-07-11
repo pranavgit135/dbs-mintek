@@ -819,7 +819,7 @@ export default function TestimonialsSection() {
           <Badge className="mb-4 px-4 py-2 text-sm font-medium">WHAT OUR CLIENTS SAY</Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-600 mb-6">Our Testimonials</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Hear from our satisfied clients about their experience working with DBS Mintek and how we've helped
+            Hear from our satisfied clients about their experience working with DBS Mintek and how we&apos;ve helped
             transform their business operations.
           </p>
         </div>
@@ -915,7 +915,7 @@ export default function TestimonialsSection() {
 
                         {/* Testimonial Text */}
                         <blockquote className="text-gray-600 leading-relaxed mb-6 text-sm line-clamp-4">
-                          "{testimonial.testimonial}"
+                          &quot;{testimonial.testimonial}&quot;
                         </blockquote>
 
                         {/* Client Info */}
@@ -1008,7 +1008,7 @@ export default function TestimonialsSection() {
             <div className="max-w-3xl mx-auto">
               <h3 className="text-2xl lg:text-3xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
               <p className="text-lg mb-8 text-blue-100">
-                Experience the same level of excellence that our clients rave about. Let's discuss how we can transform
+                Experience the same level of excellence that our clients rave about. Let&apos;s discuss how we can transform
                 your customer service operations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
