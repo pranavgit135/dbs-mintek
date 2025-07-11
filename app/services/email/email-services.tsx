@@ -1,7 +1,7 @@
 "use client"
 
 import { useState,useEffect } from "react"
-const iconMap: { [key: String]: React.ElementType } = {
+const iconMap: { [key: string]: React.ElementType } = {
   Mail,
   Zap,
   Users,
@@ -63,8 +63,8 @@ function FAQSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -100,7 +100,7 @@ function FAQSection() {
 
   return (
     <div className="space-y-4">
-      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:String) => (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:string) => (
         <Card key={faq.question} className="border border-gray-200 hover:border-purple-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(faq.question)}>
             <div className="flex items-center justify-between">
@@ -128,8 +128,8 @@ export default function EmailServices() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -208,7 +208,7 @@ export default function EmailServices() {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                  
 
-                  {data?.items?.[0]?.fields?.pageContent.heroStats.map((stat:String)=>{
+                  {data?.items?.[0]?.fields?.pageContent.heroStats.map((stat:string)=>{
                   const StateIcon = iconMap[stat.icon]
                   return(
                     <div key={stat.label} className="bg-white/20 rounded-lg p-4 text-center">
@@ -257,7 +257,7 @@ export default function EmailServices() {
               <div className="space-y-4">
                
 
-                {data?.items?.[0]?.fields?.pageContent.overviewFeatures.map((feature:String)=>{
+                {data?.items?.[0]?.fields?.pageContent.overviewFeatures.map((feature:string)=>{
                   const FeatureIcon = iconMap[feature.icon]
 
                   return(
@@ -327,7 +327,7 @@ export default function EmailServices() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
-          {data?.items?.[0]?.fields?.pageContent.keyFeatures.map((feature:String)=>{
+          {data?.items?.[0]?.fields?.pageContent.keyFeatures.map((feature:string)=>{
                   const FeatureIcon = iconMap[feature.icon]
                   return(
                     <Card key={feature.title} className="bg-white hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
@@ -430,7 +430,7 @@ export default function EmailServices() {
                 <div className="grid grid-cols-2 gap-4">
 
 
-                {data?.items?.[0]?.fields?.pageContent.techStats.map((stat:String)=>{
+                {data?.items?.[0]?.fields?.pageContent.techStats.map((stat:string)=>{
                   return(<div key={stat.label} className="bg-white/20 rounded-lg p-4 text-center">
                     <div className="text-2xl font-bold mb-1">{stat.label}</div>
                     <div className="text-sm text-purple-200">{stat.subLabel}</div>
@@ -489,7 +489,7 @@ export default function EmailServices() {
             </div>
 
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
-            {data?.items?.[0]?.fields?.pageContent.ctaStats.map((stat:String)=>{
+            {data?.items?.[0]?.fields?.pageContent.ctaStats.map((stat:string)=>{
                   const CtaIcon = iconMap[stat.icon]
                   return(
                     <div key={stat.label} className="text-center">
