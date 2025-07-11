@@ -61,7 +61,7 @@ function AnimatedStat({ stat, isVisible }: { stat: (typeof stats)[0]; isVisible:
   const [hasAnimated, setHasAnimated] = useState(false)
 
   // Extract number from stat.number (handle 50+, 98%, 500+, 24/7)
-  const getNumericValue = (value: string) => {
+  const getNumericValue = (value: String) => {
     if (value === "24/7") return 24
     return Number.parseInt(value.replace(/[^0-9]/g, ""))
   }
@@ -79,7 +79,7 @@ function AnimatedStat({ stat, isVisible }: { stat: (typeof stats)[0]; isVisible:
   }, [isVisible, hasAnimated, startAnimation])
 
   // Format the display value
-  const getDisplayValue = (currentCount: number, originalValue: string) => {
+  const getDisplayValue = (currentCount: number, originalValue: String) => {
     if (originalValue === "24/7") {
       return currentCount >= 24 ? "24/7" : `${currentCount}/7`
     }
