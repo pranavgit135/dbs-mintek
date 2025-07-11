@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import logi from "../public/logo.png"
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
