@@ -46,8 +46,8 @@ function ServiceCarousel() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: any;
+      heading?: String;
+      [key: String]: String;
     };
   }
   
@@ -199,7 +199,7 @@ function ServiceCarousel() {
     setIsAutoPlay(!isAutoPlay)
   }
 
-  const currentService = services[currentSlide]
+  
  
 
   return (
@@ -797,8 +797,8 @@ export default function AboutUs() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: any;
+      heading?: String;
+      [key: String]:String;
     };
   }
   
