@@ -157,7 +157,7 @@ export default function FounderSection() {
 
               {/* Stats Grid */}
               <div className="grid grid-cols-3 gap-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-xl">
-                {data?.items?.[0]?.fields?.founderStats.map((stat:String) => {
+                {data?.items?.[0]?.fields?.founderStats.map((stat:string) => {
                   const StatIcon = iconMap[stat.icon]
                   return(<motion.div
                     key={stat.icon}
