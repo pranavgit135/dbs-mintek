@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react"
 import Header from "@/components/header"
-const iconMap: { [key: String]: React.ElementType } = {
+const iconMap: { [key: string]: React.ElementType } = {
   Building2,
   Globe,
   Headphones,
@@ -46,8 +46,8 @@ function ServiceCarousel() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -247,7 +247,7 @@ function ServiceCarousel() {
           className="flex transition-transform duration-700 ease-in-out h-full"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {data?.items?.[0]?.fields?.services.map((service:String) => {
+          {data?.items?.[0]?.fields?.services.map((service:string) => {
             const ServiceIcon = iconMap[service.icon]
             
             return (
@@ -281,7 +281,7 @@ function ServiceCarousel() {
                       <div className="space-y-3 sm:space-y-4">
                         <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Key Features:</h4>
                         <div className="grid grid-cols-1 gap-2">
-                          {service.features.map((feature:String, idx:number) => (
+                          {service.features.map((feature:string, idx:number) => (
                             <div key={idx} className="flex items-start gap-3">
                               <div className={`w-2 h-2 bg-${service.color}-500 rounded-full mt-2 flex-shrink-0`}></div>
                               <span className="text-xs sm:text-sm text-gray-700 leading-relaxed">{feature}</span>
@@ -294,7 +294,7 @@ function ServiceCarousel() {
                         <div className={`bg-${service.color}-50 p-3 sm:p-4 rounded-lg`}>
                           <p className={`text-xs text-${service.color}-700 font-medium mb-2`}>Channels Supported:</p>
                           <div className="flex flex-wrap gap-1 sm:gap-2">
-                            {service.channels.map((channel:String, idx:number) => (
+                            {service.channels.map((channel:string, idx:number) => (
                               <Badge key={idx} variant="outline" className="text-xs">
                                 {channel}
                               </Badge>
@@ -312,7 +312,7 @@ function ServiceCarousel() {
                         <div className={`bg-${service.color}-50 p-3 sm:p-4 rounded-lg`}>
                           <p className={`text-xs text-${service.color}-700 font-medium mb-2`}>Key Benefits:</p>
                           <ul className={`text-xs text-${service.color}-600 space-y-1`}>
-                            {service.benefits.map((benefit:String, idx:number) => (
+                            {service.benefits.map((benefit:string, idx:number) => (
                               <li key={idx} className="leading-relaxed">
                                 • {benefit}
                               </li>
@@ -325,7 +325,7 @@ function ServiceCarousel() {
                         <div className={`bg-${service.color}-50 p-3 sm:p-4 rounded-lg`}>
                           <p className={`text-xs text-${service.color}-700 font-medium mb-2`}>Technology Features:</p>
                           <ul className={`text-xs text-${service.color}-600 space-y-1`}>
-                            {service.technology.map((tech:String, idx:number) => (
+                            {service.technology.map((tech:string, idx:number) => (
                               <li key={idx} className="leading-relaxed">
                                 • {tech}
                               </li>
@@ -338,7 +338,7 @@ function ServiceCarousel() {
                         <div className={`bg-${service.color}-50 p-3 sm:p-4 rounded-lg`}>
                           <p className={`text-xs text-${service.color}-700 font-medium mb-2`}>Deployment Options:</p>
                           <ul className={`text-xs text-${service.color}-600 space-y-1`}>
-                            {service.deployment.map((option:String, idx:number) => (
+                            {service.deployment.map((option:string, idx:number) => (
                               <li key={idx} className="leading-relaxed">
                                 • {option}
                               </li>
@@ -353,7 +353,7 @@ function ServiceCarousel() {
                             Healthcare Specializations:
                           </p>
                           <ul className={`text-xs text-${service.color}-600 space-y-1`}>
-                            {service.specializations.map((spec:String, idx:number) => (
+                            {service.specializations.map((spec:string, idx:number) => (
                               <li key={idx} className="leading-relaxed">
                                 • {spec}
                               </li>
@@ -797,8 +797,8 @@ export default function AboutUs() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]:String;
+      heading?: string;
+      [key: string]:string;
     };
   }
   
