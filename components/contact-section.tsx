@@ -12,47 +12,9 @@ const iconMap: { [key: string]: React.ElementType } = {
 }
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Building, Users, Headphones } from "lucide-react"
 
-const contactInfo = [
-  {
-    icon: Phone,
-    title: "Call Us",
-    details: ["+91 98765 43210", "+91 87654 32109"],
-    description: "Speak directly with our experts",
-    color: "blue",
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    details: ["info@dbsmintek.com", "sales@dbsmintek.com"],
-    description: "Get detailed information via email",
-    color: "green",
-  },
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    details: ["Mumbai Office", "Pune Office"],
-    description: "Meet us at our locations",
-    color: "purple",
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    details: ["24/7 Support Available", "Mon-Sun: Always Open"],
-    description: "We're here when you need us",
-    color: "orange",
-  },
-]
 
-const services = [
-  "Inbound Call Center",
-  "Outbound Call Center",
-  "Customer Support",
-  "Technical Support",
-  "Sales & Lead Generation",
-  "Email Support",
-  "Chat Support",
-  "Healthcare Services",
-]
+
+
 const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutSection`;
 
 export default function ContactSection() {
@@ -68,13 +30,13 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-  const [status, setStatus] = useState('');
+  // const [status, setStatus] = useState('');
   const [data, setData] = useState<ContentfulResponse | null>(null);
 
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -129,8 +91,8 @@ export default function ContactSection() {
       body: JSON.stringify(formData),
     });
     console.log(formData)
-    const result = await res.json();
-    setStatus(result.success ? 'Email sent!' : result.error);
+    // const result = await res.json();
+    // setStatus(result.success ? 'Email sent!' : result.error);
     setIsSubmitting(true)
 
     // Simulate form submission
@@ -198,7 +160,7 @@ export default function ContactSection() {
                     <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
                     <h4 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h4>
                     <p className="text-gray-600">
-                      Your message has been sent successfully. We'll get back to you within 24 hours.
+                      Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                     </p>
                   </div>
                 ) : (
@@ -263,7 +225,7 @@ export default function ContactSection() {
                         className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                       >
                         <option value="">Select a service</option>
-                        {data?.items?.[0]?.fields?.contactServices.map((service:any) => (
+                        {data?.items?.[0]?.fields?.contactServices.map((service:String) => (
                           <option key={service} value={service}>
                             {service}
                           </option>
@@ -307,10 +269,10 @@ export default function ContactSection() {
             </div>
 
             <div className="grid gap-6 lg:grid-cols-2 md:grid-cols-2">
-              {data?.items?.[0]?.fields?.contactDetails.map((info:any, index:any) => {
+              {data?.items?.[0]?.fields?.contactDetails.map((info:String) => {
                 const InfoIcon = iconMap[info.icon]
                 return(<Card
-                  key={index}
+                  key={info.icon}
                   className="group hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm"
                 >
                   <CardContent className="p-6">
@@ -331,8 +293,8 @@ export default function ContactSection() {
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
                         <div className="space-y-1 mb-2">
-                          {info.details.map((detail:any, idx:any) => (
-                            <p key={idx} className="text-gray-700 font-medium">
+                          {info.details.map((detail:String) => (
+                            <p key={detail} className="text-gray-700 font-medium">
                               {detail}
                             </p>
                           ))}
