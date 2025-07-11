@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react"
 import Header from "@/components/header"
-const iconMap: { [key: string]: React.ElementType } = {
+const iconMap: { [key: String]: React.ElementType } = {
   Building2,
   Globe,
   Headphones,
@@ -791,7 +791,7 @@ function AnimatedCarousel() {
 
 const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutPage`;
 
-console.log(url)
+
 export default function AboutUs() {
   const [data, setData] = useState<ContentfulResponse | null>(null);
 
