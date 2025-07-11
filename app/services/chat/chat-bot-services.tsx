@@ -59,7 +59,7 @@ function FAQSection() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: String;
     };
   }
   
@@ -88,43 +88,8 @@ function FAQSection() {
     fetchData();
   }, []);
 
-  const faqs: FAQItem[] = [
-    {
-      question: "What types of chatbots can you integrate with our existing systems?",
-      answer:
-        "We can integrate various types of chatbots including rule-based bots, AI-powered conversational bots, voice bots, and hybrid solutions. Our integration capabilities support popular platforms and can be customized to work with your existing CRM and communication systems.",
-    },
-    {
-      question: "How do voice bots differ from traditional chatbots?",
-      answer:
-        "Voice bots use speech recognition and natural language processing to interact through voice commands, while traditional chatbots use text-based communication. Voice bots provide hands-free interaction, making them ideal for accessibility and multitasking scenarios.",
-    },
-    {
-      question: "Can you design custom voice bots based on our specific requirements?",
-      answer:
-        "Yes, we design custom voice bots tailored to your specific business requirements, including industry-specific terminology, workflow integration, multi-language support, and custom voice personalities that align with your brand identity.",
-    },
-    {
-      question: "What platforms do your chatbots support?",
-      answer:
-        "Our chatbots support multiple platforms including websites, mobile apps, WhatsApp, Facebook Messenger, Telegram, Slack, Microsoft Teams, and custom API integrations. We ensure seamless deployment across all your customer touchpoints.",
-    },
-    {
-      question: "How do you ensure chatbot accuracy and performance?",
-      answer:
-        "We use advanced NLP algorithms, continuous machine learning, regular training data updates, performance monitoring, and A/B testing to ensure high accuracy. Our bots are continuously optimized based on real user interactions and feedback.",
-    },
-    {
-      question: "What kind of analytics and reporting do you provide for bot interactions?",
-      answer:
-        "We provide comprehensive analytics including conversation flow analysis, user engagement metrics, resolution rates, response times, popular queries, user satisfaction scores, and detailed performance reports to help optimize bot effectiveness.",
-    },
-    {
-      question: "How quickly can you deploy a chatbot or voice bot solution?",
-      answer:
-        "Deployment time varies based on complexity. Simple chatbots can be deployed in 1-2 weeks, while custom voice bots with advanced features may take 4-6 weeks. We provide detailed project timelines during the consultation phase.",
-    },
-  ]
+  
+
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -132,7 +97,7 @@ function FAQSection() {
 
   return (
     <div className="space-y-4">
-      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:any, index:Number)=> (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:String)=> (
         <Card key={faq.question} className="border border-gray-200 hover:border-teal-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(faq.question)}>
             <div className="flex items-center justify-between">
@@ -161,7 +126,7 @@ export default function ChatBotServices() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -239,7 +204,7 @@ export default function ChatBotServices() {
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
                 <div className="grid grid-cols-2 gap-4 mb-6">
                  
-                {data?.items?.[0]?.fields?.pageContent.channels.map((channel:any, index:Number)=>{
+                {data?.items?.[0]?.fields?.pageContent.channels.map((channel:String)=>{
                   const ChannelIcon = iconMap[channel.icon]
                   return (
                     <div key={channel.icon} className="bg-white/20 rounded-lg p-4 text-center">
@@ -275,7 +240,7 @@ export default function ChatBotServices() {
 
           <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
            
-          {data?.items?.[0]?.fields?.pageContent.services.map((service:any,index:any)=>{
+          {data?.items?.[0]?.fields?.pageContent.services.map((service:String,index:String)=>{
             const ServiceIcon = iconMap[service.icon]
             return(
               <Card key={index} className="bg-gradient-to-br from-teal-50 to-teal-100 border-0 hover:shadow-xl transition-all duration-300">
@@ -334,7 +299,7 @@ export default function ChatBotServices() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             
-          {data?.items?.[0]?.fields?.pageContent.benefitsList.map((benefit:any, index:any)=>{
+          {data?.items?.[0]?.fields?.pageContent.benefitsList.map((benefit:String, index:String)=>{
             const BenefitIcon = iconMap[benefit.icon]
 
             return(
@@ -406,7 +371,7 @@ export default function ChatBotServices() {
 
                 <div className="space-y-4">
 
-                {data?.items?.[0]?.fields?.pageContent.techFeatures.map((fech:any,index:Number)=>{
+                {data?.items?.[0]?.fields?.pageContent.techFeatures.map((fech:String)=>{
                   const FeatureIcon = iconMap[fech.icon]
 
                   return(
@@ -469,7 +434,7 @@ export default function ChatBotServices() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          {data?.items?.[0]?.fields?.pageContent.platforms.map((platform:any,index:Number)=>{
+          {data?.items?.[0]?.fields?.pageContent.platforms.map((platform:String)=>{
             const PlatformIcon = iconMap[platform.icon]
 
             return(
@@ -534,7 +499,7 @@ export default function ChatBotServices() {
 
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
              
-            {data?.items?.[0]?.fields?.pageContent.quickCards.map((card:any,index:Number)=>{
+            {data?.items?.[0]?.fields?.pageContent.quickCards.map((card:String)=>{
               const CardIcon = iconMap[card.icon]
               return(
                 <div key={card.icon} className="text-center">
