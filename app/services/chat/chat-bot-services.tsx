@@ -1,7 +1,7 @@
 "use client"
 
 import { useState,useEffect } from "react"
-const iconMap: { [key: String]: React.ElementType }={
+const iconMap: { [key: string]: React.ElementType }={
   MessageSquare,
   Bot,
   Mic,
@@ -58,8 +58,8 @@ function FAQSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -97,7 +97,7 @@ function FAQSection() {
 
   return (
     <div className="space-y-4">
-      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:String)=> (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:string)=> (
         <Card key={faq.question} className="border border-gray-200 hover:border-teal-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(faq.question)}>
             <div className="flex items-center justify-between">
@@ -125,8 +125,8 @@ export default function ChatBotServices() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -204,7 +204,7 @@ export default function ChatBotServices() {
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
                 <div className="grid grid-cols-2 gap-4 mb-6">
                  
-                {data?.items?.[0]?.fields?.pageContent.channels.map((channel:String)=>{
+                {data?.items?.[0]?.fields?.pageContent.channels.map((channel:string)=>{
                   const ChannelIcon = iconMap[channel.icon]
                   return (
                     <div key={channel.icon} className="bg-white/20 rounded-lg p-4 text-center">
@@ -240,7 +240,7 @@ export default function ChatBotServices() {
 
           <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
            
-          {data?.items?.[0]?.fields?.pageContent.services.map((service:String,index:String)=>{
+          {data?.items?.[0]?.fields?.pageContent.services.map((service:string,index:string)=>{
             const ServiceIcon = iconMap[service.icon]
             return(
               <Card key={index} className="bg-gradient-to-br from-teal-50 to-teal-100 border-0 hover:shadow-xl transition-all duration-300">
@@ -299,7 +299,7 @@ export default function ChatBotServices() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             
-          {data?.items?.[0]?.fields?.pageContent.benefitsList.map((benefit:String, index:String)=>{
+          {data?.items?.[0]?.fields?.pageContent.benefitsList.map((benefit:string, index:string)=>{
             const BenefitIcon = iconMap[benefit.icon]
 
             return(
@@ -371,7 +371,7 @@ export default function ChatBotServices() {
 
                 <div className="space-y-4">
 
-                {data?.items?.[0]?.fields?.pageContent.techFeatures.map((fech:String)=>{
+                {data?.items?.[0]?.fields?.pageContent.techFeatures.map((fech:string)=>{
                   const FeatureIcon = iconMap[fech.icon]
 
                   return(
@@ -434,7 +434,7 @@ export default function ChatBotServices() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          {data?.items?.[0]?.fields?.pageContent.platforms.map((platform:String)=>{
+          {data?.items?.[0]?.fields?.pageContent.platforms.map((platform:string)=>{
             const PlatformIcon = iconMap[platform.icon]
 
             return(
@@ -499,7 +499,7 @@ export default function ChatBotServices() {
 
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
              
-            {data?.items?.[0]?.fields?.pageContent.quickCards.map((card:String)=>{
+            {data?.items?.[0]?.fields?.pageContent.quickCards.map((card:string)=>{
               const CardIcon = iconMap[card.icon]
               return(
                 <div key={card.icon} className="text-center">
