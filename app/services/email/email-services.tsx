@@ -64,7 +64,7 @@ function FAQSection() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -93,51 +93,14 @@ function FAQSection() {
     fetchData();
   }, []);
 
-  const faqs: FAQItem[] = [
-    {
-      question: "How do you integrate client emails with your distribution system?",
-      answer:
-        "We seamlessly integrate your existing email infrastructure with our distribution system, allowing multiple advisors to respond in real-time. This ensures faster response times and better customer service through coordinated team efforts.",
-    },
-    {
-      question: "What makes your email service different from traditional providers?",
-      answer:
-        "Our email service goes beyond traditional communication by providing omnichannel engagement experiences, real-time advisor collaboration, and 360-degree customer interaction views across multiple touchpoints and platforms.",
-    },
-    {
-      question: "How fast do you respond to client emails?",
-      answer:
-        "We respond at lightning speeds using our latest email management software with ACD technology. Our associates are trained to provide immediate responses to client enquiries, sales requests, and service requests.",
-    },
-    {
-      question: "Can you handle multiple communication channels simultaneously?",
-      answer:
-        "Yes, we provide omnichannel engagement experiences that integrate email with other communication channels like voice, chat, and social media, giving agents a complete 360-degree view of customer interactions.",
-    },
-    {
-      question: "What security measures do you have for email communications?",
-      answer:
-        "We implement state-of-the-art security measures including encryption, secure data transmission, access controls, and compliance with industry standards to protect all email communications and customer data.",
-    },
-    {
-      question: "How do you ensure quality in email responses?",
-      answer:
-        "Our quality assurance process includes trained email specialists, standardized response templates, real-time monitoring, performance tracking, and continuous training to maintain high-quality customer communications.",
-    },
-    {
-      question: "Can you customize email workflows for different business needs?",
-      answer:
-        "We customize email workflows, response templates, escalation procedures, and integration points based on your specific business requirements and customer service objectives.",
-    },
-  ]
-
+  
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
   }
 
   return (
     <div className="space-y-4">
-      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:any, index:Number) => (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:String) => (
         <Card key={faq.question} className="border border-gray-200 hover:border-purple-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(faq.question)}>
             <div className="flex items-center justify-between">
@@ -166,7 +129,7 @@ export default function EmailServices() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -245,7 +208,7 @@ export default function EmailServices() {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                  
 
-                  {data?.items?.[0]?.fields?.pageContent.heroStats.map((stat:any)=>{
+                  {data?.items?.[0]?.fields?.pageContent.heroStats.map((stat:String)=>{
                   const StateIcon = iconMap[stat.icon]
                   return(
                     <div key={stat.label} className="bg-white/20 rounded-lg p-4 text-center">
@@ -294,7 +257,7 @@ export default function EmailServices() {
               <div className="space-y-4">
                
 
-                {data?.items?.[0]?.fields?.pageContent.overviewFeatures.map((feature:any)=>{
+                {data?.items?.[0]?.fields?.pageContent.overviewFeatures.map((feature:String)=>{
                   const FeatureIcon = iconMap[feature.icon]
 
                   return(
@@ -364,7 +327,7 @@ export default function EmailServices() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
-          {data?.items?.[0]?.fields?.pageContent.keyFeatures.map((feature:any)=>{
+          {data?.items?.[0]?.fields?.pageContent.keyFeatures.map((feature:String)=>{
                   const FeatureIcon = iconMap[feature.icon]
                   return(
                     <Card key={feature.title} className="bg-white hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
@@ -467,7 +430,7 @@ export default function EmailServices() {
                 <div className="grid grid-cols-2 gap-4">
 
 
-                {data?.items?.[0]?.fields?.pageContent.techStats.map((stat:any)=>{
+                {data?.items?.[0]?.fields?.pageContent.techStats.map((stat:String)=>{
                   return(<div key={stat.label} className="bg-white/20 rounded-lg p-4 text-center">
                     <div className="text-2xl font-bold mb-1">{stat.label}</div>
                     <div className="text-sm text-purple-200">{stat.subLabel}</div>
@@ -526,7 +489,7 @@ export default function EmailServices() {
             </div>
 
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
-            {data?.items?.[0]?.fields?.pageContent.ctaStats.map((stat:any)=>{
+            {data?.items?.[0]?.fields?.pageContent.ctaStats.map((stat:String)=>{
                   const CtaIcon = iconMap[stat.icon]
                   return(
                     <div key={stat.label} className="text-center">
