@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 const iconMap: { [key: string]: React.ElementType } = {
   Linkedin, Quote, Award, Users, TrendingUp 
 }
@@ -22,7 +22,7 @@ export default function FounderSection() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -50,11 +50,7 @@ export default function FounderSection() {
 
     fetchData();
   }, []);
-  const stats = [
-    { icon: Users, value: "300+", label: "Businesses Helped" },
-    { icon: TrendingUp, value: "10+", label: "Years Experience" },
-    { icon: Award, value: "95%", label: "Client Success Rate" },
-  ]
+ 
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,17 +63,7 @@ export default function FounderSection() {
     },
   }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  }
+
 
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden" ref={ref}>
@@ -106,7 +92,7 @@ export default function FounderSection() {
               Leadership That Drives Innovation
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Discover the vision and expertise behind Geo SofTech's success story
+              Discover the vision and expertise behind Geo SofTech&apos;s success story
             </p>
           </motion.div>
 
@@ -171,10 +157,10 @@ export default function FounderSection() {
 
               {/* Stats Grid */}
               <div className="grid grid-cols-3 gap-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-xl">
-                {data?.items?.[0]?.fields?.founderStats.map((stat:any, index:any) => {
+                {data?.items?.[0]?.fields?.founderStats.map((stat:String) => {
                   const StatIcon = iconMap[stat.icon]
                   return(<motion.div
-                    key={index}
+                    key={stat.icon}
                    
                     className="text-center p-4 rounded-xl  border border-white/20 dark:border-slate-700/50"
                   >
