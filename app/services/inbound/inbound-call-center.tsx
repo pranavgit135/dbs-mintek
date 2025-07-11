@@ -43,7 +43,7 @@ function FAQSection() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -71,38 +71,7 @@ function FAQSection() {
 
     fetchData();
   }, []);
-  const faqs: FAQItem[] = [
-    {
-      question: "What are the service hours of your call center?",
-      answer:
-        "Our inbound call center operates from 8am to 8pm, providing 12 hours of dedicated customer support coverage. We also offer 24/7 monitoring and can customize operating hours based on your business requirements and customer base location.",
-    },
-    {
-      question: "How many languages do you support?",
-      answer:
-        "We provide comprehensive support in 12 languages including English, Hindi, Marathi, and various regional languages. Our multilingual agents are trained to handle customer interactions professionally in their preferred language, ensuring better customer satisfaction and communication.",
-    },
-    {
-      question: "What kind of clients do you work for?",
-      answer:
-        "We serve diverse industries including BFSI (Banking, Financial Services & Insurance), Telecom, AI Bot companies, micro financing companies, and realty aggregators. Our flexible solutions are designed to adapt to various business models and customer service requirements.",
-    },
-    {
-      question: "Do you support any particular Live Chat software?",
-      answer:
-        "Yes, we specialize in Yellow.AI chatbots integration and support various live chat platforms. Our team can seamlessly integrate with your existing chat infrastructure or help you implement new chat solutions that align with your customer service strategy.",
-    },
-    {
-      question: "What is your average response time?",
-      answer:
-        "We maintain industry-leading response times with average call pickup within 3 rings, email responses within 2 hours, and live chat responses within 30 seconds. Our lightning-speed response capability is powered by advanced ACD technology and well-trained agents.",
-    },
-    {
-      question: "Can you handle seasonal volume fluctuations?",
-      answer:
-        "Our scalable infrastructure allows us to quickly ramp up or down based on your business needs. We can handle seasonal peaks, promotional campaigns, and unexpected volume spikes without compromising service quality.",
-    },
-  ]
+ 
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -110,7 +79,7 @@ function FAQSection() {
 
   return (
     <div className="space-y-4">
-      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:any, index:number) => (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:String, index:number) => (
         <Card key={index} className="border border-gray-200 hover:border-blue-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(index)}>
             <div className="flex items-center justify-between">
@@ -139,7 +108,7 @@ export default function InboundCallCenter() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -202,7 +171,7 @@ export default function InboundCallCenter() {
               </div>
 
               <div className="grid grid-cols-3 gap-4 pt-4">
-                {data?.items?.[0]?.fields?.pageContent.stats.map((stat:any ,index:number)=>{
+                {data?.items?.[0]?.fields?.pageContent.stats.map((stat:String ,index:number)=>{
                   return (
                   <div className="text-center" key={index}>
                   <div className="text-2xl sm:text-3xl font-bold">{stat.label}</div>
