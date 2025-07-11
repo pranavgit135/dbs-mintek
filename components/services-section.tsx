@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-const iconMap: { [key: string]: React.ElementType } = {
+const iconMap: { [key: String]: React.ElementType } = {
   Headphones,
   Phone,
   Mail,
@@ -125,7 +125,7 @@ function useCountUp(target: number, duration = 2000, shouldStart = false) {
 }
 
 // Updated CountUp component
-function CountUp({ target, suffix, shouldStart }: { target: number; suffix: string; shouldStart: boolean }) {
+function CountUp({ target, suffix, shouldStart }: { target: Number; suffix: String; shouldStart: boolean }) {
   const count = useCountUp(target, 2000, shouldStart)
 
   const formatNumber = (num: number) => {
@@ -154,14 +154,14 @@ export default function ServicesSection() {
   const statsRef = useRef<HTMLDivElement>(null)
   const carouselRef = useRef<HTMLDivElement>(null)
 
-  const [activeFeature, setActiveFeature] = useState<string | null>(null)
+  const [activeFeature, setActiveFeature] = useState<String | null>(null)
   const [windowWidth, setWindowWidth] = useState(0)
   const [data, setData] = useState<ContentfulResponse | null>(null);
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: string;
+      heading?: String;
+      [key: String]: String;
     };
   }
   
