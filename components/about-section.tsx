@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState,useCallback } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-const iconMap: { [key: string]: React.ElementType } = {
+const iconMap: { [key: String]: React.ElementType } = {
   CheckCircle, Globe, Clock, Users, Award, Zap 
 }
 import { CheckCircle, Globe, Clock, Users, Award, Zap } from "lucide-react"
@@ -116,8 +116,8 @@ export default  function AboutSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: string;
+      heading?: String;
+      [key: String]: String;
     };
   }
   
