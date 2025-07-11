@@ -53,10 +53,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Footer from "@/components/footer"
 
-interface FAQItem {
-  question: string
-  answer: string
-}
+// interface FAQItem {
+//   question: string
+//   answer: string
+// }
 
 const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=serviceOutbound`;
 console.log(url);
@@ -68,7 +68,7 @@ function FAQSection() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -97,43 +97,7 @@ function FAQSection() {
     fetchData();
   }, []);
 
-  const faqs: FAQItem[] = [
-    {
-      question: "What is the difference between inbound and outbound services?",
-      answer:
-        "Inbound services handle incoming customer calls, emails, and chats for support and inquiries. Outbound services involve proactively contacting customers or prospects for telemarketing, lead generation, collections, and customer retention campaigns.",
-    },
-    {
-      question: "What is the best way to reach Outbound Services?",
-      answer:
-        "You can reach our outbound services team by calling +91-838-005-5201, sending an email to info@dbsmintek.com, or filling out the contact form on our website at www.dbsmintek.com. Our team is available to discuss your specific requirements.",
-    },
-    {
-      question: "What is the average time it takes to process and launch a campaign?",
-      answer:
-        "Campaign setup typically takes 3-5 business days depending on complexity. This includes CRM configuration, agent training, script development, and testing. We can design and implement campaigns on the fly as per customer needs.",
-    },
-    {
-      question: "What are Outbound Services?",
-      answer:
-        "Outbound services involve proactively contacting customers or prospects through telemarketing, telesales, lead generation, collections, and customer retention campaigns. These services help businesses increase leads, sales, and maintain customer relationships.",
-    },
-    {
-      question: "How can I contact Outbound Services for more information?",
-      answer:
-        "Contact us at +91-838-005-5201 or email info@dbsmintek.com. You can also visit our website at www.dbsmintek.com to learn more about our comprehensive outbound solutions and request a consultation.",
-    },
-    {
-      question: "What does it mean to be an Outbound Services Representative?",
-      answer:
-        "Outbound service representatives proactively contact customers who have expressed interest in products or services. They follow up on inquiries, conduct sales calls, generate leads, and maintain customer relationships. Our representatives are trained subject matter experts in collections, lead generation, and customer retention.",
-    },
-    {
-      question: "What are the most common outbound services you provide?",
-      answer:
-        "Our most common outbound services include telemarketing campaigns, lead generation, telesales, collections, customer retention calls, appointment setting, market research, and survey campaigns. We also provide hosted OBD solutions and CRM integration services.",
-    },
-  ]
+ 
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -145,7 +109,7 @@ function FAQSection() {
    
     <div className="space-y-4">
       
-      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:any) => (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:String) => (
         <Card key={faq.answer} className="border border-gray-200 hover:border-blue-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(faq.answer)}>
             <div className="flex items-center justify-between">
@@ -174,7 +138,7 @@ export default function OutboundServices() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -247,7 +211,7 @@ export default function OutboundServices() {
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8">
                 <div className="grid grid-cols-2 gap-4 mb-6">
 
-                {data?.items?.[0]?.fields?.pageContent.channels.map((channel:any,index:Number)=>{
+                {data?.items?.[0]?.fields?.pageContent.channels.map((channel:String)=>{
                   const ChannelIcon = iconMap[channel.icon]
                    return(
                     <div key={channel.icon} className="bg-white/20 rounded-lg p-4 text-center">
@@ -283,7 +247,7 @@ export default function OutboundServices() {
 
           <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
 
-          {data?.items?.[0]?.fields?.pageContent.benefitsList.map((benefit:any)=>{
+          {data?.items?.[0]?.fields?.pageContent.benefitsList.map((benefit:String)=>{
             const BenefitIcon = iconMap[benefit.icon]
             return(
               <Card key={benefit.icon} className="bg-gradient-to-br from-blue-50 to-blue-100 border-0 hover:shadow-xl transition-all duration-300">
@@ -602,7 +566,7 @@ export default function OutboundServices() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-600">
-              We're here to help you with any questions about our outbound services.
+              We&apos;re here to help you with any questions about our outbound services.
             </p>
           </div>
 
@@ -639,7 +603,7 @@ export default function OutboundServices() {
             </div>
 
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-white/20">
-           { data?.items?.[0]?.fields?.pageContent.quickCards.map((card:any)=>{
+           { data?.items?.[0]?.fields?.pageContent.quickCards.map((card:String)=>{
             const CardIcon = iconMap[card.icon]
             return(
               <div className="text-center" key={card.icon}>
