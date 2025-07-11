@@ -1,7 +1,7 @@
 "use client"
 
 import { useState,useEffect } from "react"
-const iconMap: { [key: string]: React.ElementType }={
+const iconMap: { [key: String]: React.ElementType }={
   MessageSquare,
   Bot,
   Mic,
@@ -45,10 +45,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Header from "@/components/dropdown-header"
 import Footer from "@/components/footer"
 
-interface FAQItem {
-  question: string
-  answer: string
-}
+// interface FAQItem {
+//   question: string
+//   answer: string
+// }
 
 const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=serviceChat`;
 console.log(url);
@@ -58,8 +58,8 @@ function FAQSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: String;
+      heading?: String;
+      [key: String]: String;
     };
   }
   
@@ -125,8 +125,8 @@ export default function ChatBotServices() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]: string;
+      heading?: String;
+      [key: String]: String;
     };
   }
   
