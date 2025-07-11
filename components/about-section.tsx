@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState,useCallback } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-const iconMap: { [key: String]: React.ElementType } = {
+const iconMap: { [key: string]: React.ElementType } = {
   CheckCircle, Globe, Clock, Users, Award, Zap 
 }
 import { CheckCircle, Globe, Clock, Users, Award, Zap } from "lucide-react"
@@ -61,7 +61,7 @@ function AnimatedStat({ stat, isVisible }: { stat: (typeof stats)[0]; isVisible:
   const [hasAnimated, setHasAnimated] = useState(false)
 
   // Extract number from stat.number (handle 50+, 98%, 500+, 24/7)
-  const getNumericValue = (value: String) => {
+  const getNumericValue = (value: string) => {
     if (value === "24/7") return 24
     return Number.parseInt(value.replace(/[^0-9]/g, ""))
   }
@@ -79,7 +79,7 @@ function AnimatedStat({ stat, isVisible }: { stat: (typeof stats)[0]; isVisible:
   }, [isVisible, hasAnimated, startAnimation])
 
   // Format the display value
-  const getDisplayValue = (currentCount: number, originalValue: String) => {
+  const getDisplayValue = (currentCount: number, originalValue: string) => {
     if (originalValue === "24/7") {
       return currentCount >= 24 ? "24/7" : `${currentCount}/7`
     }
@@ -116,8 +116,8 @@ export default  function AboutSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -261,7 +261,7 @@ export default  function AboutSection() {
             
             {/* Technology Features */}
             <div className="grid sm:grid-cols-2 gap-4">
-            {data?.items?.[0]?.fields?.aboutFeatures.map((feature:String)=>{
+            {data?.items?.[0]?.fields?.aboutFeatures.map((feature:string)=>{
                   const FeatureIcon = iconMap[feature.icon]
 
                   return(
@@ -315,7 +315,7 @@ export default  function AboutSection() {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {data?.items?.[0]?.fields?.aboutStats.map((stat:String) => (
+              {data?.items?.[0]?.fields?.aboutStats.map((stat:string) => (
                 <AnimatedStat key={stat.label} stat={stat} isVisible={statsVisible} />
                 
               ))}
