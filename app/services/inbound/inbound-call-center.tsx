@@ -42,8 +42,8 @@ function FAQSection() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -79,7 +79,7 @@ function FAQSection() {
 
   return (
     <div className="space-y-4">
-      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:String, index:number) => (
+      {data?.items?.[0]?.fields?.pageContent.faqList.map((faq:string, index:number) => (
         <Card key={index} className="border border-gray-200 hover:border-blue-300 transition-colors">
           <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors" onClick={() => toggleFAQ(index)}>
             <div className="flex items-center justify-between">
@@ -107,8 +107,8 @@ export default function InboundCallCenter() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key:String]: String;
+      heading?: string;
+      [key:string]: string;
     };
   }
   
@@ -171,7 +171,7 @@ export default function InboundCallCenter() {
               </div>
 
               <div className="grid grid-cols-3 gap-4 pt-4">
-                {data?.items?.[0]?.fields?.pageContent.stats.map((stat:String ,index:number)=>{
+                {data?.items?.[0]?.fields?.pageContent.stats.map((stat:string ,index:number)=>{
                   return (
                   <div className="text-center" key={index}>
                   <div className="text-2xl sm:text-3xl font-bold">{stat.label}</div>
