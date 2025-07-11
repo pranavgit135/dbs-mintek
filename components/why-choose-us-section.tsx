@@ -29,60 +29,6 @@ import {
   Clock,
 } from "lucide-react"
 
-const features = [
-  {
-    id: "technology",
-    title: "Technology",
-    icon: Settings,
-    description:
-      "We are well equipped with state-of-the-art technology with the capacity for fast ramp-up and roll out of new campaigns.",
-    benefits: [
-      "Latest Call Center Software",
-      "Cloud-Based Infrastructure",
-      "Real-time Analytics",
-      "Scalable Solutions",
-    ],
-    color: "blue",
-    gradient: "from-blue-500 to-blue-700",
-  },
-  {
-    id: "team",
-    title: "Best Team",
-    icon: Users,
-    description:
-      "We have the skilled and experienced professionals who are well equipped to provide exclusive customer service solutions.",
-    benefits: ["Experienced Professionals", "Multi-lingual Support", "24/7 Availability", "Dedicated Account Managers"],
-    color: "green",
-    gradient: "from-green-500 to-green-700",
-  },
-  {
-    id: "professionalism",
-    title: "Professionalism",
-    icon: Award,
-    description:
-      "Our biggest strength lies in our strong & deep tradition of 'Professionalism' & 'Respect for an Individual and Customers'.",
-    benefits: ["Quality Assurance", "Professional Standards", "Customer-Centric Approach", "Ethical Practices"],
-    color: "purple",
-    gradient: "from-purple-500 to-purple-700",
-  },
-  {
-    id: "training",
-    title: "Best Training",
-    icon: GraduationCap,
-    description:
-      "Each & every professional appointed by us undergoes rigorous and continuous in-house training by our principals.",
-    benefits: ["Comprehensive Training Programs", "Continuous Learning", "Skill Development", "Performance Monitoring"],
-    color: "orange",
-    gradient: "from-orange-500 to-orange-700",
-  },
-]
-
-const achievements = [
-  { icon: Star, number: 98, label: "Client Satisfaction Rate",suffix:"%" },
-  { icon: TrendingUp, number: 500, label: "Successful Projects" ,suffix:"+"},
-  { icon: Shield, number: 99.9, label: "Data Security",suffix: "%"  },
-  { icon: Clock, number: 24, label: "Support Coverage",suffix: "/7"  },
-]
 
 // Counter component for individual achievement
 function CountUpNumber({
@@ -152,7 +98,7 @@ export default function WhyChooseUsSection() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: any;
+      [key: string]: string;
     };
   }
   
@@ -257,7 +203,7 @@ export default function WhyChooseUsSection() {
         <div
           className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 ${isVisible ? "animate-fade-in-delay" : "opacity-0"}`}
         >
-          {data?.items?.[0]?.fields?.whychooseFeatures.map((feature:any, index:any) => {
+          {data?.items?.[0]?.fields?.whychooseFeatures.map((feature:String) => {
             const FeatureIcon = iconMap[feature.icon]
             return(
               <Card
@@ -280,8 +226,8 @@ export default function WhyChooseUsSection() {
                 </h3>
 
                 {/* Description */}
-                <div className= {`text-gray-600 leading-relaxed mb-6 `}>{feature.benefits.map((benefit:any, benefitIndex:any) => (
-                    <div key={benefitIndex} className="flex items-center space-x-2 text-sm">
+                <div className= {`text-gray-600 leading-relaxed mb-6 `}>{feature.benefits.map((benefit:String) => (
+                    <div key={benefit} className="flex items-center space-x-2 text-sm">
                       <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                       <span className="text-gray-600">{benefit}</span>
                     </div>
@@ -323,9 +269,9 @@ export default function WhyChooseUsSection() {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {data?.items?.[0]?.fields?.whychooseStats.map((achievement:any, index:any) => {
+              {data?.items?.[0]?.fields?.whychooseStats.map((achievement:String) => {
                const StatIcon = iconMap[achievement.icon]
-               return(<div key={index} className="text-center group">
+               return(<div key={achievement.icon} className="text-center group">
                   <div className="flex justify-center mb-4">
                     <div className="p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
                       <StatIcon className="h-8 w-8 text-blue-600" />
