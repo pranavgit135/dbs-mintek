@@ -265,7 +265,7 @@ interface ServiceType {
           className="flex transition-transform duration-700 ease-in-out h-full"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {data?.items?.[0]?.fields?.services[]?.map((service:servicetype) => {
+          {data?.items?.[0]?.fields?.services?.map((service:ServiceType) => {
             const ServiceIcon = iconMap[service.icon]
             
             return (
