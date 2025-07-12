@@ -125,7 +125,7 @@ function useCountUp(target: number, duration = 2000, shouldStart = false) {
 }
 
 // Updated CountUp component
-function CountUp({ target, suffix, shouldStart }: { target: Number; suffix: string; shouldStart: boolean }) {
+function CountUp({ target, suffix, shouldStart }: { target: number; suffix: string; shouldStart: boolean }) {
   const count = useCountUp(target, 2000, shouldStart)
 
   const formatNumber = (num: number) => {
