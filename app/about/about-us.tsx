@@ -47,7 +47,7 @@ function ServiceCarousel() {
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: string;
+      [key: string]: string | undefined;
     };
   }
   
