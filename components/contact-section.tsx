@@ -85,12 +85,12 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     //handle form data
-    const res = await fetch('/api/send-email', {
+     await fetch('/api/send-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
-    console.log(res)
+    
     // const result = await res.json();
     // setStatus(result.success ? 'Email sent!' : result.error);
     setIsSubmitting(true)
