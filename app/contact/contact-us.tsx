@@ -30,17 +30,17 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 interface ContactFormData {
-  firstName: String
+  firstName: string
   
-  lastName: String
-  phone: String
-  email: String
+  lastName: string
+  phone: string
+  email: string
  
-  companyName: String
+  companyName: string
   
-  signature: String
-  enquiryType: String
-  captcha: String
+  signature: string
+  enquiryType: string
+  captcha: string
 }
 
 const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=contactPage`;
@@ -64,8 +64,8 @@ export default function ContactUs() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: String;
-      [key: String]: String;
+      heading?: string;
+      [key: string]: string;
     };
   }
   
@@ -103,7 +103,7 @@ export default function ContactUs() {
     setNum2(b);
   }, []);
 
-  const handleInputChange = (field: keyof ContactFormData, value: String) => {
+  const handleInputChange = (field: keyof ContactFormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
@@ -512,7 +512,7 @@ export default function ContactUs() {
                 <CardContent>
                   <div className="space-y-3">
 
-                  {data?.items?.[0]?.fields?.whyChooseUsPoints.map((key:String)=>{
+                  {data?.items?.[0]?.fields?.whyChooseUsPoints.map((key:string)=>{
                     return(<div key={key}  className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                       <span className="text-sm text-gray-700">{key}</span>
@@ -541,7 +541,7 @@ export default function ContactUs() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {data?.items?.[0]?.fields?.locations.map((location:String) => (
+            {data?.items?.[0]?.fields?.locations.map((location:string) => (
               <Card key={location.id} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
                 <CardHeader>
                   <div className="flex items-start justify-between gap-4">
