@@ -247,7 +247,7 @@ function ServiceCarousel() {
           className="flex transition-transform duration-700 ease-in-out h-full"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {data?.items?.[0]?.fields?.services?.map((service:string) => {
+          {data?.items?.[0]?.fields?.services?.map((service:servicetype) => {
             const ServiceIcon = iconMap[service.icon]
             
             return (
