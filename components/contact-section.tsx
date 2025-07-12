@@ -51,7 +51,7 @@ export default function ContactSection() {
         if (!res.ok) throw new Error("Failed to fetch data");
         const json = await res.json();
         setData(json);
-
+        consol.log(res)
         // ✅ Safe log
       if (json?.items?.length > 0) {
         console.log(json);
