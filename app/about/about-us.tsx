@@ -44,10 +44,28 @@ function ServiceCarousel() {
   const [isPaused, setIsPaused] = useState(false)
   const [data, setData] = useState<ContentfulResponse | null>(null);
 
+interface ServiceType {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  color: string;
+  features: string[];
+  channels?: string[];
+  languages?: string;
+  gradient: string;
+  benefits?: string[];
+  technology?: string[];
+  deployment?: string[];
+  specializations?: string[];
+}
+
+  
   interface ContentfulEntry {
     fields: {
       heading?: string;
-      [key: string]: string | undefined;
+      services?: ServiceType[];
     };
   }
   
