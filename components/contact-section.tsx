@@ -47,11 +47,11 @@ export default function ContactSection() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(url); // Replace with your API URL
-        if (!res.ok) throw new Error("Failed to fetch data");
-        const json = await res.json();
+        const response = await fetch(url); // Replace with your API URL
+        if (!response.ok) throw new Error("Failed to fetch data");
+        const json = await response.json();
         setData(json);
-        console.log(res)
+        
         // ✅ Safe log
       if (json?.items?.length > 0) {
         console.log(json);
