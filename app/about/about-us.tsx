@@ -42,57 +42,10 @@ function ServiceCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlay, setIsAutoPlay] = useState(true)
   const [isPaused, setIsPaused] = useState(false)
-  const [data, setData] = useState<ContentfulResponse | null>(null);
-
-interface ServiceType {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  icon: string;
-  color: string;
-  features: string[];
-  channels?: string[];
-  languages?: string;
-  gradient: string;
-  benefits?: string[];
-  technology?: string[];
-  deployment?: string[];
-  specializations?: string[];
-}
-
   
-  interface ContentfulEntry {
-    fields: {
-      heading?: string;
-      services?: ServiceType[];
-    };
-  }
-  
-  interface ContentfulResponse {
-    items: ContentfulEntry[];
-  }
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch(url); // Replace with your API URL
-        if (!res.ok) throw new Error("Failed to fetch data");
-        const json = await res.json();
-        setData(json);
 
-        // ✅ Safe log
-      if (json?.items?.length > 0) {
-        console.log(json);
-      }
-      } catch (err) {
-        console.error("API fetch error:", err);
-      } finally {
-      }
-    }
 
-    fetchData();
-  }, []);
 
   const services = [
     {
@@ -265,7 +218,7 @@ interface ServiceType {
           className="flex transition-transform duration-700 ease-in-out h-full"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {services.map((service:ServiceType) => {
+          {services.map((service) => {
             const ServiceIcon = iconMap[service.icon]
             
             return (
