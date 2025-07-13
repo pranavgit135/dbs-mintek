@@ -768,8 +768,8 @@ export default function AboutUs() {
 
   interface ContentfulEntry {
     fields: {
-      heading?: string;
-      [key: string]:string;
+      heading?: string | udefined;
+      [key: string]:string | undefined;
     };
   }
   
