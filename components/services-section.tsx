@@ -142,7 +142,7 @@ function CountUp({ target, suffix, shouldStart }: { target: number; suffix: stri
     </span>
   )
 }
-const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutSection`;
+const url = `https://cdn.contentful.com/spaces/3iacs7izb5ma/environments/master/entries?access_token=YHoprnmLTn1fYI1cCiwdQDb8QNCwP-pFxG923-a79vc&content_type=aboutSection`;
 
 export default function ServicesSection() {
   const [isVisible, setIsVisible] = useState(false)
