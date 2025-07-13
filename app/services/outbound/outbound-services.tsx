@@ -58,8 +58,8 @@ import Footer from "@/components/footer"
 //   answer: string
 // }
 
-const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=serviceOutbound`;
-console.log(url);
+const url = `https://cdn.contentful.com/spaces/3iacs7izb5ma/environments/master/entries?access_token=YHoprnmLTn1fYI1cCiwdQDb8QNCwP-pFxG923-a79vc&content_type=serviceOutbound`;
+
 
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
