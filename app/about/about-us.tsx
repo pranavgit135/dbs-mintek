@@ -2,21 +2,21 @@
 
 import React, { useState, useEffect, useRef } from "react"
 import Header from "@/components/header"
-const iconMap: { [key: string]: React.ElementType } = {
-  Building2,
-  Globe,
-  Headphones,
-  MapPin,
-  Phone,
-  Shield,
-  Target,
-  Users,
-  Zap,
-  ChevronLeft,
-  ChevronRight,
-  Play,
-  Pause,
-}
+// const iconMap: { [key: string]: React.ElementType } = {
+//   Building2,
+//   Globe,
+//   Headphones,
+//   MapPin,
+//   Phone,
+//   Shield,
+//   Target,
+//   Users,
+//   Zap,
+//   ChevronLeft,
+//   ChevronRight,
+//   Play,
+//   Pause,
+// }
 
 import {
   Building2,
@@ -219,7 +219,7 @@ function ServiceCarousel() {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {services.map((service) => {
-            const ServiceIcon = iconMap[service.icon]
+            const ServiceIcon = service.icon
             
             return (
               <div key={service.id} className="w-full flex-shrink-0">
