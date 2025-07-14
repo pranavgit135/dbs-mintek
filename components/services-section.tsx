@@ -308,7 +308,7 @@ useEffect(() => {
                 transform: `translateX(-${currentSlide * (windowWidth < 768 ? 100 : window.innerWidth < 1024 ? 50 : 100 / 3)}%)`,
               }}
             >
-              {data?.items?.[0]?.fields?.services.map((service:string) => {
+              {data?.items?.[0]?.fields?.services.map((service:string,index:number) => {
                 const ServiceIcon = iconMap[service.icon]
                 return(
                 <div key={service.id} className="w-full  md:w-1/2 lg:w-1/3 flex-shrink-0 px-2">
