@@ -269,7 +269,7 @@ export default function WhyChooseUsSection() {
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {data?.items?.[0]?.fields?.whychooseStats.map((achievement:string) => {
+              {data?.items?.[0]?.fields?.whychooseStats.map((achievement:string,index:number) => {
                const StatIcon = iconMap[achievement.icon]
                return(<div key={achievement.icon} className="text-center group">
                   <div className="flex justify-center mb-4">
