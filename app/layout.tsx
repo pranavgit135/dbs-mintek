@@ -3,8 +3,8 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'mintek',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  description: '',
+  generator: 'GEOSoftech',
 }
 
 export default function RootLayout({
