@@ -40,7 +40,7 @@ export default function Header() {
         
       ],
     },
-     { name: "Gellery", href: "/gallery" },
+     { name: "Gallery", href: "/gallery" },
     { name: "Contact Us", href: "/contact" },
   ]
 

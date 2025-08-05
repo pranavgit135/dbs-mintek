@@ -65,6 +65,7 @@ function ServiceCarousel() {
       channels: ["Voice", "Email", "Chat"],
       languages: "English, Hindi, Marathi & Regional Languages",
       gradient: "from-green-500 to-emerald-600",
+      href : "/services/inbound"
     },
     {
       id: "outbound",
@@ -82,6 +83,7 @@ function ServiceCarousel() {
       ],
       benefits: ["Market Differentiation", "Global Marketplace Reach", "Desired Business Results"],
       gradient: "from-blue-500 to-cyan-600",
+      href : "/services/outbound"
     },
     {
       id: "email",
@@ -99,6 +101,7 @@ function ServiceCarousel() {
       ],
       technology: ["Latest Email Management Software", "ACD Technology", "Lightning Speed Response Times"],
       gradient: "from-purple-500 to-violet-600",
+      href : "/services/email"
     },
     {
       id: "chat",
@@ -116,6 +119,7 @@ function ServiceCarousel() {
       ],
       deployment: ["Client Website Integration", "Our Website Chat Support", "Multi-platform Compatibility"],
       gradient: "from-orange-500 to-amber-600",
+      href : "/services/chat"
     },
     {
       id: "healthcare",
@@ -138,6 +142,7 @@ function ServiceCarousel() {
         "Compliance & HIPAA Standards",
       ],
       gradient: "from-red-500 to-rose-600",
+      href : "/services/pension"
     },
   ]
 
@@ -341,7 +346,7 @@ function ServiceCarousel() {
                             window.location.href = `/services/${service.id}`
                           }}
                         >
-                          <span className="truncate">Learn More About {service.title}</span>
+                          <a href={service.href} className="truncate">Learn More About {service.title}</a>
                           <ChevronRight className="w-4 h-4 ml-2 flex-shrink-0" />
                         </Button>
                       </div>
@@ -437,7 +442,7 @@ function AnimatedCarousel() {
         }}
         ref={carouselRef}
       >
-        <div className="flex" style={{ width: `${cardCount * cardWidth}px` }}>
+        <div className="flex" style={{ width: `${cardCount   * cardWidth}px` }}>
           {/* Each card: 300px wide, 3 visible at a time */}
           <div className="min-w-[300px] max-w-[300px] flex-shrink-0 snap-center px-2">
             <Card className="h-full shadow-xl transition-all hover:scale-105">
@@ -647,7 +652,7 @@ function AnimatedCarousel() {
                     <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 flex-shrink-0" />
                     <div className="min-w-0 flex-1">
                       <CardTitle className="text-responsive-lg sm:text-responsive-xl break-words">
-                        Navi Mumbai
+                       Ghansoli, Navi Mumbai
                       </CardTitle>
                       <Badge variant="outline" className="mt-1 text-responsive-xs sm:text-responsive-sm">
                         Modern Facility
@@ -690,17 +695,17 @@ function AnimatedCarousel() {
             </Card>
           </div>
           <div className="min-w-[300px] max-w-[300px] flex-shrink-0 snap-center px-2">
-            <Card className="h-full transition-all hover:scale-105">
+            <Card className="h-full  transition-all hover:scale-105">
               <CardHeader>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3 w-full sm:w-auto">
                     <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-red-600 flex-shrink-0" />
                     <div className="min-w-0 flex-1">
                       <CardTitle className="text-responsive-lg sm:text-responsive-xl break-words">
-                        Arihant Aura, Thane
+                        Turbhe, Navi Mumbai
                       </CardTitle>
                       <Badge variant="outline" className="mt-1 text-responsive-xs sm:text-responsive-sm">
-                        Modern Facility
+                        IT Park
                       </Badge>
                     </div>
                   </div>
@@ -786,9 +791,7 @@ export default function AboutUs() {
         setData(json);
 
         // ✅ Safe log
-      if (json?.items?.length > 0) {
-        console.log(json);
-      }
+     
       } catch (err) {
         console.error("API fetch error:", err);
       } finally {

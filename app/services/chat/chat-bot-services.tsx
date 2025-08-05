@@ -51,7 +51,7 @@ import Footer from "@/components/footer"
 // }
 
 const url = `https://cdn.contentful.com/spaces/3iacs7izb5ma/environments/master/entries?access_token=YHoprnmLTn1fYI1cCiwdQDb8QNCwP-pFxG923-a79vc&content_type=serviceChat`;
-console.log(url);
+
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [data, setData] = useState<ContentfulResponse | null>(null);
@@ -75,10 +75,7 @@ function FAQSection() {
         const json = await res.json();
         setData(json);
 
-        // ✅ Safe log
-      if (json?.items?.length > 0) {
-        console.log(json);
-      }
+      
       } catch (err) {
         console.error("API fetch error:", err);
       } finally {
@@ -142,10 +139,7 @@ export default function ChatBotServices() {
         const json = await res.json();
         setData(json);
 
-        // ✅ Safe log
-      if (json?.items?.length > 0) {
-        console.log(json);
-      }
+     
       } catch (err) {
         console.error("API fetch error:", err);
       } finally {

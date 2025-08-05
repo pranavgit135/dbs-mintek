@@ -81,10 +81,7 @@ export default function ContactUs() {
         const json = await res.json();
         setData(json);
 
-        // ✅ Safe log
-      if (json?.items?.length > 0) {
-        console.log(json);
-      }
+        
       } catch (err) {
         console.error("API fetch error:", err);
       } finally {
@@ -132,7 +129,7 @@ export default function ContactUs() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
-    console.log(res)
+    
     // const result = await res.json();
     // setStatus(result.success ? 'Email sent!' : result.error);
     setIsSubmitting(true)
@@ -144,7 +141,7 @@ export default function ContactUs() {
     
     // Simulate form submission
     setTimeout(() => {
-      alert("Thank you for your enquiry! We&apos;ll be in touch soon.")
+      alert("Thank you for your enquiry! We will get back to you soon.")
       setIsSubmitting(false)
       // Reset form
       setFormData({

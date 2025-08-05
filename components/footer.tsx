@@ -21,33 +21,33 @@ const footerLinks = {
   services: [
     { name: "Inbound Call Center", href: "/services/inbound" },
     { name: "Outbound Call Center", href: "/services/outbound" },
-    { name: "Customer Support", href: "/services/customer-support" },
-    { name: "Technical Support", href: "/services/technical-support" },
-    { name: "Email Support", href: "/services/email-support" },
-    { name: "Chat Support", href: "/services/chat-support" },
+    // { name: "Customer Support", href: "/services/customer-support" },
+    { name: "US Pension", href: "/services/pension" },
+    { name: "Email Support", href: "/services/email" },
+    { name: "Chat Support", href: "/services/chat" },
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Why Choose Us", href: "/why-choose-us" },
-    { name: "Our Team", href: "/team" },
-    { name: "Careers", href: "/careers" },
-    { name: "News & Updates", href: "/news" },
-    { name: "Case Studies", href: "/case-studies" },
+    { name: "Why Choose Us", href: "/about" },
+    { name: "Our Team", href: "/contact" },
+    { name: "Careers", href: "/contact" },
+    { name: "News & Updates", href: "/about" },
+    // { name: "Case Studies", href: "/case-studies" },
   ],
   support: [
     { name: "Contact Us", href: "/contact" },
-    { name: "FAQ", href: "/faq" },
-    { name: "Support Center", href: "/support" },
-    { name: "Documentation", href: "/docs" },
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
+    { name: "FAQ", href: "/#" },
+    // { name: "Support Center", href: "/support" },
+    // { name: "Documentation", href: "/docs" },
+    // { name: "Privacy Policy", href: "/privacy" },
+    // { name: "Terms of Service", href: "/terms" },
   ],
 }
 
 const socialLinks = [
   { name: "Facebook", icon: Facebook, href: "#", color: "hover:text-blue-600" },
   { name: "Twitter", icon: Twitter, href: "#", color: "hover:text-blue-400" },
-  { name: "LinkedIn", icon: Linkedin, href: "#", color: "hover:text-blue-700" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/dbsmintek/", color: "hover:text-blue-700" },
   { name: "Instagram", icon: Instagram, href: "#", color: "hover:text-pink-600" },
 ]
 
@@ -108,6 +108,7 @@ export default function Footer() {
                   <Link
                     key={social.name}
                     href={social.href}
+                    target="_blank"
                     className={`p-2 bg-gray-800 rounded-lg transition-colors ${social.color}`}
                   >
                     <social.icon className="h-5 w-5" />
@@ -218,15 +219,15 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400">© {new Date().getFullYear()} DBS Mintek Pvt Ltd. All rights reserved| Developed by GEO Softech.</div>
+            <div className="text-sm text-gray-400">© {new Date().getFullYear()} DBS Mintek Pvt Ltd. All rights reserved | Developed by <a target="_blank" href="https://www.geosoftech.com/" className="hover:underline">GEO Softech.</a></div>
             <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/#" className="text-gray-400 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/#" className="text-gray-400 hover:text-white transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/cookies" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/#" className="text-gray-400 hover:text-white transition-colors">
                 Cookie Policy
               </Link>
             </div>

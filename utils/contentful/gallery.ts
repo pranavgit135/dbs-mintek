@@ -30,7 +30,7 @@ export async function getGalleryPage() {
   }
     `)) 
   
-   console.log(data)
+  
     
   return data?.data?.galleryPageCollection?.items?.[0];
 }

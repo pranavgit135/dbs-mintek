@@ -41,7 +41,7 @@ export async function getHomePage() {
   }
     `)) 
   
-   console.log(data)
+  
     
   return data?.data?.aboutSectionCollection?.items?.[0];
 }

@@ -14,7 +14,7 @@ import { getHomePage } from "@/utils/contentful/home"
 
 export default async function HomePage() {
   const data = await getHomePage()
- console.log(data);
+
  
   return (
     <div className="min-h-screen bg-white">

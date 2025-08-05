@@ -620,7 +620,7 @@ function Header() {
             ]
         },
         {
-            name: "Gellery",
+            name: "Gallery",
             href: "/gallery"
         },
         {
@@ -1058,21 +1058,18 @@ const footerLinks = {
             name: "Outbound Call Center",
             href: "/services/outbound"
         },
+        // { name: "Customer Support", href: "/services/customer-support" },
         {
-            name: "Customer Support",
-            href: "/services/customer-support"
-        },
-        {
-            name: "Technical Support",
-            href: "/services/technical-support"
+            name: "US Pension",
+            href: "/services/pension"
         },
         {
             name: "Email Support",
-            href: "/services/email-support"
+            href: "/services/email"
         },
         {
             name: "Chat Support",
-            href: "/services/chat-support"
+            href: "/services/chat"
         }
     ],
     company: [
@@ -1082,23 +1079,19 @@ const footerLinks = {
         },
         {
             name: "Why Choose Us",
-            href: "/why-choose-us"
+            href: "/about"
         },
         {
             name: "Our Team",
-            href: "/team"
+            href: "/contact"
         },
         {
             name: "Careers",
-            href: "/careers"
+            href: "/contact"
         },
         {
             name: "News & Updates",
-            href: "/news"
-        },
-        {
-            name: "Case Studies",
-            href: "/case-studies"
+            href: "/about"
         }
     ],
     support: [
@@ -1109,22 +1102,6 @@ const footerLinks = {
         {
             name: "FAQ",
             href: "/faq"
-        },
-        {
-            name: "Support Center",
-            href: "/support"
-        },
-        {
-            name: "Documentation",
-            href: "/docs"
-        },
-        {
-            name: "Privacy Policy",
-            href: "/privacy"
-        },
-        {
-            name: "Terms of Service",
-            href: "/terms"
         }
     ]
 };
@@ -1679,7 +1656,17 @@ function Footer() {
                                     children: [
                                         "© ",
                                         new Date().getFullYear(),
-                                        " DBS Mintek Pvt Ltd. All rights reserved| Developed by GEO Softech."
+                                        " DBS Mintek Pvt Ltd. All rights reserved | Developed by ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            target: "_blank",
+                                            href: "https://www.geosoftech.com/",
+                                            className: "hover:underline",
+                                            children: "GEO Softech."
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/footer.tsx",
+                                            lineNumber: 221,
+                                            columnNumber: 136
+                                        }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",

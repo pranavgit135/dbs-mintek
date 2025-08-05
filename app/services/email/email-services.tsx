@@ -80,10 +80,7 @@ function FAQSection() {
         const json = await res.json();
         setData(json);
 
-        // ✅ Safe log
-      if (json?.items?.length > 0) {
-        console.log(json);
-      }
+    
       } catch (err) {
         console.error("API fetch error:", err);
       } finally {
@@ -145,10 +142,7 @@ export default function EmailServices() {
         const json = await res.json();
         setData(json);
 
-        // ✅ Safe log
-      if (json?.items?.length > 0) {
-        console.log(json);
-      }
+     
       } catch (err) {
         console.error("API fetch error:", err);
       } finally {

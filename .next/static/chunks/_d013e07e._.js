@@ -170,7 +170,7 @@ function Header() {
             ]
         },
         {
-            name: "Gellery",
+            name: "Gallery",
             href: "/gallery"
         },
         {
@@ -795,21 +795,18 @@ const footerLinks = {
             name: "Outbound Call Center",
             href: "/services/outbound"
         },
+        // { name: "Customer Support", href: "/services/customer-support" },
         {
-            name: "Customer Support",
-            href: "/services/customer-support"
-        },
-        {
-            name: "Technical Support",
-            href: "/services/technical-support"
+            name: "US Pension",
+            href: "/services/pension"
         },
         {
             name: "Email Support",
-            href: "/services/email-support"
+            href: "/services/email"
         },
         {
             name: "Chat Support",
-            href: "/services/chat-support"
+            href: "/services/chat"
         }
     ],
     company: [
@@ -819,23 +816,19 @@ const footerLinks = {
         },
         {
             name: "Why Choose Us",
-            href: "/why-choose-us"
+            href: "/about"
         },
         {
             name: "Our Team",
-            href: "/team"
+            href: "/contact"
         },
         {
             name: "Careers",
-            href: "/careers"
+            href: "/contact"
         },
         {
             name: "News & Updates",
-            href: "/news"
-        },
-        {
-            name: "Case Studies",
-            href: "/case-studies"
+            href: "/about"
         }
     ],
     support: [
@@ -845,23 +838,7 @@ const footerLinks = {
         },
         {
             name: "FAQ",
-            href: "/faq"
-        },
-        {
-            name: "Support Center",
-            href: "/support"
-        },
-        {
-            name: "Documentation",
-            href: "/docs"
-        },
-        {
-            name: "Privacy Policy",
-            href: "/privacy"
-        },
-        {
-            name: "Terms of Service",
-            href: "/terms"
+            href: "/#"
         }
     ]
 };
@@ -881,7 +858,7 @@ const socialLinks = [
     {
         name: "LinkedIn",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Linkedin$3e$__["Linkedin"],
-        href: "#",
+        href: "https://www.linkedin.com/company/dbsmintek/",
         color: "hover:text-blue-700"
     },
     {
@@ -1046,12 +1023,13 @@ function Footer() {
                                             className: "flex space-x-4",
                                             children: socialLinks.map((social)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                     href: social.href,
+                                                    target: "_blank",
                                                     className: `p-2 bg-gray-800 rounded-lg transition-colors ${social.color}`,
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(social.icon, {
                                                         className: "h-5 w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 114,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, social.name, false, {
@@ -1077,7 +1055,7 @@ function Footer() {
                                             children: "Our Services"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 121,
+                                            lineNumber: 122,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1091,30 +1069,30 @@ function Footer() {
                                                                 className: "h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/footer.tsx",
-                                                                lineNumber: 129,
+                                                                lineNumber: 130,
                                                                 columnNumber: 23
                                                             }, this),
                                                             link.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 125,
+                                                        lineNumber: 126,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, link.name, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 124,
+                                                    lineNumber: 125,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 122,
+                                            lineNumber: 123,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 120,
+                                    lineNumber: 121,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1124,7 +1102,7 @@ function Footer() {
                                             children: "Company"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 139,
+                                            lineNumber: 140,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1138,30 +1116,30 @@ function Footer() {
                                                                 className: "h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/footer.tsx",
-                                                                lineNumber: 147,
+                                                                lineNumber: 148,
                                                                 columnNumber: 23
                                                             }, this),
                                                             link.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 143,
+                                                        lineNumber: 144,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, link.name, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 142,
+                                                    lineNumber: 143,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 140,
+                                            lineNumber: 141,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 139,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1171,7 +1149,7 @@ function Footer() {
                                             children: "Stay Updated"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 157,
+                                            lineNumber: 158,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1179,7 +1157,7 @@ function Footer() {
                                             children: "Subscribe to our newsletter for the latest updates and industry insights."
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 158,
+                                            lineNumber: 159,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1191,7 +1169,7 @@ function Footer() {
                                                     className: "bg-gray-800 border-gray-700 text-white placeholder-gray-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 164,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1200,18 +1178,18 @@ function Footer() {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 169,
+                                                        lineNumber: 170,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 168,
+                                                    lineNumber: 169,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 163,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -1219,7 +1197,7 @@ function Footer() {
                                             children: "Support"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 173,
+                                            lineNumber: 174,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1233,30 +1211,30 @@ function Footer() {
                                                                 className: "h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/footer.tsx",
-                                                                lineNumber: 181,
+                                                                lineNumber: 182,
                                                                 columnNumber: 23
                                                             }, this),
                                                             link.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 177,
+                                                        lineNumber: 178,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, link.name, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 176,
+                                                    lineNumber: 177,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 174,
+                                            lineNumber: 175,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 156,
+                                    lineNumber: 157,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -1282,7 +1260,7 @@ function Footer() {
                                             className: "h-8 w-8 text-yellow-400"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 195,
+                                            lineNumber: 196,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1292,7 +1270,7 @@ function Footer() {
                                                     children: "ISO 9001:2015"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 197,
+                                                    lineNumber: 198,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1300,19 +1278,19 @@ function Footer() {
                                                     children: "Quality Management"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 198,
+                                                    lineNumber: 199,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 196,
+                                            lineNumber: 197,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 194,
+                                    lineNumber: 195,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1322,7 +1300,7 @@ function Footer() {
                                             className: "h-8 w-8 text-green-400"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 202,
+                                            lineNumber: 203,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1332,7 +1310,7 @@ function Footer() {
                                                     children: "NASSCOM Member"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 204,
+                                                    lineNumber: 205,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1340,19 +1318,19 @@ function Footer() {
                                                     children: "Industry Association"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 205,
+                                                    lineNumber: 206,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 203,
+                                            lineNumber: 204,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 201,
+                                    lineNumber: 202,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1362,7 +1340,7 @@ function Footer() {
                                             className: "h-8 w-8 text-blue-400"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 209,
+                                            lineNumber: 210,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1372,7 +1350,7 @@ function Footer() {
                                                     children: "24/7 Operations"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 211,
+                                                    lineNumber: 212,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1380,30 +1358,30 @@ function Footer() {
                                                     children: "Always Available"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 212,
+                                                    lineNumber: 213,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 210,
+                                            lineNumber: 211,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 208,
+                                    lineNumber: 209,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/footer.tsx",
-                            lineNumber: 193,
+                            lineNumber: 194,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/footer.tsx",
-                        lineNumber: 192,
+                        lineNumber: 193,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1413,57 +1391,71 @@ function Footer() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "text-sm text-gray-400",
-                                    children: "© 2024 DBS Mintek Pvt Ltd. All rights reserved| Developed by GEO Softech."
-                                }, void 0, false, {
-                                    fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 221,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex space-x-6 text-sm",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            href: "/privacy",
-                                            className: "text-gray-400 hover:text-white transition-colors",
-                                            children: "Privacy Policy"
+                                        "© ",
+                                        new Date().getFullYear(),
+                                        " DBS Mintek Pvt Ltd. All rights reserved | Developed by ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            target: "_blank",
+                                            href: "https://www.geosoftech.com/",
+                                            className: "hover:underline",
+                                            children: "GEO Softech."
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 223,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            href: "/terms",
-                                            className: "text-gray-400 hover:text-white transition-colors",
-                                            children: "Terms of Service"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 226,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            href: "/cookies",
-                                            className: "text-gray-400 hover:text-white transition-colors",
-                                            children: "Cookie Policy"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 229,
-                                            columnNumber: 15
+                                            lineNumber: 222,
+                                            columnNumber: 136
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
                                     lineNumber: 222,
                                     columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex space-x-6 text-sm",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/#",
+                                            className: "text-gray-400 hover:text-white transition-colors",
+                                            children: "Privacy Policy"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/footer.tsx",
+                                            lineNumber: 224,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/#",
+                                            className: "text-gray-400 hover:text-white transition-colors",
+                                            children: "Terms of Service"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/footer.tsx",
+                                            lineNumber: 227,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/#",
+                                            className: "text-gray-400 hover:text-white transition-colors",
+                                            children: "Cookie Policy"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/footer.tsx",
+                                            lineNumber: 230,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/footer.tsx",
+                                    lineNumber: 223,
+                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/footer.tsx",
-                            lineNumber: 220,
+                            lineNumber: 221,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/footer.tsx",
-                        lineNumber: 219,
+                        lineNumber: 220,
                         columnNumber: 9
                     }, this)
                 ]
@@ -1564,7 +1556,8 @@ function ServiceCarousel() {
                 "Chat"
             ],
             languages: "English, Hindi, Marathi & Regional Languages",
-            gradient: "from-green-500 to-emerald-600"
+            gradient: "from-green-500 to-emerald-600",
+            href: "/services/inbound"
         },
         {
             id: "outbound",
@@ -1584,7 +1577,8 @@ function ServiceCarousel() {
                 "Global Marketplace Reach",
                 "Desired Business Results"
             ],
-            gradient: "from-blue-500 to-cyan-600"
+            gradient: "from-blue-500 to-cyan-600",
+            href: "/services/outbound"
         },
         {
             id: "email",
@@ -1604,7 +1598,8 @@ function ServiceCarousel() {
                 "ACD Technology",
                 "Lightning Speed Response Times"
             ],
-            gradient: "from-purple-500 to-violet-600"
+            gradient: "from-purple-500 to-violet-600",
+            href: "/services/email"
         },
         {
             id: "chat",
@@ -1624,7 +1619,8 @@ function ServiceCarousel() {
                 "Our Website Chat Support",
                 "Multi-platform Compatibility"
             ],
-            gradient: "from-orange-500 to-amber-600"
+            gradient: "from-orange-500 to-amber-600",
+            href: "/services/chat"
         },
         {
             id: "healthcare",
@@ -1645,7 +1641,8 @@ function ServiceCarousel() {
                 "Patient Data Management",
                 "Compliance & HIPAA Standards"
             ],
-            gradient: "from-red-500 to-rose-600"
+            gradient: "from-red-500 to-rose-600",
+            href: "/services/pension"
         }
     ];
     // const url = `${process.env.NEXT_PUBLIC_BASE_URL}/spaces/${process.env.NEXT_PUBLIC_SPACE_ID}/environments/master/entries?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}&content_type=aboutPage`;
@@ -1696,7 +1693,7 @@ function ServiceCarousel() {
                                 children: "Service Portfolio"
                             }, void 0, false, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 182,
+                                lineNumber: 187,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1709,13 +1706,13 @@ function ServiceCarousel() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 183,
+                                lineNumber: 188,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/about/about-us.tsx",
-                        lineNumber: 181,
+                        lineNumber: 186,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1731,13 +1728,13 @@ function ServiceCarousel() {
                                         className: "w-3 h-3 sm:w-4 sm:h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 195,
+                                        lineNumber: 200,
                                         columnNumber: 27
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
                                         className: "w-3 h-3 sm:w-4 sm:h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 195,
+                                        lineNumber: 200,
                                         columnNumber: 73
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1745,13 +1742,13 @@ function ServiceCarousel() {
                                         children: isAutoPlay ? "Pause" : "Play"
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 201,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 189,
+                                lineNumber: 194,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1766,12 +1763,12 @@ function ServiceCarousel() {
                                             className: "w-3 h-3 sm:w-4 sm:h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 201,
+                                            lineNumber: 206,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 200,
+                                        lineNumber: 205,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1783,30 +1780,30 @@ function ServiceCarousel() {
                                             className: "w-3 h-3 sm:w-4 sm:h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 209,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 208,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 199,
+                                lineNumber: 204,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/about/about-us.tsx",
-                        lineNumber: 188,
+                        lineNumber: 193,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 180,
+                lineNumber: 185,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1842,12 +1839,12 @@ function ServiceCarousel() {
                                                                 className: "w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 235,
+                                                                lineNumber: 240,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 232,
+                                                            lineNumber: 237,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1858,7 +1855,7 @@ function ServiceCarousel() {
                                                                     children: service.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                                    lineNumber: 238,
+                                                                    lineNumber: 243,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1867,19 +1864,19 @@ function ServiceCarousel() {
                                                                     children: service.subtitle
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                                    lineNumber: 239,
+                                                                    lineNumber: 244,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 237,
+                                                            lineNumber: 242,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 231,
+                                                    lineNumber: 236,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1887,7 +1884,7 @@ function ServiceCarousel() {
                                                     children: service.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 248,
+                                                    lineNumber: 253,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1898,7 +1895,7 @@ function ServiceCarousel() {
                                                             children: "Key Features:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 253,
+                                                            lineNumber: 258,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1910,7 +1907,7 @@ function ServiceCarousel() {
                                                                             className: `w-2 h-2 bg-${service.color}-500 rounded-full mt-2 flex-shrink-0`
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                                            lineNumber: 257,
+                                                                            lineNumber: 262,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1918,24 +1915,24 @@ function ServiceCarousel() {
                                                                             children: feature
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                                            lineNumber: 258,
+                                                                            lineNumber: 263,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, idx, true, {
                                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                                    lineNumber: 256,
+                                                                    lineNumber: 261,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 254,
+                                                            lineNumber: 259,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 252,
+                                                    lineNumber: 257,
                                                     columnNumber: 23
                                                 }, this),
                                                 service.channels && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1946,7 +1943,7 @@ function ServiceCarousel() {
                                                             children: "Channels Supported:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 266,
+                                                            lineNumber: 271,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1957,12 +1954,12 @@ function ServiceCarousel() {
                                                                     children: channel
                                                                 }, idx, false, {
                                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                                    lineNumber: 269,
+                                                                    lineNumber: 274,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 267,
+                                                            lineNumber: 272,
                                                             columnNumber: 27
                                                         }, this),
                                                         service.languages && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1973,13 +1970,13 @@ function ServiceCarousel() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 275,
+                                                            lineNumber: 280,
                                                             columnNumber: 29
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 265,
+                                                    lineNumber: 270,
                                                     columnNumber: 25
                                                 }, this),
                                                 service.benefits && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1990,7 +1987,7 @@ function ServiceCarousel() {
                                                             children: "Key Benefits:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 284,
+                                                            lineNumber: 289,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2003,18 +2000,18 @@ function ServiceCarousel() {
                                                                     ]
                                                                 }, idx, true, {
                                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                                    lineNumber: 287,
+                                                                    lineNumber: 292,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 285,
+                                                            lineNumber: 290,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 283,
+                                                    lineNumber: 288,
                                                     columnNumber: 25
                                                 }, this),
                                                 service.technology && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2025,7 +2022,7 @@ function ServiceCarousel() {
                                                             children: "Technology Features:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 297,
+                                                            lineNumber: 302,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2038,18 +2035,18 @@ function ServiceCarousel() {
                                                                     ]
                                                                 }, idx, true, {
                                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                                    lineNumber: 300,
+                                                                    lineNumber: 305,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 298,
+                                                            lineNumber: 303,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 296,
+                                                    lineNumber: 301,
                                                     columnNumber: 25
                                                 }, this),
                                                 service.deployment && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2060,7 +2057,7 @@ function ServiceCarousel() {
                                                             children: "Deployment Options:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 310,
+                                                            lineNumber: 315,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2073,18 +2070,18 @@ function ServiceCarousel() {
                                                                     ]
                                                                 }, idx, true, {
                                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                                    lineNumber: 313,
+                                                                    lineNumber: 318,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 311,
+                                                            lineNumber: 316,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 309,
+                                                    lineNumber: 314,
                                                     columnNumber: 25
                                                 }, this),
                                                 service.specializations && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2095,7 +2092,7 @@ function ServiceCarousel() {
                                                             children: "Healthcare Specializations:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 323,
+                                                            lineNumber: 328,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2108,18 +2105,18 @@ function ServiceCarousel() {
                                                                     ]
                                                                 }, idx, true, {
                                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                                    lineNumber: 328,
+                                                                    lineNumber: 333,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 326,
+                                                            lineNumber: 331,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 322,
+                                                    lineNumber: 327,
                                                     columnNumber: 25
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2130,7 +2127,8 @@ function ServiceCarousel() {
                                                             window.location.href = `/services/${service.id}`;
                                                         },
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                                href: service.href,
                                                                 className: "truncate",
                                                                 children: [
                                                                     "Learn More About ",
@@ -2138,36 +2136,36 @@ function ServiceCarousel() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 344,
+                                                                lineNumber: 349,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                                 className: "w-4 h-4 ml-2 flex-shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 345,
+                                                                lineNumber: 350,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 338,
+                                                        lineNumber: 343,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 337,
+                                                    lineNumber: 342,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 230,
+                                            lineNumber: 235,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 229,
+                                        lineNumber: 234,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2180,7 +2178,7 @@ function ServiceCarousel() {
                                                 className: "absolute inset-0 bg-black/10"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 356,
+                                                lineNumber: 361,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2190,7 +2188,7 @@ function ServiceCarousel() {
                                                         className: "w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 sm:mb-6 opacity-80"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 358,
+                                                        lineNumber: 363,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2198,7 +2196,7 @@ function ServiceCarousel() {
                                                         children: service.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 359,
+                                                        lineNumber: 364,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2206,62 +2204,62 @@ function ServiceCarousel() {
                                                         children: service.subtitle
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 360,
+                                                        lineNumber: 365,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 357,
+                                                lineNumber: 362,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-10 lg:right-10 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white/10 rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 364,
+                                                lineNumber: 369,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute bottom-4 left-4 sm:bottom-6 sm:left-6 lg:bottom-10 lg:left-10 w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-white/10 rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 365,
+                                                lineNumber: 370,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute top-1/2 left-4 sm:left-6 lg:left-10 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white/10 rounded-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 366,
+                                                lineNumber: 371,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 352,
+                                        lineNumber: 357,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 227,
+                                lineNumber: 232,
                                 columnNumber: 17
                             }, this)
                         }, service.id, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 225,
+                            lineNumber: 230,
                             columnNumber: 15
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 217,
+                    lineNumber: 222,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 211,
+                lineNumber: 216,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2271,12 +2269,12 @@ function ServiceCarousel() {
                         className: `w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === currentSlide ? `bg-gradient-to-r ${services[currentSlide].gradient} shadow-lg` : "bg-gray-300 hover:bg-gray-400"}`
                     }, index, false, {
                         fileName: "[project]/app/about/about-us.tsx",
-                        lineNumber: 378,
+                        lineNumber: 383,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 376,
+                lineNumber: 381,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2288,18 +2286,18 @@ function ServiceCarousel() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 392,
+                    lineNumber: 397,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 391,
+                lineNumber: 396,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/about/about-us.tsx",
-        lineNumber: 177,
+        lineNumber: 182,
         columnNumber: 5
     }, this);
 }
@@ -2376,7 +2374,7 @@ function AnimatedCarousel() {
                                                         className: "w-6 h-6 sm:w-8 sm:h-8 text-red-600 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 447,
+                                                        lineNumber: 452,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2387,7 +2385,7 @@ function AnimatedCarousel() {
                                                                 children: "Mumbai (Head Office)"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 449,
+                                                                lineNumber: 454,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2396,29 +2394,29 @@ function AnimatedCarousel() {
                                                                 children: "Head Office"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 452,
+                                                                lineNumber: 457,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 448,
+                                                        lineNumber: 453,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 446,
+                                                lineNumber: 451,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 445,
+                                            lineNumber: 450,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 444,
+                                        lineNumber: 449,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2432,27 +2430,27 @@ function AnimatedCarousel() {
                                                         children: "DBS House, EL-73, Electronic Zone,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 461,
+                                                        lineNumber: 466,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "TTC MIDC, Mahape, Navi Mumbai-400 710,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 462,
+                                                        lineNumber: 467,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Maharashtra, India"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 463,
+                                                        lineNumber: 468,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 460,
+                                                lineNumber: 465,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2465,7 +2463,7 @@ function AnimatedCarousel() {
                                                                 children: "12,000"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 467,
+                                                                lineNumber: 472,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2473,13 +2471,13 @@ function AnimatedCarousel() {
                                                                 children: " Sq Ft"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 468,
+                                                                lineNumber: 473,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 466,
+                                                        lineNumber: 471,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2489,7 +2487,7 @@ function AnimatedCarousel() {
                                                                 children: "3"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 471,
+                                                                lineNumber: 476,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2497,19 +2495,19 @@ function AnimatedCarousel() {
                                                                 children: " Floors"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 472,
+                                                                lineNumber: 477,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 470,
+                                                        lineNumber: 475,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 465,
+                                                lineNumber: 470,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2522,7 +2520,7 @@ function AnimatedCarousel() {
                                                         className: "w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 486,
+                                                        lineNumber: 491,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2530,30 +2528,30 @@ function AnimatedCarousel() {
                                                         children: "View on Google Maps"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 487,
+                                                        lineNumber: 492,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 475,
+                                                lineNumber: 480,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 459,
+                                        lineNumber: 464,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 443,
+                                lineNumber: 448,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 442,
+                            lineNumber: 447,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2571,7 +2569,7 @@ function AnimatedCarousel() {
                                                         className: "w-6 h-6 sm:w-8 sm:h-8 text-blue-600 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 497,
+                                                        lineNumber: 502,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2582,7 +2580,7 @@ function AnimatedCarousel() {
                                                                 children: "Baner, Pune"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 499,
+                                                                lineNumber: 504,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2591,29 +2589,29 @@ function AnimatedCarousel() {
                                                                 children: "Modern Facility"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 502,
+                                                                lineNumber: 507,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 498,
+                                                        lineNumber: 503,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 496,
+                                                lineNumber: 501,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 495,
+                                            lineNumber: 500,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 494,
+                                        lineNumber: 499,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2627,27 +2625,27 @@ function AnimatedCarousel() {
                                                         children: "4th Floor, Anjani Palladium"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 511,
+                                                        lineNumber: 516,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Next to Prabhavee Tech Park, Baner,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 512,
+                                                        lineNumber: 517,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Pune, Maharashtra 411045"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 513,
+                                                        lineNumber: 518,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 510,
+                                                lineNumber: 515,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2660,7 +2658,7 @@ function AnimatedCarousel() {
                                                                 children: "10,000"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 517,
+                                                                lineNumber: 522,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2668,13 +2666,13 @@ function AnimatedCarousel() {
                                                                 children: " Sq Ft"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 518,
+                                                                lineNumber: 523,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 516,
+                                                        lineNumber: 521,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2684,7 +2682,7 @@ function AnimatedCarousel() {
                                                                 children: "Latest"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 521,
+                                                                lineNumber: 526,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2692,19 +2690,19 @@ function AnimatedCarousel() {
                                                                 children: " Tech"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 522,
+                                                                lineNumber: 527,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 520,
+                                                        lineNumber: 525,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 515,
+                                                lineNumber: 520,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2717,7 +2715,7 @@ function AnimatedCarousel() {
                                                         className: "w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 536,
+                                                        lineNumber: 541,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2725,30 +2723,30 @@ function AnimatedCarousel() {
                                                         children: "View on Google Maps"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 537,
+                                                        lineNumber: 542,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 525,
+                                                lineNumber: 530,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 509,
+                                        lineNumber: 514,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 493,
+                                lineNumber: 498,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 492,
+                            lineNumber: 497,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2766,7 +2764,7 @@ function AnimatedCarousel() {
                                                         className: "w-6 h-6 sm:w-8 sm:h-8 text-green-600 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 547,
+                                                        lineNumber: 552,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2777,7 +2775,7 @@ function AnimatedCarousel() {
                                                                 children: "Kothrud, Pune"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 549,
+                                                                lineNumber: 554,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2786,29 +2784,29 @@ function AnimatedCarousel() {
                                                                 children: "IT Park"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 552,
+                                                                lineNumber: 557,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 548,
+                                                        lineNumber: 553,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 546,
+                                                lineNumber: 551,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 545,
+                                            lineNumber: 550,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 544,
+                                        lineNumber: 549,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2822,27 +2820,27 @@ function AnimatedCarousel() {
                                                         children: "3rd Floor, B Wing, Lohia Jain IT Park,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 561,
+                                                        lineNumber: 566,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Kothrud, PUNE-411-038, Chandni Chowk,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 562,
+                                                        lineNumber: 567,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Maharashtra, India"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 563,
+                                                        lineNumber: 568,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 560,
+                                                lineNumber: 565,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2855,7 +2853,7 @@ function AnimatedCarousel() {
                                                                 children: "12,000"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 567,
+                                                                lineNumber: 572,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2863,13 +2861,13 @@ function AnimatedCarousel() {
                                                                 children: " Sq Ft"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 568,
+                                                                lineNumber: 573,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 566,
+                                                        lineNumber: 571,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2879,7 +2877,7 @@ function AnimatedCarousel() {
                                                                 children: "Premium"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 571,
+                                                                lineNumber: 576,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2887,19 +2885,19 @@ function AnimatedCarousel() {
                                                                 children: " Location"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 572,
+                                                                lineNumber: 577,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 570,
+                                                        lineNumber: 575,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 565,
+                                                lineNumber: 570,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2912,7 +2910,7 @@ function AnimatedCarousel() {
                                                         className: "w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 586,
+                                                        lineNumber: 591,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2920,30 +2918,30 @@ function AnimatedCarousel() {
                                                         children: "View on Google Maps"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 587,
+                                                        lineNumber: 592,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 575,
+                                                lineNumber: 580,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 559,
+                                        lineNumber: 564,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 543,
+                                lineNumber: 548,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 542,
+                            lineNumber: 547,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2961,7 +2959,7 @@ function AnimatedCarousel() {
                                                         className: "w-6 h-6 sm:w-8 sm:h-8 text-purple-600 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 597,
+                                                        lineNumber: 602,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2972,7 +2970,7 @@ function AnimatedCarousel() {
                                                                 children: "Kolkata Office"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 599,
+                                                                lineNumber: 604,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2981,29 +2979,29 @@ function AnimatedCarousel() {
                                                                 children: "Business District"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 602,
+                                                                lineNumber: 607,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 598,
+                                                        lineNumber: 603,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 596,
+                                                lineNumber: 601,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 595,
+                                            lineNumber: 600,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 594,
+                                        lineNumber: 599,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3017,27 +3015,27 @@ function AnimatedCarousel() {
                                                         children: "Suit# 10F, 32, Chowringhee Road,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 611,
+                                                        lineNumber: 616,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Om Tower, 7th Floor, Unit#706, Park Street,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 612,
+                                                        lineNumber: 617,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Kolkata- 700 071"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 613,
+                                                        lineNumber: 618,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 610,
+                                                lineNumber: 615,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3050,7 +3048,7 @@ function AnimatedCarousel() {
                                                                 children: "Premium"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 617,
+                                                                lineNumber: 622,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3058,13 +3056,13 @@ function AnimatedCarousel() {
                                                                 children: " Office"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 618,
+                                                                lineNumber: 623,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 616,
+                                                        lineNumber: 621,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3074,7 +3072,7 @@ function AnimatedCarousel() {
                                                                 children: "Central"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 621,
+                                                                lineNumber: 626,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3082,19 +3080,19 @@ function AnimatedCarousel() {
                                                                 children: " Location"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 622,
+                                                                lineNumber: 627,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 620,
+                                                        lineNumber: 625,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 615,
+                                                lineNumber: 620,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3107,7 +3105,7 @@ function AnimatedCarousel() {
                                                         className: "w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 636,
+                                                        lineNumber: 641,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3115,30 +3113,30 @@ function AnimatedCarousel() {
                                                         children: "View on Google Maps"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 637,
+                                                        lineNumber: 642,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 625,
+                                                lineNumber: 630,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 609,
+                                        lineNumber: 614,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 593,
+                                lineNumber: 598,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 592,
+                            lineNumber: 597,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3156,7 +3154,7 @@ function AnimatedCarousel() {
                                                         className: "w-6 h-6 sm:w-8 sm:h-8 text-blue-600 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 647,
+                                                        lineNumber: 652,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3164,10 +3162,10 @@ function AnimatedCarousel() {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
                                                                 className: "text-responsive-lg sm:text-responsive-xl break-words",
-                                                                children: "Navi Mumbai"
+                                                                children: "Ghansoli, Navi Mumbai"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 649,
+                                                                lineNumber: 654,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -3176,29 +3174,29 @@ function AnimatedCarousel() {
                                                                 children: "Modern Facility"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 652,
+                                                                lineNumber: 657,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 648,
+                                                        lineNumber: 653,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 646,
+                                                lineNumber: 651,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 645,
+                                            lineNumber: 650,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 644,
+                                        lineNumber: 649,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3212,27 +3210,27 @@ function AnimatedCarousel() {
                                                         children: "6, Neelkanth CHS Limited,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 661,
+                                                        lineNumber: 666,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Sector 3, Ghansoli, opp. Ghansoli Rly Station,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 662,
+                                                        lineNumber: 667,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: " Navi Mumbai, Maharashtra 400701"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 663,
+                                                        lineNumber: 668,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 660,
+                                                lineNumber: 665,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3245,7 +3243,7 @@ function AnimatedCarousel() {
                                                                 children: "10,000"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 667,
+                                                                lineNumber: 672,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3253,13 +3251,13 @@ function AnimatedCarousel() {
                                                                 children: " Sq Ft"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 668,
+                                                                lineNumber: 673,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 666,
+                                                        lineNumber: 671,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3269,7 +3267,7 @@ function AnimatedCarousel() {
                                                                 children: "Latest"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 671,
+                                                                lineNumber: 676,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3277,19 +3275,19 @@ function AnimatedCarousel() {
                                                                 children: " Tech"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 672,
+                                                                lineNumber: 677,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 670,
+                                                        lineNumber: 675,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 665,
+                                                lineNumber: 670,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3302,7 +3300,7 @@ function AnimatedCarousel() {
                                                         className: "w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 686,
+                                                        lineNumber: 691,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3310,36 +3308,36 @@ function AnimatedCarousel() {
                                                         children: "View on Google Maps"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 687,
+                                                        lineNumber: 692,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 675,
+                                                lineNumber: 680,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 659,
+                                        lineNumber: 664,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 643,
+                                lineNumber: 648,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 642,
+                            lineNumber: 647,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "min-w-[300px] max-w-[300px] flex-shrink-0 snap-center px-2",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-                                className: "h-full transition-all hover:scale-105",
+                                className: "h-full  transition-all hover:scale-105",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3351,7 +3349,7 @@ function AnimatedCarousel() {
                                                         className: "w-6 h-6 sm:w-8 sm:h-8 text-red-600 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 697,
+                                                        lineNumber: 702,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3359,41 +3357,41 @@ function AnimatedCarousel() {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
                                                                 className: "text-responsive-lg sm:text-responsive-xl break-words",
-                                                                children: "Arihant Aura, Thane"
+                                                                children: "Turbhe, Navi Mumbai"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 699,
+                                                                lineNumber: 704,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
                                                                 variant: "outline",
                                                                 className: "mt-1 text-responsive-xs sm:text-responsive-sm",
-                                                                children: "Modern Facility"
+                                                                children: "IT Park"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 702,
+                                                                lineNumber: 707,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 698,
+                                                        lineNumber: 703,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 696,
+                                                lineNumber: 701,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 695,
+                                            lineNumber: 700,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 694,
+                                        lineNumber: 699,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3407,27 +3405,27 @@ function AnimatedCarousel() {
                                                         children: "Belapur Rd,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 711,
+                                                        lineNumber: 716,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Turbhe MIDC, Turbhe,"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 712,
+                                                        lineNumber: 717,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: "Navi Mumbai, Maharashtra 400705"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 713,
+                                                        lineNumber: 718,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 710,
+                                                lineNumber: 715,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3440,7 +3438,7 @@ function AnimatedCarousel() {
                                                                 children: "10,000"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 717,
+                                                                lineNumber: 722,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3448,13 +3446,13 @@ function AnimatedCarousel() {
                                                                 children: " Sq Ft"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 718,
+                                                                lineNumber: 723,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 716,
+                                                        lineNumber: 721,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3464,7 +3462,7 @@ function AnimatedCarousel() {
                                                                 children: "Latest"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 721,
+                                                                lineNumber: 726,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3472,19 +3470,19 @@ function AnimatedCarousel() {
                                                                 children: " Tech"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                                lineNumber: 722,
+                                                                lineNumber: 727,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 720,
+                                                        lineNumber: 725,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 715,
+                                                lineNumber: 720,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3497,7 +3495,7 @@ function AnimatedCarousel() {
                                                         className: "w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 736,
+                                                        lineNumber: 741,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3505,41 +3503,41 @@ function AnimatedCarousel() {
                                                         children: "View on Google Maps"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 737,
+                                                        lineNumber: 742,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 725,
+                                                lineNumber: 730,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 709,
+                                        lineNumber: 714,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 693,
+                                lineNumber: 698,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 692,
+                            lineNumber: 697,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 440,
+                    lineNumber: 445,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 428,
+                lineNumber: 433,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3552,12 +3550,12 @@ function AnimatedCarousel() {
                         "aria-label": `Go to slide ${i + 1}`
                     }, i, false, {
                         fileName: "[project]/app/about/about-us.tsx",
-                        lineNumber: 747,
+                        lineNumber: 752,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 745,
+                lineNumber: 750,
                 columnNumber: 7
             }, this)
         ]
@@ -3577,10 +3575,7 @@ function AboutUs() {
                     if (!res.ok) throw new Error("Failed to fetch data");
                     const json = await res.json();
                     setData(json);
-                    // ✅ Safe log
-                    if (json?.items?.length > 0) {
-                        console.log(json);
-                    }
+                // ✅ Safe log
                 } catch (err) {
                     console.error("API fetch error:", err);
                 } finally{}
@@ -3593,7 +3588,7 @@ function AboutUs() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 802,
+                lineNumber: 805,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3607,7 +3602,7 @@ function AboutUs() {
                             children: "Established 2008"
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 806,
+                            lineNumber: 809,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -3615,7 +3610,7 @@ function AboutUs() {
                             children: data?.items?.[0]?.fields?.companyName
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 809,
+                            lineNumber: 812,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3623,7 +3618,7 @@ function AboutUs() {
                             children: data?.items?.[0]?.fields?.herodescription
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 812,
+                            lineNumber: 815,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3636,20 +3631,20 @@ function AboutUs() {
                                             className: "w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 818,
+                                            lineNumber: 821,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: data?.items?.[0]?.fields?.highlightStats?.[0]?.label
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 819,
+                                            lineNumber: 822,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 817,
+                                    lineNumber: 820,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3659,20 +3654,20 @@ function AboutUs() {
                                             className: "w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 822,
+                                            lineNumber: 825,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: data?.items?.[0]?.fields?.highlightStats?.[1]?.label
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 823,
+                                            lineNumber: 826,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 821,
+                                    lineNumber: 824,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3682,26 +3677,26 @@ function AboutUs() {
                                             className: "w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 826,
+                                            lineNumber: 829,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: data?.items?.[0]?.fields?.highlightStats?.[2]?.label
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 827,
+                                            lineNumber: 830,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 825,
+                                    lineNumber: 828,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 816,
+                            lineNumber: 819,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3710,18 +3705,18 @@ function AboutUs() {
                             children: "Request A Call Today"
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 830,
+                            lineNumber: 833,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 805,
+                    lineNumber: 808,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 804,
+                lineNumber: 807,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3738,7 +3733,7 @@ function AboutUs() {
                                     children: "About Our Company"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 843,
+                                    lineNumber: 846,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3746,13 +3741,13 @@ function AboutUs() {
                                     children: "Incorporated in 2008 as a Private Limited Company, DBS MINTEK has grown to become a trusted partner for businesses seeking reliable call center solutions."
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 846,
+                                    lineNumber: 849,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 842,
+                            lineNumber: 845,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3766,7 +3761,7 @@ function AboutUs() {
                                             children: "Our Story"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 854,
+                                            lineNumber: 857,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3774,7 +3769,7 @@ function AboutUs() {
                                             children: data?.items?.[0]?.fields?.ourStory
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 855,
+                                            lineNumber: 858,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3782,7 +3777,7 @@ function AboutUs() {
                                             children: "We are scaling up by another 200 workstations in the short term, demonstrating our commitment to growth and meeting increasing client demands."
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 858,
+                                            lineNumber: 861,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3796,7 +3791,7 @@ function AboutUs() {
                                                             children: "1200+"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 864,
+                                                            lineNumber: 867,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3804,13 +3799,13 @@ function AboutUs() {
                                                             children: "Active Workstations"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 865,
+                                                            lineNumber: 868,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 863,
+                                                    lineNumber: 866,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3821,7 +3816,7 @@ function AboutUs() {
                                                             children: "34,000+"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 868,
+                                                            lineNumber: 871,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3829,25 +3824,25 @@ function AboutUs() {
                                                             children: "Sq Ft Total Area"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 869,
+                                                            lineNumber: 872,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 867,
+                                                    lineNumber: 870,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 862,
+                                            lineNumber: 865,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 853,
+                                    lineNumber: 856,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3858,34 +3853,34 @@ function AboutUs() {
                                             className: "w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-blue-600"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 875,
+                                            lineNumber: 878,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 874,
+                                        lineNumber: 877,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 873,
+                                    lineNumber: 876,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 852,
+                            lineNumber: 855,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 841,
+                    lineNumber: 844,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 840,
+                lineNumber: 843,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3906,7 +3901,7 @@ function AboutUs() {
                                                     className: "w-6 h-6 sm:w-8 sm:h-8 text-blue-600 flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 889,
+                                                    lineNumber: 892,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
@@ -3914,18 +3909,18 @@ function AboutUs() {
                                                     children: "Our Mission"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 890,
+                                                    lineNumber: 893,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 888,
+                                            lineNumber: 891,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 887,
+                                        lineNumber: 890,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3934,18 +3929,18 @@ function AboutUs() {
                                             children: data?.items?.[0]?.fields?.ourMission
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 894,
+                                            lineNumber: 897,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 893,
+                                        lineNumber: 896,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 886,
+                                lineNumber: 889,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -3959,7 +3954,7 @@ function AboutUs() {
                                                     className: "w-6 h-6 sm:w-8 sm:h-8 text-indigo-600 flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 903,
+                                                    lineNumber: 906,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
@@ -3967,18 +3962,18 @@ function AboutUs() {
                                                     children: "Our Vision"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 904,
+                                                    lineNumber: 907,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 902,
+                                            lineNumber: 905,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 901,
+                                        lineNumber: 904,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3987,34 +3982,34 @@ function AboutUs() {
                                             children: data?.items?.[0]?.fields?.ourVision
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 908,
+                                            lineNumber: 911,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 907,
+                                        lineNumber: 910,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 900,
+                                lineNumber: 903,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/about/about-us.tsx",
-                        lineNumber: 885,
+                        lineNumber: 888,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 884,
+                    lineNumber: 887,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 883,
+                lineNumber: 886,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4031,7 +4026,7 @@ function AboutUs() {
                                     children: "Our Services"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 921,
+                                    lineNumber: 924,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4039,36 +4034,36 @@ function AboutUs() {
                                     children: "Comprehensive solutions across multiple domains and languages"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 922,
+                                    lineNumber: 925,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 920,
+                            lineNumber: 923,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "relative w-full rounded-xl",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ServiceCarousel, {}, void 0, false, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 929,
+                                lineNumber: 932,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 928,
+                            lineNumber: 931,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 919,
+                    lineNumber: 922,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 918,
+                lineNumber: 921,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4084,7 +4079,7 @@ function AboutUs() {
                                     children: "State-of-the-Art Infrastructure"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 938,
+                                    lineNumber: 941,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4092,13 +4087,13 @@ function AboutUs() {
                                     children: "Premium technology and infrastructure ensuring seamless operations"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 941,
+                                    lineNumber: 944,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 937,
+                            lineNumber: 940,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4113,7 +4108,7 @@ function AboutUs() {
                                                     className: "w-10 h-10 sm:w-12 sm:h-12 text-purple-600 mb-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 949,
+                                                    lineNumber: 952,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
@@ -4121,13 +4116,13 @@ function AboutUs() {
                                                     children: data?.items?.[0]?.fields?.infrastructure[0].title
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 950,
+                                                    lineNumber: 953,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 948,
+                                            lineNumber: 951,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4141,7 +4136,7 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 954,
+                                                        lineNumber: 957,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4151,7 +4146,7 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 955,
+                                                        lineNumber: 958,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4161,7 +4156,7 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 956,
+                                                        lineNumber: 959,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4171,24 +4166,24 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 957,
+                                                        lineNumber: 960,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 953,
+                                                lineNumber: 956,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 952,
+                                            lineNumber: 955,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 947,
+                                    lineNumber: 950,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -4200,7 +4195,7 @@ function AboutUs() {
                                                     className: "w-10 h-10 sm:w-12 sm:h-12 text-green-600 mb-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 964,
+                                                    lineNumber: 967,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
@@ -4208,13 +4203,13 @@ function AboutUs() {
                                                     children: data?.items?.[0]?.fields?.infrastructure[1].title
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 965,
+                                                    lineNumber: 968,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 963,
+                                            lineNumber: 966,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4228,7 +4223,7 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 969,
+                                                        lineNumber: 972,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4238,7 +4233,7 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 970,
+                                                        lineNumber: 973,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4248,7 +4243,7 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 971,
+                                                        lineNumber: 974,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4258,24 +4253,24 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 972,
+                                                        lineNumber: 975,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 968,
+                                                lineNumber: 971,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 967,
+                                            lineNumber: 970,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 962,
+                                    lineNumber: 965,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -4287,7 +4282,7 @@ function AboutUs() {
                                                     className: "w-10 h-10 sm:w-12 sm:h-12 text-blue-600 mb-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 979,
+                                                    lineNumber: 982,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
@@ -4295,13 +4290,13 @@ function AboutUs() {
                                                     children: data?.items?.[0]?.fields?.infrastructure[2].title
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 980,
+                                                    lineNumber: 983,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 978,
+                                            lineNumber: 981,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4315,7 +4310,7 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 984,
+                                                        lineNumber: 987,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4325,7 +4320,7 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 985,
+                                                        lineNumber: 988,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4335,7 +4330,7 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 986,
+                                                        lineNumber: 989,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -4345,41 +4340,41 @@ function AboutUs() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/about-us.tsx",
-                                                        lineNumber: 987,
+                                                        lineNumber: 990,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 983,
+                                                lineNumber: 986,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 982,
+                                            lineNumber: 985,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 977,
+                                    lineNumber: 980,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 946,
+                            lineNumber: 949,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 936,
+                    lineNumber: 939,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 935,
+                lineNumber: 938,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4396,7 +4391,7 @@ function AboutUs() {
                                     children: "Our Locations"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 999,
+                                    lineNumber: 1002,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4404,25 +4399,25 @@ function AboutUs() {
                                     children: "Strategically located across major business hubs in India"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1000,
+                                    lineNumber: 1003,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 998,
+                            lineNumber: 1001,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "relative",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedCarousel, {}, void 0, false, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 1009,
+                                lineNumber: 1012,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1007,
+                            lineNumber: 1010,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4437,7 +4432,7 @@ function AboutUs() {
                                                 children: "Find Us on the Map"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 1016,
+                                                lineNumber: 1019,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -4445,13 +4440,13 @@ function AboutUs() {
                                                 children: "Click on any location above to view detailed directions"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 1017,
+                                                lineNumber: 1020,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 1015,
+                                        lineNumber: 1018,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4465,7 +4460,7 @@ function AboutUs() {
                                                             className: "w-6 h-6 sm:w-8 sm:h-8 text-red-600 mx-auto mb-2 "
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1024,
+                                                            lineNumber: 1027,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4473,7 +4468,7 @@ function AboutUs() {
                                                             children: "Mumbai"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1025,
+                                                            lineNumber: 1028,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4481,13 +4476,13 @@ function AboutUs() {
                                                             children: "Head Office"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1026,
+                                                            lineNumber: 1029,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1023,
+                                                    lineNumber: 1026,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4497,7 +4492,7 @@ function AboutUs() {
                                                             className: "w-6 h-6 sm:w-8 sm:h-8 text-blue-600 mx-auto mb-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1029,
+                                                            lineNumber: 1032,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4505,7 +4500,7 @@ function AboutUs() {
                                                             children: "Baner"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1030,
+                                                            lineNumber: 1033,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4513,13 +4508,13 @@ function AboutUs() {
                                                             children: "Tech Hub"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1031,
+                                                            lineNumber: 1034,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1028,
+                                                    lineNumber: 1031,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4529,7 +4524,7 @@ function AboutUs() {
                                                             className: "w-6 h-6 sm:w-8 sm:h-8 text-green-600 mx-auto mb-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1034,
+                                                            lineNumber: 1037,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4537,7 +4532,7 @@ function AboutUs() {
                                                             children: "Kothrud"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1035,
+                                                            lineNumber: 1038,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4545,13 +4540,13 @@ function AboutUs() {
                                                             children: "IT Park"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1036,
+                                                            lineNumber: 1039,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1033,
+                                                    lineNumber: 1036,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4561,7 +4556,7 @@ function AboutUs() {
                                                             className: "w-6 h-6 sm:w-8 sm:h-8 text-purple-600 mx-auto mb-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1039,
+                                                            lineNumber: 1042,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4569,7 +4564,7 @@ function AboutUs() {
                                                             children: "Kolkata"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1040,
+                                                            lineNumber: 1043,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4577,46 +4572,46 @@ function AboutUs() {
                                                             children: "Business Center"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/about-us.tsx",
-                                                            lineNumber: 1041,
+                                                            lineNumber: 1044,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1038,
+                                                    lineNumber: 1041,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1022,
+                                            lineNumber: 1025,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/about-us.tsx",
-                                        lineNumber: 1021,
+                                        lineNumber: 1024,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/about-us.tsx",
-                                lineNumber: 1014,
+                                lineNumber: 1017,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1013,
+                            lineNumber: 1016,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 997,
+                    lineNumber: 1000,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 996,
+                lineNumber: 999,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4632,7 +4627,7 @@ function AboutUs() {
                                     children: "Why Choose DBS MINTEK?"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1054,
+                                    lineNumber: 1057,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4640,13 +4635,13 @@ function AboutUs() {
                                     children: "Experience the difference with our commitment to excellence"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1057,
+                                    lineNumber: 1060,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1053,
+                            lineNumber: 1056,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4661,12 +4656,12 @@ function AboutUs() {
                                                 className: "w-6 h-6 sm:w-8 sm:h-8 text-blue-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 1065,
+                                                lineNumber: 1068,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1064,
+                                            lineNumber: 1067,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4674,7 +4669,7 @@ function AboutUs() {
                                             children: "Fast Ramp-up"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1067,
+                                            lineNumber: 1070,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4682,13 +4677,13 @@ function AboutUs() {
                                             children: "Quick deployment and scaling of new campaigns"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1068,
+                                            lineNumber: 1071,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1063,
+                                    lineNumber: 1066,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4700,12 +4695,12 @@ function AboutUs() {
                                                 className: "w-6 h-6 sm:w-8 sm:h-8 text-green-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 1075,
+                                                lineNumber: 1078,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1074,
+                                            lineNumber: 1077,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4713,7 +4708,7 @@ function AboutUs() {
                                             children: "Quality Assurance"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1077,
+                                            lineNumber: 1080,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4721,13 +4716,13 @@ function AboutUs() {
                                             children: "Uncompromising quality in all operations"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1078,
+                                            lineNumber: 1081,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1073,
+                                    lineNumber: 1076,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4739,12 +4734,12 @@ function AboutUs() {
                                                 className: "w-6 h-6 sm:w-8 sm:h-8 text-purple-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 1085,
+                                                lineNumber: 1088,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1084,
+                                            lineNumber: 1087,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4752,7 +4747,7 @@ function AboutUs() {
                                             children: "Experienced Team"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1087,
+                                            lineNumber: 1090,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4760,13 +4755,13 @@ function AboutUs() {
                                             children: "Passionate professionals dedicated to excellence"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1088,
+                                            lineNumber: 1091,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1083,
+                                    lineNumber: 1086,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4778,12 +4773,12 @@ function AboutUs() {
                                                 className: "w-6 h-6 sm:w-8 sm:h-8 text-orange-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/about-us.tsx",
-                                                lineNumber: 1095,
+                                                lineNumber: 1098,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1094,
+                                            lineNumber: 1097,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4791,7 +4786,7 @@ function AboutUs() {
                                             children: "Global Reach"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1097,
+                                            lineNumber: 1100,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4799,30 +4794,30 @@ function AboutUs() {
                                             children: "Making your business global with our solutions"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1098,
+                                            lineNumber: 1101,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1093,
+                                    lineNumber: 1096,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1062,
+                            lineNumber: 1065,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 1052,
+                    lineNumber: 1055,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 1051,
+                lineNumber: 1054,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4835,7 +4830,7 @@ function AboutUs() {
                             children: "Our Culture & Values"
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1109,
+                            lineNumber: 1112,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4843,7 +4838,7 @@ function AboutUs() {
                             children: "We encourage an open & creative workplace conducive to personal & professional growth for all of our employees. We believe in rewarding excellence & providing an environment that is both fun & challenging."
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1110,
+                            lineNumber: 1113,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4856,7 +4851,7 @@ function AboutUs() {
                                             className: "w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1116,
+                                            lineNumber: 1119,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4864,7 +4859,7 @@ function AboutUs() {
                                             children: data?.items?.[0]?.fields?.culture[0].title
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1117,
+                                            lineNumber: 1120,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4875,13 +4870,13 @@ function AboutUs() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1118,
+                                            lineNumber: 1121,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1115,
+                                    lineNumber: 1118,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4891,7 +4886,7 @@ function AboutUs() {
                                             className: "w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1122,
+                                            lineNumber: 1125,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4899,7 +4894,7 @@ function AboutUs() {
                                             children: data?.items?.[0]?.fields?.culture[1].title
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1123,
+                                            lineNumber: 1126,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4910,13 +4905,13 @@ function AboutUs() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1124,
+                                            lineNumber: 1127,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1121,
+                                    lineNumber: 1124,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4926,7 +4921,7 @@ function AboutUs() {
                                             className: "w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1128,
+                                            lineNumber: 1131,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4934,7 +4929,7 @@ function AboutUs() {
                                             children: data?.items?.[0]?.fields?.culture[2].title
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1129,
+                                            lineNumber: 1132,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4945,30 +4940,30 @@ function AboutUs() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1130,
+                                            lineNumber: 1133,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1127,
+                                    lineNumber: 1130,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1114,
+                            lineNumber: 1117,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 1108,
+                    lineNumber: 1111,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 1107,
+                lineNumber: 1110,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4982,7 +4977,7 @@ function AboutUs() {
                             children: "Make Your Business Global"
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1140,
+                            lineNumber: 1143,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4990,7 +4985,7 @@ function AboutUs() {
                             children: data?.items?.[0]?.fields?.contactCta
                         }, void 0, false, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1143,
+                            lineNumber: 1146,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5004,14 +4999,14 @@ function AboutUs() {
                                             className: "w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0"
                                         }, void 0, false, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1151,
+                                            lineNumber: 1154,
                                             columnNumber: 15
                                         }, this),
                                         "Request A Call Today"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1147,
+                                    lineNumber: 1150,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -5021,13 +5016,13 @@ function AboutUs() {
                                     children: "Get Free Consultation"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1154,
+                                    lineNumber: 1157,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1146,
+                            lineNumber: 1149,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5038,7 +5033,7 @@ function AboutUs() {
                                     children: "Contact Information"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1163,
+                                    lineNumber: 1166,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5051,20 +5046,20 @@ function AboutUs() {
                                                     className: "w-3 h-3 sm:w-4 sm:h-4 text-gray-500 flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1166,
+                                                    lineNumber: 1169,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Mumbai • Pune • Kolkata"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1167,
+                                                    lineNumber: 1170,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1165,
+                                            lineNumber: 1168,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5074,20 +5069,20 @@ function AboutUs() {
                                                     className: "w-3 h-3 sm:w-4 sm:h-4 text-gray-500 flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1170,
+                                                    lineNumber: 1173,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "24/7 Support Available"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1171,
+                                                    lineNumber: 1174,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1169,
+                                            lineNumber: 1172,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5097,54 +5092,54 @@ function AboutUs() {
                                                     className: "w-3 h-3 sm:w-4 sm:h-4 text-gray-500 flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1174,
+                                                    lineNumber: 1177,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "International Services"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/about-us.tsx",
-                                                    lineNumber: 1175,
+                                                    lineNumber: 1178,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/about-us.tsx",
-                                            lineNumber: 1173,
+                                            lineNumber: 1176,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/about-us.tsx",
-                                    lineNumber: 1164,
+                                    lineNumber: 1167,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/about/about-us.tsx",
-                            lineNumber: 1162,
+                            lineNumber: 1165,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/about/about-us.tsx",
-                    lineNumber: 1139,
+                    lineNumber: 1142,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 1138,
+                lineNumber: 1141,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/about/about-us.tsx",
-                lineNumber: 1181,
+                lineNumber: 1184,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/about/about-us.tsx",
-        lineNumber: 801,
+        lineNumber: 804,
         columnNumber: 5
     }, this);
 }

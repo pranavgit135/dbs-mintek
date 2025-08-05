@@ -170,7 +170,7 @@ function Header() {
             ]
         },
         {
-            name: "Gellery",
+            name: "Gallery",
             href: "/gallery"
         },
         {
@@ -1232,10 +1232,6 @@ function AboutSection() {
                     if (!res.ok) throw new Error("Failed to fetch data");
                     const json = await res.json();
                     setData(json);
-                    // ✅ Safe log
-                    if (json?.items?.length > 0) {
-                        console.log(json);
-                    }
                 } catch (err) {
                     console.error("API fetch error:", err);
                 } finally{}
@@ -1293,20 +1289,20 @@ function AboutSection() {
                         className: "absolute top-20 left-20 w-32 h-32 bg-purple-500 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/components/about-section.tsx",
-                        lineNumber: 191,
+                        lineNumber: 188,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-20 right-20 w-40 h-40 bg-blue-500 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/components/about-section.tsx",
-                        lineNumber: 192,
+                        lineNumber: 189,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/about-section.tsx",
-                lineNumber: 190,
+                lineNumber: 187,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1324,7 +1320,7 @@ function AboutSection() {
                                         children: "ABOUT US"
                                     }, void 0, false, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 200,
+                                        lineNumber: 197,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1335,7 +1331,7 @@ function AboutSection() {
                                                 children: data?.items?.[1]?.fields?.heading
                                             }, void 0, false, {
                                                 fileName: "[project]/components/about-section.tsx",
-                                                lineNumber: 209,
+                                                lineNumber: 206,
                                                 columnNumber: 16
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1343,13 +1339,13 @@ function AboutSection() {
                                                 children: data?.items?.[4]?.fields?.subheading
                                             }, void 0, false, {
                                                 fileName: "[project]/components/about-section.tsx",
-                                                lineNumber: 213,
+                                                lineNumber: 210,
                                                 columnNumber: 16
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 208,
+                                        lineNumber: 205,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1357,7 +1353,7 @@ function AboutSection() {
                                         children: data?.items?.[1]?.fields?.subheading
                                     }, void 0, false, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 216,
+                                        lineNumber: 213,
                                         columnNumber: 14
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1374,7 +1370,7 @@ function AboutSection() {
                                                         className: "h-5 w-5 text-green-500 flex-shrink-0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/about-section.tsx",
-                                                        lineNumber: 244,
+                                                        lineNumber: 241,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1382,24 +1378,24 @@ function AboutSection() {
                                                         children: point
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/about-section.tsx",
-                                                        lineNumber: 245,
+                                                        lineNumber: 242,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, index, true, {
                                                 fileName: "[project]/components/about-section.tsx",
-                                                lineNumber: 243,
+                                                lineNumber: 240,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 236,
+                                        lineNumber: 233,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/about-section.tsx",
-                                lineNumber: 199,
+                                lineNumber: 196,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1413,7 +1409,7 @@ function AboutSection() {
                                                 children: data?.items?.[0]?.fields?.rightColTitle
                                             }, void 0, false, {
                                                 fileName: "[project]/components/about-section.tsx",
-                                                lineNumber: 254,
+                                                lineNumber: 251,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1421,13 +1417,13 @@ function AboutSection() {
                                                 children: data?.items?.[0]?.fields?.rightColDescription
                                             }, void 0, false, {
                                                 fileName: "[project]/components/about-section.tsx",
-                                                lineNumber: 257,
+                                                lineNumber: 254,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 253,
+                                        lineNumber: 250,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1447,12 +1443,12 @@ function AboutSection() {
                                                                     className: "h-6 w-6 text-blue-600"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/about-section.tsx",
-                                                                    lineNumber: 272,
+                                                                    lineNumber: 269,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/about-section.tsx",
-                                                                lineNumber: 271,
+                                                                lineNumber: 268,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1463,7 +1459,7 @@ function AboutSection() {
                                                                         children: feature.title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/about-section.tsx",
-                                                                        lineNumber: 275,
+                                                                        lineNumber: 272,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1471,47 +1467,47 @@ function AboutSection() {
                                                                         children: feature.description
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/about-section.tsx",
-                                                                        lineNumber: 276,
+                                                                        lineNumber: 273,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/about-section.tsx",
-                                                                lineNumber: 274,
+                                                                lineNumber: 271,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/about-section.tsx",
-                                                        lineNumber: 270,
+                                                        lineNumber: 267,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/about-section.tsx",
-                                                    lineNumber: 269,
+                                                    lineNumber: 266,
                                                     columnNumber: 19
                                                 }, this)
                                             }, feature.title, false, {
                                                 fileName: "[project]/components/about-section.tsx",
-                                                lineNumber: 268,
+                                                lineNumber: 265,
                                                 columnNumber: 21
                                             }, this);
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 263,
+                                        lineNumber: 260,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/about-section.tsx",
-                                lineNumber: 252,
+                                lineNumber: 249,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/about-section.tsx",
-                        lineNumber: 197,
+                        lineNumber: 194,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1528,7 +1524,7 @@ function AboutSection() {
                                             children: data?.items?.[1]?.fields?.heading
                                         }, void 0, false, {
                                             fileName: "[project]/components/about-section.tsx",
-                                            lineNumber: 311,
+                                            lineNumber: 308,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1536,13 +1532,13 @@ function AboutSection() {
                                             children: data?.items?.[1]?.fields?.subheading
                                         }, void 0, false, {
                                             fileName: "[project]/components/about-section.tsx",
-                                            lineNumber: 312,
+                                            lineNumber: 309,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/about-section.tsx",
-                                    lineNumber: 310,
+                                    lineNumber: 307,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1552,23 +1548,23 @@ function AboutSection() {
                                             isVisible: statsVisible
                                         }, stat.label, false, {
                                             fileName: "[project]/components/about-section.tsx",
-                                            lineNumber: 319,
+                                            lineNumber: 316,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/components/about-section.tsx",
-                                    lineNumber: 317,
+                                    lineNumber: 314,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/about-section.tsx",
-                            lineNumber: 309,
+                            lineNumber: 306,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/about-section.tsx",
-                        lineNumber: 308,
+                        lineNumber: 305,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1582,7 +1578,7 @@ function AboutSection() {
                                         className: "h-12 w-12 mx-auto mb-6 text-yellow-300"
                                     }, void 0, false, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 330,
+                                        lineNumber: 327,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1590,7 +1586,7 @@ function AboutSection() {
                                         children: data?.items?.[0]?.fields?.aboutctaTitle
                                     }, void 0, false, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 331,
+                                        lineNumber: 328,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1598,7 +1594,7 @@ function AboutSection() {
                                         children: data?.items?.[0]?.fields?.aboutctaDescription
                                     }, void 0, false, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 332,
+                                        lineNumber: 329,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1609,7 +1605,7 @@ function AboutSection() {
                                                 children: data?.items?.[0]?.fields?.ctaBtn1
                                             }, void 0, false, {
                                                 fileName: "[project]/components/about-section.tsx",
-                                                lineNumber: 336,
+                                                lineNumber: 333,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1617,41 +1613,41 @@ function AboutSection() {
                                                 children: data?.items?.[0]?.fields?.ctaBtn2
                                             }, void 0, false, {
                                                 fileName: "[project]/components/about-section.tsx",
-                                                lineNumber: 339,
+                                                lineNumber: 336,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/about-section.tsx",
-                                        lineNumber: 335,
+                                        lineNumber: 332,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/about-section.tsx",
-                                lineNumber: 329,
+                                lineNumber: 326,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/about-section.tsx",
-                            lineNumber: 328,
+                            lineNumber: 325,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/about-section.tsx",
-                        lineNumber: 327,
+                        lineNumber: 324,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/about-section.tsx",
-                lineNumber: 195,
+                lineNumber: 192,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/about-section.tsx",
-        lineNumber: 185,
+        lineNumber: 182,
         columnNumber: 5
     }, this);
 }
@@ -1873,10 +1869,7 @@ function ServicesSection() {
                     if (!res.ok) throw new Error("Failed to fetch data");
                     const json = await res.json();
                     setData(json);
-                    // ✅ Safe log
-                    if (json?.items?.length > 0) {
-                        console.log(json);
-                    }
+                // ✅ Safe log
                 } catch (err) {
                     console.error("API fetch error:", err);
                 } finally{}
@@ -2003,20 +1996,20 @@ function ServicesSection() {
                         className: "absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/components/services-section.tsx",
-                        lineNumber: 286,
+                        lineNumber: 284,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-20 left-20 w-40 h-40 bg-green-500 rounded-full blur-3xl animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/components/services-section.tsx",
-                        lineNumber: 287,
+                        lineNumber: 285,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/services-section.tsx",
-                lineNumber: 285,
+                lineNumber: 283,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2030,7 +2023,7 @@ function ServicesSection() {
                                 children: "WHAT WE OFFER"
                             }, void 0, false, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 293,
+                                lineNumber: 291,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2038,7 +2031,7 @@ function ServicesSection() {
                                 children: data?.items?.[0]?.fields?.serviceTitle
                             }, void 0, false, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 294,
+                                lineNumber: 292,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2046,13 +2039,13 @@ function ServicesSection() {
                                 children: data?.items?.[0]?.fields?.serviceDescription
                             }, void 0, false, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 295,
+                                lineNumber: 293,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/services-section.tsx",
-                        lineNumber: 292,
+                        lineNumber: 290,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2082,14 +2075,14 @@ function ServicesSection() {
                                                                 className: "absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services-section.tsx",
-                                                                lineNumber: 322,
+                                                                lineNumber: 320,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                 className: "absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services-section.tsx",
-                                                                lineNumber: 323,
+                                                                lineNumber: 321,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2103,12 +2096,12 @@ function ServicesSection() {
                                                                                 className: "h-12 w-12 text-white"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/services-section.tsx",
-                                                                                lineNumber: 327,
+                                                                                lineNumber: 325,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/services-section.tsx",
-                                                                            lineNumber: 326,
+                                                                            lineNumber: 324,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2122,7 +2115,7 @@ function ServicesSection() {
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/components/services-section.tsx",
-                                                                                    lineNumber: 330,
+                                                                                    lineNumber: 328,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2130,30 +2123,30 @@ function ServicesSection() {
                                                                                     children: service.title
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/services-section.tsx",
-                                                                                    lineNumber: 331,
+                                                                                    lineNumber: 329,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/components/services-section.tsx",
-                                                                            lineNumber: 329,
+                                                                            lineNumber: 327,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/services-section.tsx",
-                                                                    lineNumber: 325,
+                                                                    lineNumber: 323,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services-section.tsx",
-                                                                lineNumber: 324,
+                                                                lineNumber: 322,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services-section.tsx",
-                                                        lineNumber: 321,
+                                                        lineNumber: 319,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2168,7 +2161,7 @@ function ServicesSection() {
                                                                             children: "Key Features"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/services-section.tsx",
-                                                                            lineNumber: 341,
+                                                                            lineNumber: 339,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2180,7 +2173,7 @@ function ServicesSection() {
                                                                                             className: "h-5 w-5 text-green-500 flex-shrink-0"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services-section.tsx",
-                                                                                            lineNumber: 348,
+                                                                                            lineNumber: 346,
                                                                                             columnNumber: 33
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2188,24 +2181,24 @@ function ServicesSection() {
                                                                                             children: feature
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services-section.tsx",
-                                                                                            lineNumber: 349,
+                                                                                            lineNumber: 347,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     ]
                                                                                 }, featureIndex, true, {
                                                                                     fileName: "[project]/components/services-section.tsx",
-                                                                                    lineNumber: 344,
+                                                                                    lineNumber: 342,
                                                                                     columnNumber: 31
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/services-section.tsx",
-                                                                            lineNumber: 342,
+                                                                            lineNumber: 340,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/services-section.tsx",
-                                                                    lineNumber: 340,
+                                                                    lineNumber: 338,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2216,7 +2209,7 @@ function ServicesSection() {
                                                                             children: "Service Overview"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/services-section.tsx",
-                                                                            lineNumber: 361,
+                                                                            lineNumber: 359,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2224,13 +2217,13 @@ function ServicesSection() {
                                                                             children: service.description
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/services-section.tsx",
-                                                                            lineNumber: 362,
+                                                                            lineNumber: 360,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/services-section.tsx",
-                                                                    lineNumber: 356,
+                                                                    lineNumber: 354,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2241,46 +2234,46 @@ function ServicesSection() {
                                                                             className: "ml-2 h-4 w-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/services-section.tsx",
-                                                                            lineNumber: 366,
+                                                                            lineNumber: 364,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/services-section.tsx",
-                                                                    lineNumber: 364,
+                                                                    lineNumber: 362,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/services-section.tsx",
-                                                            lineNumber: 338,
+                                                            lineNumber: 336,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services-section.tsx",
-                                                        lineNumber: 337,
+                                                        lineNumber: 335,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 315,
+                                                lineNumber: 313,
                                                 columnNumber: 19
                                             }, this)
                                         }, service.id, false, {
                                             fileName: "[project]/components/services-section.tsx",
-                                            lineNumber: 314,
+                                            lineNumber: 312,
                                             columnNumber: 17
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/components/services-section.tsx",
-                                    lineNumber: 304,
+                                    lineNumber: 302,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 303,
+                                lineNumber: 301,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2296,12 +2289,12 @@ function ServicesSection() {
                                                     className: "h-5 w-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services-section.tsx",
-                                                    lineNumber: 381,
+                                                    lineNumber: 379,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 380,
+                                                lineNumber: 378,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2311,18 +2304,18 @@ function ServicesSection() {
                                                     className: "h-5 w-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services-section.tsx",
-                                                    lineNumber: 384,
+                                                    lineNumber: 382,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 383,
+                                                lineNumber: 381,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services-section.tsx",
-                                        lineNumber: 379,
+                                        lineNumber: 377,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2334,12 +2327,12 @@ function ServicesSection() {
                                                 onClick: ()=>goToSlide(index)
                                             }, index, false, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 391,
+                                                lineNumber: 389,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/services-section.tsx",
-                                        lineNumber: 389,
+                                        lineNumber: 387,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2349,24 +2342,24 @@ function ServicesSection() {
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/components/services-section.tsx",
-                                            lineNumber: 405,
+                                            lineNumber: 403,
                                             columnNumber: 45
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/components/services-section.tsx",
-                                            lineNumber: 405,
+                                            lineNumber: 403,
                                             columnNumber: 77
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/services-section.tsx",
-                                        lineNumber: 404,
+                                        lineNumber: 402,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 377,
+                                lineNumber: 375,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2378,18 +2371,18 @@ function ServicesSection() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/components/services-section.tsx",
-                                    lineNumber: 411,
+                                    lineNumber: 409,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 410,
+                                lineNumber: 408,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/services-section.tsx",
-                        lineNumber: 301,
+                        lineNumber: 299,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2406,7 +2399,7 @@ function ServicesSection() {
                                             children: data?.items?.[0]?.fields?.serviceStatTitle
                                         }, void 0, false, {
                                             fileName: "[project]/components/services-section.tsx",
-                                            lineNumber: 422,
+                                            lineNumber: 420,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2414,13 +2407,13 @@ function ServicesSection() {
                                             children: data?.items?.[0]?.fields?.serviceStatDescription
                                         }, void 0, false, {
                                             fileName: "[project]/components/services-section.tsx",
-                                            lineNumber: 423,
+                                            lineNumber: 421,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/services-section.tsx",
-                                    lineNumber: 421,
+                                    lineNumber: 419,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2438,17 +2431,17 @@ function ServicesSection() {
                                                             className: "h-8 w-8 text-blue-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services-section.tsx",
-                                                            lineNumber: 435,
+                                                            lineNumber: 433,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services-section.tsx",
-                                                        lineNumber: 434,
+                                                        lineNumber: 432,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services-section.tsx",
-                                                    lineNumber: 433,
+                                                    lineNumber: 431,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2459,12 +2452,12 @@ function ServicesSection() {
                                                         shouldStart: statsVisible
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services-section.tsx",
-                                                        lineNumber: 439,
+                                                        lineNumber: 437,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services-section.tsx",
-                                                    lineNumber: 438,
+                                                    lineNumber: 436,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2472,30 +2465,30 @@ function ServicesSection() {
                                                     children: stat.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services-section.tsx",
-                                                    lineNumber: 441,
+                                                    lineNumber: 439,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, stat.icon, true, {
                                             fileName: "[project]/components/services-section.tsx",
-                                            lineNumber: 432,
+                                            lineNumber: 430,
                                             columnNumber: 19
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/components/services-section.tsx",
-                                    lineNumber: 428,
+                                    lineNumber: 426,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/services-section.tsx",
-                            lineNumber: 420,
+                            lineNumber: 418,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/services-section.tsx",
-                        lineNumber: 419,
+                        lineNumber: 417,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2510,7 +2503,7 @@ function ServicesSection() {
                                         children: data?.items?.[0]?.fields?.servicectaTitle
                                     }, void 0, false, {
                                         fileName: "[project]/components/services-section.tsx",
-                                        lineNumber: 454,
+                                        lineNumber: 452,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2518,7 +2511,7 @@ function ServicesSection() {
                                         children: data?.items?.[0]?.fields?.servicectaDescription
                                     }, void 0, false, {
                                         fileName: "[project]/components/services-section.tsx",
-                                        lineNumber: 455,
+                                        lineNumber: 453,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2529,7 +2522,7 @@ function ServicesSection() {
                                                 children: data?.items?.[0]?.fields?.ctaBtn1
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 459,
+                                                lineNumber: 457,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2537,41 +2530,41 @@ function ServicesSection() {
                                                 children: data?.items?.[0]?.fields?.ctaBtn2
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services-section.tsx",
-                                                lineNumber: 460,
+                                                lineNumber: 458,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services-section.tsx",
-                                        lineNumber: 458,
+                                        lineNumber: 456,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/services-section.tsx",
-                                lineNumber: 453,
+                                lineNumber: 451,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/services-section.tsx",
-                            lineNumber: 452,
+                            lineNumber: 450,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/services-section.tsx",
-                        lineNumber: 451,
+                        lineNumber: 449,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/services-section.tsx",
-                lineNumber: 290,
+                lineNumber: 288,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/services-section.tsx",
-        lineNumber: 280,
+        lineNumber: 278,
         columnNumber: 5
     }, this);
 }
@@ -3274,10 +3267,6 @@ function WhyChooseUsSection() {
                     if (!res.ok) throw new Error("Failed to fetch data");
                     const json = await res.json();
                     setData(json);
-                    // ✅ Safe log
-                    if (json?.items?.length > 0) {
-                        console.log(json);
-                    }
                 } catch (err) {
                     console.error("API fetch error:", err);
                 } finally{}
@@ -3348,20 +3337,20 @@ function WhyChooseUsSection() {
                         className: "absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/components/why-choose-us-section.tsx",
-                        lineNumber: 186,
+                        lineNumber: 183,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-20 right-20 w-40 h-40 bg-purple-500 rounded-full blur-3xl animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/components/why-choose-us-section.tsx",
-                        lineNumber: 187,
+                        lineNumber: 184,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/why-choose-us-section.tsx",
-                lineNumber: 185,
+                lineNumber: 182,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3375,7 +3364,7 @@ function WhyChooseUsSection() {
                                 children: "WHY CHOOSE US"
                             }, void 0, false, {
                                 fileName: "[project]/components/why-choose-us-section.tsx",
-                                lineNumber: 193,
+                                lineNumber: 190,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3383,7 +3372,7 @@ function WhyChooseUsSection() {
                                 children: data?.items?.[0]?.fields?.whychooseTitle
                             }, void 0, false, {
                                 fileName: "[project]/components/why-choose-us-section.tsx",
-                                lineNumber: 196,
+                                lineNumber: 193,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3391,13 +3380,13 @@ function WhyChooseUsSection() {
                                 children: data?.items?.[0]?.fields?.whychooseDescription
                             }, void 0, false, {
                                 fileName: "[project]/components/why-choose-us-section.tsx",
-                                lineNumber: 197,
+                                lineNumber: 194,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/why-choose-us-section.tsx",
-                        lineNumber: 192,
+                        lineNumber: 189,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3419,17 +3408,17 @@ function WhyChooseUsSection() {
                                                     className: "h-12 w-12"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/why-choose-us-section.tsx",
-                                                    lineNumber: 219,
+                                                    lineNumber: 216,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/why-choose-us-section.tsx",
-                                                lineNumber: 218,
+                                                lineNumber: 215,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                            lineNumber: 217,
+                                            lineNumber: 214,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3437,7 +3426,7 @@ function WhyChooseUsSection() {
                                             children: feature.title
                                         }, void 0, false, {
                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                            lineNumber: 224,
+                                            lineNumber: 221,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3449,7 +3438,7 @@ function WhyChooseUsSection() {
                                                             className: "h-4 w-4 text-green-500 flex-shrink-0"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                                            lineNumber: 231,
+                                                            lineNumber: 228,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3457,18 +3446,18 @@ function WhyChooseUsSection() {
                                                             children: benefit
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                                            lineNumber: 232,
+                                                            lineNumber: 229,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, benefit, true, {
                                                     fileName: "[project]/components/why-choose-us-section.tsx",
-                                                    lineNumber: 230,
+                                                    lineNumber: 227,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                            lineNumber: 229,
+                                            lineNumber: 226,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3476,7 +3465,7 @@ function WhyChooseUsSection() {
                                             children: feature.description
                                         }, void 0, false, {
                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                            lineNumber: 238,
+                                            lineNumber: 235,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3487,30 +3476,30 @@ function WhyChooseUsSection() {
                                                     className: "h-4 w-4 group-hover:translate-x-1 transition-transform"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/why-choose-us-section.tsx",
-                                                    lineNumber: 252,
+                                                    lineNumber: 249,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                            lineNumber: 247,
+                                            lineNumber: 244,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/why-choose-us-section.tsx",
-                                    lineNumber: 215,
+                                    lineNumber: 212,
                                     columnNumber: 15
                                 }, this)
                             }, feature.id, false, {
                                 fileName: "[project]/components/why-choose-us-section.tsx",
-                                lineNumber: 209,
+                                lineNumber: 206,
                                 columnNumber: 15
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/components/why-choose-us-section.tsx",
-                        lineNumber: 203,
+                        lineNumber: 200,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3527,7 +3516,7 @@ function WhyChooseUsSection() {
                                             children: "Our Track Record"
                                         }, void 0, false, {
                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                            lineNumber: 265,
+                                            lineNumber: 262,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3535,13 +3524,13 @@ function WhyChooseUsSection() {
                                             children: "Numbers that speak for our commitment to excellence and client satisfaction"
                                         }, void 0, false, {
                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                            lineNumber: 266,
+                                            lineNumber: 263,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/why-choose-us-section.tsx",
-                                    lineNumber: 264,
+                                    lineNumber: 261,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3559,17 +3548,17 @@ function WhyChooseUsSection() {
                                                             className: "h-8 w-8 text-blue-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                                            lineNumber: 277,
+                                                            lineNumber: 274,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/why-choose-us-section.tsx",
-                                                        lineNumber: 276,
+                                                        lineNumber: 273,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/why-choose-us-section.tsx",
-                                                    lineNumber: 275,
+                                                    lineNumber: 272,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3583,17 +3572,17 @@ function WhyChooseUsSection() {
                                                             delay: index * 200
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                                            lineNumber: 282,
+                                                            lineNumber: 279,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/why-choose-us-section.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 278,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/why-choose-us-section.tsx",
-                                                    lineNumber: 280,
+                                                    lineNumber: 277,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3601,30 +3590,30 @@ function WhyChooseUsSection() {
                                                     children: achievement.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/why-choose-us-section.tsx",
-                                                    lineNumber: 290,
+                                                    lineNumber: 287,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, achievement.icon, true, {
                                             fileName: "[project]/components/why-choose-us-section.tsx",
-                                            lineNumber: 274,
+                                            lineNumber: 271,
                                             columnNumber: 23
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/components/why-choose-us-section.tsx",
-                                    lineNumber: 271,
+                                    lineNumber: 268,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/why-choose-us-section.tsx",
-                            lineNumber: 263,
+                            lineNumber: 260,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/why-choose-us-section.tsx",
-                        lineNumber: 262,
+                        lineNumber: 259,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3639,7 +3628,7 @@ function WhyChooseUsSection() {
                                         children: data?.items?.[0]?.fields?.whychooseCtaTitle
                                     }, void 0, false, {
                                         fileName: "[project]/components/why-choose-us-section.tsx",
-                                        lineNumber: 304,
+                                        lineNumber: 301,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3647,7 +3636,7 @@ function WhyChooseUsSection() {
                                         children: data?.items?.[0]?.fields?.whychooseCtaDescription
                                     }, void 0, false, {
                                         fileName: "[project]/components/why-choose-us-section.tsx",
-                                        lineNumber: 305,
+                                        lineNumber: 302,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3658,7 +3647,7 @@ function WhyChooseUsSection() {
                                                 children: data?.items?.[0]?.fields?.ctaBtn1
                                             }, void 0, false, {
                                                 fileName: "[project]/components/why-choose-us-section.tsx",
-                                                lineNumber: 309,
+                                                lineNumber: 306,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3666,41 +3655,41 @@ function WhyChooseUsSection() {
                                                 children: data?.items?.[0]?.fields?.ctaBtn2
                                             }, void 0, false, {
                                                 fileName: "[project]/components/why-choose-us-section.tsx",
-                                                lineNumber: 312,
+                                                lineNumber: 309,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/why-choose-us-section.tsx",
-                                        lineNumber: 308,
+                                        lineNumber: 305,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/why-choose-us-section.tsx",
-                                lineNumber: 303,
+                                lineNumber: 300,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/why-choose-us-section.tsx",
-                            lineNumber: 302,
+                            lineNumber: 299,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/why-choose-us-section.tsx",
-                        lineNumber: 301,
+                        lineNumber: 298,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/why-choose-us-section.tsx",
-                lineNumber: 190,
+                lineNumber: 187,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/why-choose-us-section.tsx",
-        lineNumber: 180,
+        lineNumber: 177,
         columnNumber: 5
     }, this);
 }
@@ -5222,10 +5211,7 @@ function ContactSection() {
                     if (!response.ok) throw new Error("Failed to fetch data");
                     const json = await response.json();
                     setData(json);
-                    // ✅ Safe log
-                    if (json?.items?.length > 0) {
-                        console.log(json);
-                    }
+                // ✅ Safe log
                 } catch (err) {
                     console.error("API fetch error:", err);
                 } finally{}
@@ -5299,20 +5285,20 @@ function ContactSection() {
                         className: "absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/components/contact-section.tsx",
-                        lineNumber: 132,
+                        lineNumber: 130,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-20 left-20 w-40 h-40 bg-green-500 rounded-full blur-3xl animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/components/contact-section.tsx",
-                        lineNumber: 133,
+                        lineNumber: 131,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/contact-section.tsx",
-                lineNumber: 131,
+                lineNumber: 129,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5326,7 +5312,7 @@ function ContactSection() {
                                 children: "GET IN TOUCH"
                             }, void 0, false, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 139,
+                                lineNumber: 137,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -5334,7 +5320,7 @@ function ContactSection() {
                                 children: data?.items?.[0]?.fields?.contactTitle
                             }, void 0, false, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 140,
+                                lineNumber: 138,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5342,13 +5328,13 @@ function ContactSection() {
                                 children: data?.items?.[0]?.fields?.contactdescription
                             }, void 0, false, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 141,
+                                lineNumber: 139,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/contact-section.tsx",
-                        lineNumber: 138,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5370,12 +5356,12 @@ function ContactSection() {
                                                             className: "h-6 w-6 text-blue-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 153,
+                                                            lineNumber: 151,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 152,
+                                                        lineNumber: 150,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -5383,13 +5369,13 @@ function ContactSection() {
                                                         children: "Send us a Message"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 155,
+                                                        lineNumber: 153,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/contact-section.tsx",
-                                                lineNumber: 151,
+                                                lineNumber: 149,
                                                 columnNumber: 17
                                             }, this),
                                             isSubmitted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5399,7 +5385,7 @@ function ContactSection() {
                                                         className: "h-16 w-16 text-green-500 mx-auto mb-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 160,
+                                                        lineNumber: 158,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -5407,7 +5393,7 @@ function ContactSection() {
                                                         children: "Thank You!"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 161,
+                                                        lineNumber: 159,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5415,13 +5401,13 @@ function ContactSection() {
                                                         children: "Your message has been sent successfully. We'll get back to you within 24 hours."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 160,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/contact-section.tsx",
-                                                lineNumber: 159,
+                                                lineNumber: 157,
                                                 columnNumber: 19
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                                 onSubmit: handleSubmit,
@@ -5437,7 +5423,7 @@ function ContactSection() {
                                                                         children: "Full Name *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 170,
+                                                                        lineNumber: 168,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -5449,13 +5435,13 @@ function ContactSection() {
                                                                         placeholder: "Enter your full name"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 171,
+                                                                        lineNumber: 169,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 169,
+                                                                lineNumber: 167,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5465,7 +5451,7 @@ function ContactSection() {
                                                                         children: "Email Address *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 181,
+                                                                        lineNumber: 179,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -5478,19 +5464,19 @@ function ContactSection() {
                                                                         placeholder: "Enter your email"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 182,
+                                                                        lineNumber: 180,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 180,
+                                                                lineNumber: 178,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 168,
+                                                        lineNumber: 166,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5503,7 +5489,7 @@ function ContactSection() {
                                                                         children: "Phone Number *"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 196,
+                                                                        lineNumber: 194,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -5516,13 +5502,13 @@ function ContactSection() {
                                                                         placeholder: "Enter your phone number"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 197,
+                                                                        lineNumber: 195,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 195,
+                                                                lineNumber: 193,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5532,7 +5518,7 @@ function ContactSection() {
                                                                         children: "Company Name"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 208,
+                                                                        lineNumber: 206,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -5543,19 +5529,19 @@ function ContactSection() {
                                                                         placeholder: "Enter your company name"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 209,
+                                                                        lineNumber: 207,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 207,
+                                                                lineNumber: 205,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 194,
+                                                        lineNumber: 192,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5565,7 +5551,7 @@ function ContactSection() {
                                                                 children: "Service Interested In"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 220,
+                                                                lineNumber: 218,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -5579,7 +5565,7 @@ function ContactSection() {
                                                                         children: "Select a service"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 227,
+                                                                        lineNumber: 225,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     data?.items?.[0]?.fields?.contactServices.map((service)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -5587,19 +5573,19 @@ function ContactSection() {
                                                                             children: service
                                                                         }, service, false, {
                                                                             fileName: "[project]/components/contact-section.tsx",
-                                                                            lineNumber: 229,
+                                                                            lineNumber: 227,
                                                                             columnNumber: 27
                                                                         }, this))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 221,
+                                                                lineNumber: 219,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 219,
+                                                        lineNumber: 217,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5609,7 +5595,7 @@ function ContactSection() {
                                                                 children: "Message *"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 237,
+                                                                lineNumber: 235,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -5622,13 +5608,13 @@ function ContactSection() {
                                                                 placeholder: "Tell us about your requirements..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 238,
+                                                                lineNumber: 236,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 236,
+                                                        lineNumber: 234,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -5638,29 +5624,29 @@ function ContactSection() {
                                                         children: isSubmitting ? "Sending..." : "Send Message"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 249,
+                                                        lineNumber: 247,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/contact-section.tsx",
-                                                lineNumber: 167,
+                                                lineNumber: 165,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/contact-section.tsx",
-                                        lineNumber: 150,
+                                        lineNumber: 148,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/contact-section.tsx",
-                                    lineNumber: 149,
+                                    lineNumber: 147,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 148,
+                                lineNumber: 146,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5673,7 +5659,7 @@ function ContactSection() {
                                                 children: data?.items?.[0]?.fields?.contactsubTitle
                                             }, void 0, false, {
                                                 fileName: "[project]/components/contact-section.tsx",
-                                                lineNumber: 265,
+                                                lineNumber: 263,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5681,13 +5667,13 @@ function ContactSection() {
                                                 children: data?.items?.[0]?.fields?.contactsubdescription
                                             }, void 0, false, {
                                                 fileName: "[project]/components/contact-section.tsx",
-                                                lineNumber: 266,
+                                                lineNumber: 264,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/contact-section.tsx",
-                                        lineNumber: 264,
+                                        lineNumber: 262,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5707,12 +5693,12 @@ function ContactSection() {
                                                                     className: "h-6 w-6"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 291,
+                                                                    lineNumber: 289,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 280,
+                                                                lineNumber: 278,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5723,7 +5709,7 @@ function ContactSection() {
                                                                         children: info.title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 294,
+                                                                        lineNumber: 292,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5733,12 +5719,12 @@ function ContactSection() {
                                                                                 children: detail
                                                                             }, detail, false, {
                                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                                lineNumber: 297,
+                                                                                lineNumber: 295,
                                                                                 columnNumber: 29
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 295,
+                                                                        lineNumber: 293,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -5746,35 +5732,35 @@ function ContactSection() {
                                                                         children: info.description
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/contact-section.tsx",
-                                                                        lineNumber: 302,
+                                                                        lineNumber: 300,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/contact-section.tsx",
-                                                                lineNumber: 293,
+                                                                lineNumber: 291,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/contact-section.tsx",
-                                                        lineNumber: 279,
+                                                        lineNumber: 277,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 278,
+                                                    lineNumber: 276,
                                                     columnNumber: 19
                                                 }, this)
                                             }, info.icon, false, {
                                                 fileName: "[project]/components/contact-section.tsx",
-                                                lineNumber: 274,
+                                                lineNumber: 272,
                                                 columnNumber: 24
                                             }, this);
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/components/contact-section.tsx",
-                                        lineNumber: 271,
+                                        lineNumber: 269,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -5787,7 +5773,7 @@ function ContactSection() {
                                                     children: "Why Choose DBS Mintek?"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 314,
+                                                    lineNumber: 312,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5799,7 +5785,7 @@ function ContactSection() {
                                                                     className: "h-8 w-8 mx-auto mb-2 opacity-80"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 317,
+                                                                    lineNumber: 315,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5807,7 +5793,7 @@ function ContactSection() {
                                                                     children: "500+"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 318,
+                                                                    lineNumber: 316,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5815,13 +5801,13 @@ function ContactSection() {
                                                                     children: "Clients Served"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 319,
+                                                                    lineNumber: 317,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 316,
+                                                            lineNumber: 314,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5830,7 +5816,7 @@ function ContactSection() {
                                                                     className: "h-8 w-8 mx-auto mb-2 opacity-80"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 322,
+                                                                    lineNumber: 320,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5838,7 +5824,7 @@ function ContactSection() {
                                                                     children: "24/7"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 323,
+                                                                    lineNumber: 321,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5846,13 +5832,13 @@ function ContactSection() {
                                                                     children: "Support"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 324,
+                                                                    lineNumber: 322,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 321,
+                                                            lineNumber: 319,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5861,7 +5847,7 @@ function ContactSection() {
                                                                     className: "h-8 w-8 mx-auto mb-2 opacity-80"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 327,
+                                                                    lineNumber: 325,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5869,7 +5855,7 @@ function ContactSection() {
                                                                     children: "99.9%"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 328,
+                                                                    lineNumber: 326,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5877,54 +5863,54 @@ function ContactSection() {
                                                                     children: "Uptime"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/contact-section.tsx",
-                                                                    lineNumber: 329,
+                                                                    lineNumber: 327,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 326,
+                                                            lineNumber: 324,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 315,
+                                                    lineNumber: 313,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 313,
+                                            lineNumber: 311,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/contact-section.tsx",
-                                        lineNumber: 312,
+                                        lineNumber: 310,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 263,
+                                lineNumber: 261,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/contact-section.tsx",
-                        lineNumber: 146,
+                        lineNumber: 144,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/contact-section.tsx",
-                lineNumber: 136,
+                lineNumber: 134,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/contact-section.tsx",
-        lineNumber: 126,
+        lineNumber: 124,
         columnNumber: 5
     }, this);
 }
@@ -5975,21 +5961,18 @@ const footerLinks = {
             name: "Outbound Call Center",
             href: "/services/outbound"
         },
+        // { name: "Customer Support", href: "/services/customer-support" },
         {
-            name: "Customer Support",
-            href: "/services/customer-support"
-        },
-        {
-            name: "Technical Support",
-            href: "/services/technical-support"
+            name: "US Pension",
+            href: "/services/pension"
         },
         {
             name: "Email Support",
-            href: "/services/email-support"
+            href: "/services/email"
         },
         {
             name: "Chat Support",
-            href: "/services/chat-support"
+            href: "/services/chat"
         }
     ],
     company: [
@@ -5999,23 +5982,19 @@ const footerLinks = {
         },
         {
             name: "Why Choose Us",
-            href: "/why-choose-us"
+            href: "/about"
         },
         {
             name: "Our Team",
-            href: "/team"
+            href: "/contact"
         },
         {
             name: "Careers",
-            href: "/careers"
+            href: "/contact"
         },
         {
             name: "News & Updates",
-            href: "/news"
-        },
-        {
-            name: "Case Studies",
-            href: "/case-studies"
+            href: "/about"
         }
     ],
     support: [
@@ -6025,23 +6004,7 @@ const footerLinks = {
         },
         {
             name: "FAQ",
-            href: "/faq"
-        },
-        {
-            name: "Support Center",
-            href: "/support"
-        },
-        {
-            name: "Documentation",
-            href: "/docs"
-        },
-        {
-            name: "Privacy Policy",
-            href: "/privacy"
-        },
-        {
-            name: "Terms of Service",
-            href: "/terms"
+            href: "/#"
         }
     ]
 };
@@ -6061,7 +6024,7 @@ const socialLinks = [
     {
         name: "LinkedIn",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$linkedin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Linkedin$3e$__["Linkedin"],
-        href: "#",
+        href: "https://www.linkedin.com/company/dbsmintek/",
         color: "hover:text-blue-700"
     },
     {
@@ -6226,12 +6189,13 @@ function Footer() {
                                             className: "flex space-x-4",
                                             children: socialLinks.map((social)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                     href: social.href,
+                                                    target: "_blank",
                                                     className: `p-2 bg-gray-800 rounded-lg transition-colors ${social.color}`,
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(social.icon, {
                                                         className: "h-5 w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 114,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, social.name, false, {
@@ -6257,7 +6221,7 @@ function Footer() {
                                             children: "Our Services"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 121,
+                                            lineNumber: 122,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -6271,30 +6235,30 @@ function Footer() {
                                                                 className: "h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/footer.tsx",
-                                                                lineNumber: 129,
+                                                                lineNumber: 130,
                                                                 columnNumber: 23
                                                             }, this),
                                                             link.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 125,
+                                                        lineNumber: 126,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, link.name, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 124,
+                                                    lineNumber: 125,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 122,
+                                            lineNumber: 123,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 120,
+                                    lineNumber: 121,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6304,7 +6268,7 @@ function Footer() {
                                             children: "Company"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 139,
+                                            lineNumber: 140,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -6318,30 +6282,30 @@ function Footer() {
                                                                 className: "h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/footer.tsx",
-                                                                lineNumber: 147,
+                                                                lineNumber: 148,
                                                                 columnNumber: 23
                                                             }, this),
                                                             link.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 143,
+                                                        lineNumber: 144,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, link.name, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 142,
+                                                    lineNumber: 143,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 140,
+                                            lineNumber: 141,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 139,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6351,7 +6315,7 @@ function Footer() {
                                             children: "Stay Updated"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 157,
+                                            lineNumber: 158,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6359,7 +6323,7 @@ function Footer() {
                                             children: "Subscribe to our newsletter for the latest updates and industry insights."
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 158,
+                                            lineNumber: 159,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6371,7 +6335,7 @@ function Footer() {
                                                     className: "bg-gray-800 border-gray-700 text-white placeholder-gray-400"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 164,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -6380,18 +6344,18 @@ function Footer() {
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 169,
+                                                        lineNumber: 170,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 168,
+                                                    lineNumber: 169,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 163,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -6399,7 +6363,7 @@ function Footer() {
                                             children: "Support"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 173,
+                                            lineNumber: 174,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -6413,30 +6377,30 @@ function Footer() {
                                                                 className: "h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/footer.tsx",
-                                                                lineNumber: 181,
+                                                                lineNumber: 182,
                                                                 columnNumber: 23
                                                             }, this),
                                                             link.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/footer.tsx",
-                                                        lineNumber: 177,
+                                                        lineNumber: 178,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, link.name, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 176,
+                                                    lineNumber: 177,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 174,
+                                            lineNumber: 175,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 156,
+                                    lineNumber: 157,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -6462,7 +6426,7 @@ function Footer() {
                                             className: "h-8 w-8 text-yellow-400"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 195,
+                                            lineNumber: 196,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6472,7 +6436,7 @@ function Footer() {
                                                     children: "ISO 9001:2015"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 197,
+                                                    lineNumber: 198,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6480,19 +6444,19 @@ function Footer() {
                                                     children: "Quality Management"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 198,
+                                                    lineNumber: 199,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 196,
+                                            lineNumber: 197,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 194,
+                                    lineNumber: 195,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6502,7 +6466,7 @@ function Footer() {
                                             className: "h-8 w-8 text-green-400"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 202,
+                                            lineNumber: 203,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6512,7 +6476,7 @@ function Footer() {
                                                     children: "NASSCOM Member"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 204,
+                                                    lineNumber: 205,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6520,19 +6484,19 @@ function Footer() {
                                                     children: "Industry Association"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 205,
+                                                    lineNumber: 206,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 203,
+                                            lineNumber: 204,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 201,
+                                    lineNumber: 202,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6542,7 +6506,7 @@ function Footer() {
                                             className: "h-8 w-8 text-blue-400"
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 209,
+                                            lineNumber: 210,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6552,7 +6516,7 @@ function Footer() {
                                                     children: "24/7 Operations"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 211,
+                                                    lineNumber: 212,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6560,30 +6524,30 @@ function Footer() {
                                                     children: "Always Available"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
-                                                    lineNumber: 212,
+                                                    lineNumber: 213,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 210,
+                                            lineNumber: 211,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 208,
+                                    lineNumber: 209,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/footer.tsx",
-                            lineNumber: 193,
+                            lineNumber: 194,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/footer.tsx",
-                        lineNumber: 192,
+                        lineNumber: 193,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6596,58 +6560,68 @@ function Footer() {
                                     children: [
                                         "© ",
                                         new Date().getFullYear(),
-                                        " DBS Mintek Pvt Ltd. All rights reserved| Developed by GEO Softech."
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/components/footer.tsx",
-                                    lineNumber: 221,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex space-x-6 text-sm",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            href: "/privacy",
-                                            className: "text-gray-400 hover:text-white transition-colors",
-                                            children: "Privacy Policy"
+                                        " DBS Mintek Pvt Ltd. All rights reserved | Developed by ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            target: "_blank",
+                                            href: "https://www.geosoftech.com/",
+                                            className: "hover:underline",
+                                            children: "GEO Softech."
                                         }, void 0, false, {
                                             fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 223,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            href: "/terms",
-                                            className: "text-gray-400 hover:text-white transition-colors",
-                                            children: "Terms of Service"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 226,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            href: "/cookies",
-                                            className: "text-gray-400 hover:text-white transition-colors",
-                                            children: "Cookie Policy"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/footer.tsx",
-                                            lineNumber: 229,
-                                            columnNumber: 15
+                                            lineNumber: 222,
+                                            columnNumber: 136
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
                                     lineNumber: 222,
                                     columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex space-x-6 text-sm",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/#",
+                                            className: "text-gray-400 hover:text-white transition-colors",
+                                            children: "Privacy Policy"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/footer.tsx",
+                                            lineNumber: 224,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/#",
+                                            className: "text-gray-400 hover:text-white transition-colors",
+                                            children: "Terms of Service"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/footer.tsx",
+                                            lineNumber: 227,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/#",
+                                            className: "text-gray-400 hover:text-white transition-colors",
+                                            children: "Cookie Policy"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/footer.tsx",
+                                            lineNumber: 230,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/footer.tsx",
+                                    lineNumber: 223,
+                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/footer.tsx",
-                            lineNumber: 220,
+                            lineNumber: 221,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/footer.tsx",
-                        lineNumber: 219,
+                        lineNumber: 220,
                         columnNumber: 9
                     }, this)
                 ]
@@ -6726,10 +6700,7 @@ function FounderSection({ about }) {
                     if (!res.ok) throw new Error("Failed to fetch data");
                     const json = await res.json();
                     setData(json);
-                    // ✅ Safe log
-                    if (json?.items?.length > 0) {
-                        console.log(json);
-                    }
+                // ✅ Safe log
                 } catch (err) {
                     console.error("API fetch error:", err);
                 } finally{}
@@ -6757,28 +6728,28 @@ function FounderSection({ about }) {
                 className: "absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800"
             }, void 0, false, {
                 fileName: "[project]/components/founder-section.tsx",
-                lineNumber: 71,
+                lineNumber: 69,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/components/founder-section.tsx",
-                lineNumber: 72,
+                lineNumber: 70,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute bottom-0 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/components/founder-section.tsx",
-                lineNumber: 73,
+                lineNumber: 71,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
             }, void 0, false, {
                 fileName: "[project]/components/founder-section.tsx",
-                lineNumber: 76,
+                lineNumber: 74,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6799,14 +6770,14 @@ function FounderSection({ about }) {
                                             className: "w-4 h-4 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/components/founder-section.tsx",
-                                            lineNumber: 88,
+                                            lineNumber: 86,
                                             columnNumber: 15
                                         }, this),
                                         "Meet Our Founder"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/founder-section.tsx",
-                                    lineNumber: 87,
+                                    lineNumber: 85,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -6814,7 +6785,7 @@ function FounderSection({ about }) {
                                     children: "Leadership That Drives Innovation"
                                 }, void 0, false, {
                                     fileName: "[project]/components/founder-section.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 89,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6822,13 +6793,13 @@ function FounderSection({ about }) {
                                     children: "Discover the vision and expertise behind Geo SofTech's success story"
                                 }, void 0, false, {
                                     fileName: "[project]/components/founder-section.tsx",
-                                    lineNumber: 94,
+                                    lineNumber: 92,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/founder-section.tsx",
-                            lineNumber: 86,
+                            lineNumber: 84,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6843,14 +6814,14 @@ function FounderSection({ about }) {
                                                 className: "absolute -top-4 -left-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/founder-section.tsx",
-                                                lineNumber: 105,
+                                                lineNumber: 103,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/founder-section.tsx",
-                                                lineNumber: 106,
+                                                lineNumber: 104,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6868,17 +6839,17 @@ function FounderSection({ about }) {
                                                                 priority: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/founder-section.tsx",
-                                                                lineNumber: 112,
+                                                                lineNumber: 110,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/founder-section.tsx",
-                                                            lineNumber: 111,
+                                                            lineNumber: 109,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/founder-section.tsx",
-                                                        lineNumber: 110,
+                                                        lineNumber: 108,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -6892,12 +6863,12 @@ function FounderSection({ about }) {
                                                                         className: "w-6 h-6 text-white"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/founder-section.tsx",
-                                                                        lineNumber: 129,
+                                                                        lineNumber: 127,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/founder-section.tsx",
-                                                                    lineNumber: 128,
+                                                                    lineNumber: 126,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6907,7 +6878,7 @@ function FounderSection({ about }) {
                                                                             children: "10+"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/founder-section.tsx",
-                                                                            lineNumber: 132,
+                                                                            lineNumber: 130,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6915,41 +6886,41 @@ function FounderSection({ about }) {
                                                                             children: "Years Leading"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/founder-section.tsx",
-                                                                            lineNumber: 133,
+                                                                            lineNumber: 131,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/founder-section.tsx",
-                                                                    lineNumber: 131,
+                                                                    lineNumber: 129,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/founder-section.tsx",
-                                                            lineNumber: 127,
+                                                            lineNumber: 125,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/founder-section.tsx",
-                                                        lineNumber: 123,
+                                                        lineNumber: 121,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/founder-section.tsx",
-                                                lineNumber: 109,
+                                                lineNumber: 107,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/founder-section.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 101,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/founder-section.tsx",
-                                    lineNumber: 102,
+                                    lineNumber: 100,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -6965,7 +6936,7 @@ function FounderSection({ about }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/founder-section.tsx",
-                                                    lineNumber: 145,
+                                                    lineNumber: 143,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6973,7 +6944,7 @@ function FounderSection({ about }) {
                                                     children: about?.founderTitle
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/founder-section.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 144,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6983,18 +6954,18 @@ function FounderSection({ about }) {
                                                         children: about.founderDescription
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/founder-section.tsx",
-                                                        lineNumber: 152,
+                                                        lineNumber: 150,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/founder-section.tsx",
-                                                    lineNumber: 151,
+                                                    lineNumber: 149,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/founder-section.tsx",
-                                            lineNumber: 144,
+                                            lineNumber: 142,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7010,12 +6981,12 @@ function FounderSection({ about }) {
                                                                 className: "w-6 h-6 text-white"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/founder-section.tsx",
-                                                                lineNumber: 168,
+                                                                lineNumber: 166,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/founder-section.tsx",
-                                                            lineNumber: 167,
+                                                            lineNumber: 165,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7023,7 +6994,7 @@ function FounderSection({ about }) {
                                                             children: stat.value
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/founder-section.tsx",
-                                                            lineNumber: 170,
+                                                            lineNumber: 168,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7031,26 +7002,26 @@ function FounderSection({ about }) {
                                                             children: stat.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/founder-section.tsx",
-                                                            lineNumber: 171,
+                                                            lineNumber: 169,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, stat.icon, true, {
                                                     fileName: "[project]/components/founder-section.tsx",
-                                                    lineNumber: 162,
+                                                    lineNumber: 160,
                                                     columnNumber: 26
                                                 }, this);
                                             })
                                         }, void 0, false, {
                                             fileName: "[project]/components/founder-section.tsx",
-                                            lineNumber: 159,
+                                            lineNumber: 157,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex flex-col sm:flex-row gap-4 justify-center",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                    href: "https://linkedin.com/in/amarkorde",
+                                                    href: "https://www.linkedin.com/in/bibhash-jha-210ab25?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                                                     target: "_blank",
                                                     rel: "noopener noreferrer",
                                                     className: "inline-flex",
@@ -7062,19 +7033,19 @@ function FounderSection({ about }) {
                                                                 className: " mr-2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/founder-section.tsx",
-                                                                lineNumber: 189,
+                                                                lineNumber: 187,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Connect on LinkedIn"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/founder-section.tsx",
-                                                        lineNumber: 185,
+                                                        lineNumber: 183,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/founder-section.tsx",
-                                                    lineNumber: 179,
+                                                    lineNumber: 177,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -7084,25 +7055,25 @@ function FounderSection({ about }) {
                                                     children: "View Portfolio"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/founder-section.tsx",
-                                                    lineNumber: 194,
+                                                    lineNumber: 192,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/founder-section.tsx",
-                                            lineNumber: 178,
+                                            lineNumber: 176,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/founder-section.tsx",
-                                    lineNumber: 142,
+                                    lineNumber: 140,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/founder-section.tsx",
-                            lineNumber: 100,
+                            lineNumber: 98,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -7110,29 +7081,29 @@ function FounderSection({ about }) {
                                 className: "relative overflow-hidden bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 border-0 shadow-xl"
                             }, void 0, false, {
                                 fileName: "[project]/components/founder-section.tsx",
-                                lineNumber: 207,
+                                lineNumber: 205,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/founder-section.tsx",
-                            lineNumber: 206,
+                            lineNumber: 204,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/founder-section.tsx",
-                    lineNumber: 79,
+                    lineNumber: 77,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/founder-section.tsx",
-                lineNumber: 78,
+                lineNumber: 76,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/founder-section.tsx",
-        lineNumber: 69,
+        lineNumber: 67,
         columnNumber: 5
     }, this);
 }
