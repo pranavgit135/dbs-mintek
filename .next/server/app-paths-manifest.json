@@ -1,0 +1,12 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/page": "app/page.js",
+  "/services/email/page": "app/services/email/page.js",
+  "/services/inbound/page": "app/services/inbound/page.js",
+  "/services/outbound/page": "app/services/outbound/page.js",
+  "/services/pension/page": "app/services/pension/page.js"
+}
