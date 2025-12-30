@@ -175,7 +175,7 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
         console.error('Error loading blog post:', error)
         setPost(null)
       } finally {
-        setLoading(false)
+      setLoading(false)
       }
     }
 

@@ -146,11 +146,11 @@ export default function BlogCreatePage() {
     
     try {
       const blogData = {
-        title,
-        content,
-        tags,
-        featuredImage,
-        status: isPublished ? 'published' : 'draft',
+      title,
+      content,
+      tags,
+      featuredImage,
+      status: isPublished ? 'published' : 'draft',
       }
 
       let response
@@ -187,7 +187,7 @@ export default function BlogCreatePage() {
       console.error('Error saving blog:', error)
       alert(error.message || 'Error saving blog post. Please try again.')
     } finally {
-      setIsSubmitting(false)
+    setIsSubmitting(false)
     }
   }
 
@@ -239,12 +239,12 @@ export default function BlogCreatePage() {
             </Link>
           </div>
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               {isEditing ? '✏️ Edit Blog Post' : '✨ Create New Blog Post'}
-            </h1>
-            <p className="text-white/70 text-lg">
+          </h1>
+          <p className="text-white/70 text-lg">
               {isEditing ? 'Update your blog post' : 'Share your thoughts with the world'}
-            </p>
+          </p>
           </div>
         </motion.div>
 
