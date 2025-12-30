@@ -67,8 +67,7 @@ BlogSchema.pre('save', function (next) {
   next()
 })
 
-// Index for faster queries
-BlogSchema.index({ slug: 1 })
+// Index for faster queries (slug index is already created by unique: true, so we skip it)
 BlogSchema.index({ status: 1 })
 BlogSchema.index({ createdAt: -1 })
 

@@ -19,7 +19,8 @@ import {
 } from 'lucide-react'
 
 interface BlogPost {
-  id: number
+  _id?: string
+  id?: number
   title: string
   content: string
   excerpt: string
@@ -33,10 +34,11 @@ interface BlogPost {
   comments?: number
 }
 
-export default function BlogDetailPage({ params }: { params: { slug: string } }) {
+export default function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const [post, setPost] = useState<BlogPost | null>(null)
   const [loading, setLoading] = useState(true)
   const [liked, setLiked] = useState(false)
+  const [slug, setSlug] = useState<string>('')
 
   // Fallback dummy blog posts data
   const dummyPosts: BlogPost[] = [
@@ -149,12 +151,23 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
   ]
 
   useEffect(() => {
+    // Await params first
+    const initParams = async () => {
+      const resolvedParams = await params
+      setSlug(resolvedParams.slug)
+    }
+    initParams()
+  }, [params])
+
+  useEffect(() => {
+    if (!slug) return
+    
     // Load post from API
     const fetchPost = async () => {
       setLoading(true)
       
       try {
-        const response = await fetch(`/api/blog/slug/${params.slug}`)
+        const response = await fetch(`/api/blog/slug/${slug}`)
         const result = await response.json()
 
         if (result.success && result.data) {
@@ -180,7 +193,7 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
     }
 
     fetchPost()
-  }, [params.slug])
+  }, [slug])
 
   const handleLike = () => {
     if (post) {
@@ -288,14 +301,20 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
           transition={{ delay: 0.1 }}
           className="mb-8"
         >
-          <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-            <img
-              src={post.featuredImage}
-              alt={post.title}
-              className="w-full h-64 md:h-80 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-          </div>
+          {post.featuredImage ? (
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src={post.featuredImage}
+                alt={post.title}
+                className="w-full h-64 md:h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            </div>
+          ) : (
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 h-64 md:h-80 flex items-center justify-center">
+              <BookOpen className="w-24 h-24 text-white/30" />
+            </div>
+          )}
         </motion.div>
 
         {/* Post Content */}
@@ -564,20 +583,26 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
           <h2 className="text-2xl font-bold text-white mb-6">Related Posts</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {dummyPosts
-              .filter(p => p.id !== post.id)
+              .filter(p => (p.id || 0) !== (post.id || post._id || 0))
               .slice(0, 2)
               .map((relatedPost, index) => (
                 <Link 
-                  key={relatedPost.id}
+                  key={relatedPost.id || index}
                   href={`/blog/${relatedPost.title.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-')}`}
                 >
                   <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer group">
                     <CardContent className="p-6">
-                      <img
-                        src={relatedPost.featuredImage}
-                        alt={relatedPost.title}
-                        className="w-full h-32 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
-                      />
+                      {relatedPost.featuredImage ? (
+                        <img
+                          src={relatedPost.featuredImage}
+                          alt={relatedPost.title}
+                          className="w-full h-32 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-32 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg mb-4 flex items-center justify-center">
+                          <BookOpen className="w-8 h-8 text-white/30" />
+                        </div>
+                      )}
                       <h3 className="text-white font-semibold mb-2 group-hover:text-purple-300 transition-colors">
                         {relatedPost.title}
                       </h3>

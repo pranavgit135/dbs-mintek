@@ -5,12 +5,13 @@ import Blog from '@/models/Blog'
 // GET blog by slug
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
     await connectDB()
+    const { slug } = await params
 
-    const blog = await Blog.findOne({ slug: params.slug, status: 'published' })
+    const blog = await Blog.findOne({ slug, status: 'published' })
 
     if (!blog) {
       return NextResponse.json(

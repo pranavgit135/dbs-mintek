@@ -6,12 +6,13 @@ import { isAuthenticated } from '@/lib/auth'
 // GET single blog by ID
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB()
+    const { id } = await params
 
-    const blog = await Blog.findById(params.id)
+    const blog = await Blog.findById(id)
 
     if (!blog) {
       return NextResponse.json(
@@ -33,7 +34,7 @@ export async function GET(
 // PUT update blog
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   // Check authentication
   const authenticated = await isAuthenticated()
@@ -46,6 +47,7 @@ export async function PUT(
 
   try {
     await connectDB()
+    const { id } = await params
 
     const body = await request.json()
     const { title, content, tags, featuredImage, status } = body
@@ -73,13 +75,13 @@ export async function PUT(
       .trim()
 
     // Check if slug already exists (excluding current blog)
-    const existingBlog = await Blog.findOne({ slug, _id: { $ne: params.id } })
+    const existingBlog = await Blog.findOne({ slug, _id: { $ne: id } })
     if (existingBlog) {
       slug = `${slug}-${Date.now()}`
     }
 
     const blog = await Blog.findByIdAndUpdate(
-      params.id,
+      id,
       {
         title,
         content,
@@ -112,7 +114,7 @@ export async function PUT(
 // DELETE blog
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   // Check authentication
   const authenticated = await isAuthenticated()
@@ -125,8 +127,9 @@ export async function DELETE(
 
   try {
     await connectDB()
+    const { id } = await params
 
-    const blog = await Blog.findByIdAndDelete(params.id)
+    const blog = await Blog.findByIdAndDelete(id)
 
     if (!blog) {
       return NextResponse.json(
